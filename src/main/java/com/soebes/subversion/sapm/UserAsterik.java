@@ -1,7 +1,7 @@
 package com.soebes.subversion.sapm;
 
 /**
- * This user is the user who represents anyone.
+ * This user is the user who represents anybody.
  * 
  * @author Karl Heinz Marbaise
  *

@@ -26,8 +26,27 @@ public class AccessRule {
 	 */
 	private String repositoryPath;
 
+	
+	/**
+	 * This is used if you have no paritcular repository
+	 * defined for exmample
+	 * 
+	 * <pre>
+	 * [/test/trunk]
+	 * ...
+	 * </pre>
+	 * @param path
+	 */
+	public AccessRule(String path) {
+		super();
+		init(null, path);
+	}
 	public AccessRule(String repositoryName, String path) {
 		super();
+		init(repositoryName, path);
+	}
+
+	private void init(String repositoryName, String path) {
 		if (!path.endsWith("/")) {
 			path += "/";
 		}
@@ -35,7 +54,6 @@ public class AccessRule {
 		setRepositoryPath(path);
 		setAccessList(new ArrayList<Access>());
 	}
-
 	public String getRepositoryName() {
 		return repositoryName;
 	}
@@ -86,10 +104,17 @@ public class AccessRule {
 	 */
 	public AccessLevel getAccess(String user, String repository, String path) {
 		AccessLevel result = AccessLevel.NOTHING;
-		if (getRepositoryName().equals(repository)) {
+		if (getRepositoryName() == null) {
 			Path repositoryPath = new Path(getRepositoryPath());
 			if (repositoryPath.contains(path)) {
 				result = getAccessForPrincipal(user);
+			}
+		} else {
+			if (getRepositoryName().equals(repository)) {
+				Path repositoryPath = new Path(getRepositoryPath());
+				if (repositoryPath.contains(path)) {
+					result = getAccessForPrincipal(user);
+				}
 			}
 		}
 		
