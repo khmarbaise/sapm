@@ -24,6 +24,50 @@
  */
 package com.soebes.subversion.sapm;
 
+import java.util.ArrayList;
+
+/**
+ * This class can handle an access rule which comprises of multiple {@link AccessRules}.
+ *
+ * <pre>
+ * [/]
+ * * = r
+ *
+ * [repository:/test/trunk]
+ * harry = rw
+ * michael = rw
+ * </pre>
+ *
+ * @author Karl Heinz Marbaise
+ *
+ */
 public class AccessRules {
 
+    private ArrayList<AccessRule> accessRules;
+
+    public AccessRules() {
+        setAccessRules(new ArrayList<AccessRule>());
+    }
+
+    public void add(AccessRule accessRule) {
+        getAccessRules().add(accessRule);
+    }
+
+    public ArrayList<AccessRule> getAccessRules() {
+        return accessRules;
+    }
+    public void setAccessRules(ArrayList<AccessRule> accessRules) {
+        this.accessRules = accessRules;
+    }
+
+    public AccessLevel getAccess(String user, String repository, String accessPath) {
+        AccessLevel result = AccessLevel.NOTHING;
+        for (AccessRule item : getAccessRules()) {
+            AccessLevel itemResult = item.getAccess(user, repository, accessPath);
+            if (!itemResult.equals(AccessLevel.NOTHING)) {
+                result = itemResult;
+            }
+        }
+        return result;
+    }
 }
