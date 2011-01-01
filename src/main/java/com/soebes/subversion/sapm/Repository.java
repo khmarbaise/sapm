@@ -4,38 +4,38 @@ import java.util.ArrayList;
 
 public class Repository {
 
-	private String name; //Which repository
-	
-	private ArrayList<String> paths = new ArrayList<String>();
-	
-	public Repository(String name) {
-		super();
-		this.name = name;
-	}
+    private String name; // Which repository
 
-	public Repository(String name, String path) {
-		super();
-		this.name = name;
-		this.paths.add(path);
-	}
+    private ArrayList<String> paths = new ArrayList<String>();
 
-	public String getName() {
-		return name;
-	}
+    public Repository(String name) {
+        super();
+        this.name = name;
+    }
 
-	public void setName(String name) {
-		this.name = name;
-	}
+    public Repository(String name, String path) {
+        super();
+        this.name = name;
+        this.paths.add(path);
+    }
 
-	public ArrayList<String> getPaths() {
-		return paths;
-	}
+    public String getName() {
+        return name;
+    }
 
-	public void setPaths(ArrayList<String> paths) {
-		this.paths = paths;
-	}
-	
-	public void addPath(String path) {
-		this.paths.add(path);
-	}
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public ArrayList<String> getPaths() {
+        return paths;
+    }
+
+    public void setPaths(ArrayList<String> paths) {
+        this.paths = paths;
+    }
+
+    public void addPath(String path) {
+        this.paths.add(path);
+    }
 }

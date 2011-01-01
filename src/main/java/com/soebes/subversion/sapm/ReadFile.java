@@ -7,19 +7,19 @@ import java.util.ArrayList;
 
 public class ReadFile {
 
-	public static ArrayList<IContent> readFile (String fileName) {
-		Parser p = new Parser ();
-		try {
-	        BufferedReader in = new BufferedReader(new FileReader(fileName));
-	        String str;
-	        while ((str = in.readLine()) != null) {
-	        	p.parse(str);
-	        }
-	        in.close();
-	    } catch (IOException e) {
-	    	e.printStackTrace();
-	    }
-	    return p.getRules();
-	}
+    public static ArrayList<IContent> readFile(String fileName) {
+        Parser p = new Parser();
+        try {
+            BufferedReader in = new BufferedReader(new FileReader(fileName));
+            String str;
+            while ((str = in.readLine()) != null) {
+                p.parse(str);
+            }
+            in.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return p.getRules();
+    }
 
 }
