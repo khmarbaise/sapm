@@ -93,23 +93,17 @@ public class AccessRuleUserTest {
     @DataProvider(name = "createAccessSet")
     public Object[][] createAccessSet() {
         return new Object[][] {
-                { "harry", "repository", "/", AccessLevel.NOTHING },
-                { "harry", "repository", "/test/trunk/", AccessLevel.READ_WRITE },
-                { "harry", "repository", "/test/trunk/src/",
-                    AccessLevel.READ_WRITE },
-                    { "harry", "repository", "/test/trunk/src/xyz.java",
-                        AccessLevel.READ_WRITE },
-                        { "harry", "repository", "/test/trunk/src/CHANGELOG",
-                            AccessLevel.READ_WRITE },
-                            { "brian", "repository", "/test/trunk/src/xyz.java",
-                                AccessLevel.READ },
-                                { "brian", "repository", "/test/trunk/src/CHANGELOG",
-                                    AccessLevel.READ },
-                                    { "sally", "repository", "/test/trunk/src/xyz.java",
-                                        AccessLevel.NOTHING },
-                                        { "brian", "repository", "/test/trunk/", AccessLevel.READ },
-                                        { "sally", "repository", "/test/trunk/", AccessLevel.NOTHING },
-                                        { "harry", "different", "/test/trunk/", AccessLevel.NOTHING }, };
+            { "harry", "repository",    "/",                            AccessLevel.NOTHING },
+            { "harry", "repository",    "/test/trunk/",                 AccessLevel.READ_WRITE },
+            { "harry", "repository",    "/test/trunk/src/",             AccessLevel.READ_WRITE },
+            { "harry", "repository",    "/test/trunk/src/xyz.java",     AccessLevel.READ_WRITE },
+            { "harry", "repository",    "/test/trunk/src/CHANGELOG",    AccessLevel.READ_WRITE },
+            { "brian", "repository",    "/test/trunk/src/xyz.java",     AccessLevel.READ },
+            { "brian", "repository",    "/test/trunk/src/CHANGELOG",    AccessLevel.READ },
+            { "sally", "repository",    "/test/trunk/src/xyz.java",     AccessLevel.NOTHING },
+            { "brian", "repository",    "/test/trunk/",                 AccessLevel.READ },
+            { "sally", "repository",    "/test/trunk/",                 AccessLevel.NOTHING },
+            { "harry", "different",     "/test/trunk/",                 AccessLevel.NOTHING }, };
     }
 
     @Test(dataProvider = "createAccessSet")

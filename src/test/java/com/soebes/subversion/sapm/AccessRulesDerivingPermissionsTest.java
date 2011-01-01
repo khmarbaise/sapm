@@ -106,41 +106,29 @@ public class AccessRulesDerivingPermissionsTest {
     @DataProvider(name = "createAccessSet")
     public Object[][] createAccessSet() {
         return new Object[][] {
-                { "harry", "repository", "/", AccessLevel.NOTHING },
-                { "harry", "repository", "/test/trunk/", AccessLevel.READ },
-                { "harry", "repository", "/test/trunk/src/", AccessLevel.READ },
-                { "harry", "repository", "/test/trunk/src/xyz.java",
-                    AccessLevel.READ },
-                    { "harry", "repository", "/test/trunk/src/CHANGELOG",
-                        AccessLevel.READ },
+            { "harry",      "repository", "/",                          AccessLevel.NOTHING },
+            { "harry",      "repository", "/test/trunk/",               AccessLevel.READ },
+            { "harry",      "repository", "/test/trunk/src/",           AccessLevel.READ },
+            { "harry",      "repository", "/test/trunk/src/xyz.java",   AccessLevel.READ },
+            { "harry",      "repository", "/test/trunk/src/CHANGELOG",  AccessLevel.READ },
 
-                        { "brian", "repository", "/test/trunk/src/xyz.java",
-                            AccessLevel.READ },
-                            { "brian", "repository", "/test/trunk/src/CHANGELOG",
-                                AccessLevel.READ },
+            { "brian",      "repository", "/test/trunk/src/xyz.java",   AccessLevel.READ },
+            { "brian",      "repository", "/test/trunk/src/CHANGELOG",  AccessLevel.READ },
 
-                                { "sally", "repository", "/test/trunk/src/xyz.java",
-                                    AccessLevel.NOTHING },
-                                    { "sally", "repository", "/test/trunk/", AccessLevel.NOTHING },
-                                    { "harry", "different", "/test/trunk/", AccessLevel.NOTHING },
-                                    { "michael", "different", "/test/trunk/", AccessLevel.NOTHING },
-                                    { "brian", "different", "/test/trunk/", AccessLevel.NOTHING },
+            { "sally",      "repository", "/test/trunk/src/xyz.java",   AccessLevel.NOTHING },
+            { "sally",      "repository", "/test/trunk/",               AccessLevel.NOTHING },
+            { "harry",      "different", "/test/trunk/",                AccessLevel.NOTHING },
+            { "michael",    "different", "/test/trunk/",                AccessLevel.NOTHING },
+            { "brian",      "different", "/test/trunk/",                AccessLevel.NOTHING },
 
-                                    { "michael", "repository", "/test/trunk/",
-                                        AccessLevel.READ_WRITE },
-                                        { "michael", "repository", "/test/trunk/",
-                                            AccessLevel.READ_WRITE },
-                                            { "michael", "repository", "/test/trunk/src/",
-                                                AccessLevel.READ_WRITE },
-                                                { "michael", "repository", "/test/trunk/src/xyz.java",
-                                                    AccessLevel.READ_WRITE },
-                                                    { "michael", "repository", "/test/trunk/src/CHANGELOG",
-                                                        AccessLevel.READ_WRITE },
+            { "michael",    "repository", "/test/trunk/",               AccessLevel.READ_WRITE },
+            { "michael",    "repository", "/test/trunk/",               AccessLevel.READ_WRITE },
+            { "michael",    "repository", "/test/trunk/src/",           AccessLevel.READ_WRITE },
+            { "michael",    "repository", "/test/trunk/src/xyz.java",   AccessLevel.READ_WRITE },
+            { "michael",    "repository", "/test/trunk/src/CHANGELOG",  AccessLevel.READ_WRITE },
 
-                                                        { "michael", "repository", "/test/trunk/src/xyz.java",
-                                                            AccessLevel.READ_WRITE },
-                                                            { "michael", "repository", "/test/trunk/src/CHANGELOG",
-                                                                AccessLevel.READ_WRITE }, };
+            { "michael",    "repository", "/test/trunk/src/xyz.java",   AccessLevel.READ_WRITE },
+            { "michael",    "repository", "/test/trunk/src/CHANGELOG",  AccessLevel.READ_WRITE }, };
     }
 
     @Test(dataProvider = "createAccessSet")
@@ -148,8 +136,7 @@ public class AccessRulesDerivingPermissionsTest {
             String accessPath, AccessLevel expectedLevel) {
         // Check the permission of the current user in the repository within the
         // given accessPath
-        AccessLevel al_user = accessRule
-        .getAccess(user, repository, accessPath);
+        AccessLevel al_user = accessRule.getAccess(user, repository, accessPath);
         Assert.assertEquals(expectedLevel, al_user);
     }
 

@@ -39,16 +39,14 @@ public class FileNameTest {
     @DataProvider(name = "createTestList")
     public Object[][] createTestList() {
         return new Object[][] {
-                { "/usr/local/test.zip", "zip", "test.zip", "test",
-                "/usr/local/" },
-                { "/usr/local/test.tar.gz", "tar.gz", "test.tar.gz", "test",
-                "/usr/local/" },
-                { "C:/Programme/x-y-z.zip", "zip", "x-y-z.zip", "x-y-z",
-                "C:/Programme/" },
-                { "/x.zip", "zip", "x.zip", "x", "/" },
-                { "/branches/", "", "", "", "/branches/" },
-                { "/branches", "", "branches", "branches", "/" },
-                { "/", "", "", "", "/" }, };
+            { "/usr/local/test.zip",    "zip",      "test.zip",     "test",     "/usr/local/" },
+            { "/usr/local/test.tar.gz", "tar.gz",   "test.tar.gz",  "test",     "/usr/local/" },
+            { "C:/Programme/x-y-z.zip", "zip",      "x-y-z.zip",    "x-y-z",    "C:/Programme/" },
+            { "/x.zip",                 "zip",      "x.zip",        "x",        "/" },
+            { "/branches/",             "",         "",             "",         "/branches/" },
+            { "/branches",              "",         "branches",     "branches", "/" },
+            { "/",                      "",         "",             "",         "/" },
+        };
     }
 
     @Test(dataProvider = "createTestList")
