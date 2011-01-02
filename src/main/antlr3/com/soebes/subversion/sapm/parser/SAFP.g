@@ -8,184 +8,198 @@
 grammar SAFP;
 options {
 //	language = Java;
-	output = AST;
+    output = AST;
 }
 @parser::header {
-	package com.soebes.subversion.sapm.parser;
+    package com.soebes.subversion.sapm.parser;
 
-	import com.soebes.subversion.sapm.AccessLevel;
-	import com.soebes.subversion.sapm.IReference;
+    import com.soebes.subversion.sapm.User;
+    import com.soebes.subversion.sapm.Group;
+    import com.soebes.subversion.sapm.AccessRule;
+    import com.soebes.subversion.sapm.AccessRules;
+    import com.soebes.subversion.sapm.Access;
+    import com.soebes.subversion.sapm.AccessLevel;
+    import com.soebes.subversion.sapm.IReference;
 
 }
 @lexer::header{
-	package com.soebes.subversion.sapm.parser;
+    package com.soebes.subversion.sapm.parser;
 }
 @members {
-
+    AccessRules accessRules = new AccessRules();
 }
 
 /*
  * ----------------------------------------------------------------------------
- * Parser Rules 
+ * Parser Rules
  * ----------------------------------------------------------------------------
  */
 prog
-	:	(statement)*;
+    :	(statement)*;
 
 statement
-	:	groups
-	|	repos
-	|	aliases
-	;
+    :	groups
+    |	repos { accessRules.add($repos.accessrule); }
+    |	aliases
+    ;
 
 groups
-	:	sectiongroup NL (group EQUAL groupuserdefinition 
-		{
-			System.out.println("Group:" + $group.text + " def:" + $groupuserdefinition.text);
-		}
-		NL)* 
-	;
+    :	sectiongroup NL (group EQUAL groupuserdefinition
+        {
+            System.out.println("Group:" + $group.text + " def:" + $groupuserdefinition.text);
+        }
+        NL)*
+    ;
 
-repos @init { System.out.println("Repository"); }
-	:	sectionrepository NL 
-		perm=permissionrule {
-			System.out.println("permission: " + $perm.text); 
-		} NL?
-		(
-			perm1=permissionrule {
-				System.out.println("permission: " + $perm1.text);
-			} 
-			NL?
-		)*
-	;
+repos returns [AccessRule accessrule; ] @init { System.out.println("Repository"); }
+    :	sectionrule=sectionrepository NL
+        perm=permissionrule {
+            System.out.println("permission: " + $perm.text);
+            $sectionrule.accessRule.add($perm.access);
+        } NL?
+        (
+            perm1=permissionrule {
+                System.out.println("permission: " + $perm1.text);
+                $sectionrule.accessRule.add($perm1.access);
+            }
+            NL?
+        )*
+    ;
 
 aliases @init { System.out.println("Init:Aliases"); }
-	:	sectionaliases NL 
-		(
-			alias EQUAL useraliasdefinition NL 
-			{ 
-				System.out.println("ALIAS=" + $alias.text); 
-				System.out.println("DEF:" + $useraliasdefinition.text); 
-			}
-		)*
-	;
+    :	sectionaliases NL
+        (
+            alias EQUAL useraliasdefinition NL
+            {
+                System.out.println("ALIAS=" + $alias.text);
+                System.out.println("DEF:" + $useraliasdefinition.text);
+            }
+        )*
+    ;
 
 group
-	:	ID
-	;
+    :	ID
+    ;
 
 alias
-	:	ID
-	;
+    :	ID
+    ;
 
 sectiongroup
-	:	'[' GROUPS ']' 
-	;
+    :	'[' GROUPS ']'
+    ;
 
 sectionaliases
-	:	'[' ALIASES ']'
-	;
+    :	'[' ALIASES ']'
+    ;
 
-sectionrepository
-	:	'[' repository repositorypath ']' 
-		{
-			if ($repository.text != null) {
-				System.out.println("Repository->:" + $repository.text);
-			}
-			System.out.println("Repository Path:" + $repositorypath.text);
-		}
-	;
+sectionrepository returns [ AccessRule accessRule; ]
+    :	'[' repository repositorypath ']'
+        {
+            if ($repository.text == null) {
+              $accessRule = new AccessRule($repositorypath.text);
+              System.out.println("Repository->:" + $repositorypath.text);
+            } else {
+              $accessRule = new AccessRule($repository.text, $repositorypath.text);
+              System.out.println("Repository:" + $repository.text +" " + $repositorypath.text);
+            }
+        }
+    ;
 
 repository
-	:	(ID ':')?
-	;
+    :	(ID ':')?
+    ;
 
 repositorypath
-	:	PATH
-	;
+    :	PATH
+    ;
 
-permissionrule
-	:	userpermission
-	|	grouppermission
-	;
+permissionrule returns [ Access access; ]
+    :	userpermission { $access = $userpermission.access; }
+    |	grouppermission{ $access = $grouppermission.access; }
+    ;
 
-userpermission
-	:	user EQUAL permission
-		{
-			System.out.println("User:" + $user.text + " perm:" + $permission.perm);
-		}
-	;
+userpermission returns [ Access access; ]
+    :	user EQUAL permission
+        {
+            System.out.println("User:" + $user.text + " perm:" + $permission.perm);
+            User userInstance = new User($user.text);
+            $access = new Access(userInstance, $permission.perm);
+        }
+    ;
 
 user
-	: (ID|'*')
-	;
+    : (ID|'*')
+    ;
 
-grouppermission
-	:	groupreference EQUAL permission 
-		{
-			System.out.println("Group:" + $groupreference.text + " perm:" + $permission.perm);
-		}
-	;
+grouppermission returns [ Access access; ]
+    :	groupreference EQUAL permission
+        {
+            System.out.println("Group:" + $groupreference.text + " perm:" + $permission.perm);
+            Group groupInstance = new Group($groupreference.text);
+            $access = new Access(groupInstance, $permission.perm);
+        }
+    ;
 
 permission returns [ AccessLevel perm; ] @init { $perm = AccessLevel.NOTHING; }
-	:	permission_read { $perm = AccessLevel.READ; }
-	|	permission_write { $perm = AccessLevel.WRITE; }
-	|	permission_read_write { $perm = AccessLevel.READ_WRITE; }
-	|	permission_nothing
-	;
+    :	permission_read { $perm = AccessLevel.READ; }
+    |	permission_write { $perm = AccessLevel.WRITE; }
+    |	permission_read_write { $perm = AccessLevel.READ_WRITE; }
+    |	permission_nothing
+    ;
 
 permission_read
-	:	'r'
-	|	'R'
-	;
+    :	'r'
+    |	'R'
+    ;
 
 permission_write
-	:	'w'
-	|	'W'
-	;
+    :	'w'
+    |	'W'
+    ;
 
 permission_read_write
-	:	'rw'
-	|	'RW'
-	;
+    :	'rw'
+    |	'RW'
+    ;
 
 permission_nothing
-	:	NL
-	;
+    :	NL
+    ;
 
 useraliasdefinition
-	:	useralias (',' useralias)*
-	;
+    :	useralias (',' useralias)*
+    ;
 
 useralias
-	:	ID EQUAL (ID)+
-	;
+    :	ID EQUAL (ID)+
+    ;
 
 groupuserdefinition returns [ArrayList<IReference> gud; ] @init { $gud = new ArrayList<IReference>(); }
-	:	groupuserreference ( ',' groupuserreference )*
-	;
+    :	groupuserreference ( ',' groupuserreference )*
+    ;
 
 groupuserreference
-	:	aliasreference
-	|	groupreference
-	|	userreference
-	;
+    :	aliasreference
+    |	groupreference
+    |	userreference
+    ;
 
 aliasreference
-	:	'&' ID
-	;
+    :	'&' ID
+    ;
 
 groupreference
-	:	'@' ID
-	;
+    :	'@' ID
+    ;
 
 userreference
-	:	ID
-	;
+    :	ID
+    ;
 
 /*
  * ----------------------------------------------------------------------------
- * Lexer Rules 
+ * Lexer Rules
  * ----------------------------------------------------------------------------
  */
 
@@ -198,17 +212,17 @@ ALIASES	:	'aliases';
 WS		: ( '\t' | ' ' )+ { $channel = HIDDEN; };
 
 CHARACTERS:	'_'|'a'..'z'|'A'..'Z'|'.'|'-'
-		;
+        ;
 
 INTEGER_DIGITS
-		:	'0'..'9'+
-		;
+        :	'0'..'9'+
+        ;
 
 ID		:	CHARACTERS (CHARACTERS | INTEGER_DIGITS)*
-		;
+        ;
 
 PATH	:	'/' (CHARACTERS | INTEGER_DIGITS | '/')*
-		;
+        ;
 
 NL		:	('\r' | '\n')+
-		;
+        ;

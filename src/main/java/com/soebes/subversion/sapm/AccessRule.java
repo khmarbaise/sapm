@@ -32,9 +32,9 @@ import java.util.ArrayList;
  * @group = rw
  * user = r
  * </pre>
- * 
+ *
  * @author Karl Heinz Marbaise
- * 
+ *
  */
 public class AccessRule {
 
@@ -51,12 +51,12 @@ public class AccessRule {
 
     /**
      * This is used if you have no paritcular repository defined for exmample
-     * 
+     *
      * <pre>
      * [/test/trunk]
      * ...
      * </pre>
-     * 
+     *
      * @param path
      */
     public AccessRule(String path) {
@@ -104,7 +104,7 @@ public class AccessRule {
 
     /**
      * Add the user to the user list with it's appropriate {@link AccessLevel}.
-     * 
+     *
      * @param user
      * @param readWrite
      */
@@ -116,12 +116,20 @@ public class AccessRule {
         getAccessList().add(new Access(group, readWrite));
     }
 
+    /**
+     * Convenience method for usage in grammar.
+     * @param access
+     */
+    public void add(Access access) {
+        getAccessList().add(access);
+    }
+
     public AccessLevel getAccess(User user, String repository, String path) {
         return getAccess(user.getName(), repository, path);
     }
 
     /**
-     * 
+     *
      * @param user
      * @param repository
      * @param path
@@ -152,7 +160,7 @@ public class AccessRule {
 
     /**
      * Will get the {@link AccessLevel} for the given user.
-     * 
+     *
      * @param user
      *            The user which will be searched for.
      * @return The AccessLevel of the given user @{link AccessLevel.NOTHING} if
