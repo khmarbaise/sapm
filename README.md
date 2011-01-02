@@ -7,6 +7,13 @@ and convert it into a form which can be used inside an application.
 This means to check a user against the configuration for example if a user is
 allowed to read a particular path in a special repository or not.
 
+License
+=======
+Apache License
+Version 2.0, January 2004
+http://www.apache.org/licenses/
+
+
 Status
 ======
 - Object model created and fit my needs.

@@ -92,12 +92,12 @@
                         <include>src/**</include>
                     </includes>
                     <excludes>
-                        <exclude>src/main/antlr3/**</exclude>
                         <exclude>src/main/resources/**</exclude>
                         <exclude>src/test/resources/**</exclude>
                         <exclude>target/**</exclude>
                     </excludes>
                     <mapping>
+                        <g>DOUBLESLASH_STYLE</g>
                         <apt>DOUBLETILDE_STYLE</apt>
                     </mapping>
                     <properties>
