@@ -39,25 +39,30 @@ import com.soebes.subversion.sapm.parser.SAFPParser;
 /**
  *
  *
+ *<pre>
+ * [/] = r
  *
- [/] = r
+ * [aliases]
+ * harry = CN=Harold Hacker,OU=Engineers,DC=red-bean,DC=com
+ * sally = CN=Sally Swatterbug,OU=Engineers,DC=red-bean,DC=com
+ * joe = CN=Gerald I. Joseph,OU=Engineers,DC=red-bean,DC=com
  *
- * [aliases] harry = CN=Harold Hacker,OU=Engineers,DC=red-bean,DC=com sally =
- * CN=Sally Swatterbug,OU=Engineers,DC=red-bean,DC=com joe = CN=Gerald I.
- * Joseph,OU=Engineers,DC=red-bean,DC=com
+ * [groups]
+ * calc-developers = &harry, &sally, &joe
+ * paint-developers = &frank,&sally, &jane
+ * everyone = @calc-developers, @paint-developers
  *
- * [groups] calc-developers = &harry, &sally, &joe paint-developers = &frank,
- * &sally, &jane everyone = @calc-developers, @paint-developers
- *
- * [groups] calc-developers = harry, sally, joe paint-developers = frank, sally,
+ * [groups]
+ * calc-developers = harry, sally, joe
+ * paint-developers = frank, sally,
  * jane everyone = @calc-developers, @paint-developers
  *
  * [calc:/projects/calc]
- *
  * @calc-developers = rw
  *
- *                  [paint:/projects/paint] jane = r
+ * [paint:/projects/paint] jane = r
  * @paint-developers = rw
+ * </pre>
  */
 public class AppTest extends TestBase {
 
