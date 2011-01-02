@@ -26,7 +26,8 @@ options {
     package com.soebes.subversion.sapm.parser;
 }
 @members {
-    AccessRules accessRules = new AccessRules();
+    private AccessRules accessRules = new AccessRules();
+    public AccessRules getAccessRules() { return this.accessRules; }
 }
 
 /*
@@ -63,7 +64,7 @@ repos returns [AccessRule accessrule; ] @init { System.out.println("Repository")
                 $sectionrule.accessRule.add($perm1.access);
             }
             NL?
-        )*
+        )* { $accessrule = $sectionrule.accessRule; }
     ;
 
 aliases @init { System.out.println("Init:Aliases"); }
@@ -100,14 +101,14 @@ sectionrepository returns [ AccessRule accessRule; ]
               $accessRule = new AccessRule($repositorypath.text);
               System.out.println("Repository->:" + $repositorypath.text);
             } else {
-              $accessRule = new AccessRule($repository.text, $repositorypath.text);
-              System.out.println("Repository:" + $repository.text +" " + $repositorypath.text);
+              $accessRule = new AccessRule($repository.repositoryId, $repositorypath.text);
+              System.out.println("Repository:" + $repository.repositoryId +" " + $repositorypath.text);
             }
         }
     ;
 
-repository
-    :	(ID ':')?
+repository returns [ String repositoryId; ]
+    :	(ID ':')? { $repositoryId = $ID.text; }
     ;
 
 repositorypath
