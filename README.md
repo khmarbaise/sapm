@@ -8,14 +8,12 @@ This means to check a user against the configuration for example if a user is
 allowed to read a particular path in a special repository or not.
 
 License
-=======
-Apache License
-Version 2.0, January 2004
-http://www.apache.org/licenses/
+-------
+[Apache License, Version 2.0, January 2004](http://www.apache.org/licenses/)
 
 
 Status
-======
+------
 - Object model created and fit my needs.
 - ANTLR Grammar works reading
 - Combination of the above parts is not completely done.
@@ -23,11 +21,11 @@ Status
     via parsing the configuration file.
 
 TODOs
-======
+-----
 - Check to see if the last rule is the one which counts.
 
 Usage
-=====
+-----
 
 The following rule set can be handled with the classes:
 
