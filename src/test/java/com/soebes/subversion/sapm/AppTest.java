@@ -54,8 +54,8 @@ import com.soebes.subversion.sapm.parser.SAFPParser;
  *
  * [groups]
  * calc-developers = harry, sally, joe
- * paint-developers = frank, sally,
- * jane everyone = @calc-developers, @paint-developers
+ * paint-developers = frank, sally, jane
+ * everyone = @calc-developers, @paint-developers
  *
  * [calc:/projects/calc]
  * @calc-developers = rw
