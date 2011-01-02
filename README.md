@@ -12,6 +12,7 @@ Status
 - Object model created and fit my needs.
 - ANTLR Grammar works reading
 - Combination of the above parts is not yet done.
+  - The first configuration can be read and produces a correct AccessRules instance.
 
 
 The following rule set can be handled with the classes:
@@ -26,13 +27,13 @@ The above configuration contents can be created by using the following code snip
 <code>
     AccessRules accessRules = new AccessRules();
 
-    UserAsterik userAsterik = new UserAsterik();
+    User user = UserFactory.createInstance("*");
     AccessRule accessRuleRoot = new AccessRule("/");
-    accessRuleRoot.add(userAsterik, AccessLevel.READ);
+    accessRuleRoot.add(user, AccessLevel.READ);
     accessRules.add(accessRuleRoot);
 
-    User userHarry = new User("harry");
-    User userBrian = new User("brian");
+    User userHarry = UserFactory.createInstance("harry");
+    User userBrian = UserFactory.createInstance("brian");
 
     AccessRule accessRule = new AccessRule("repository", "/test/trunk");
     accessRule.add(userHarry, AccessLevel.READ_WRITE);
