@@ -14,6 +14,7 @@ options {
     package com.soebes.subversion.sapm.parser;
 
     import com.soebes.subversion.sapm.User;
+    import com.soebes.subversion.sapm.UserFactory;
     import com.soebes.subversion.sapm.Group;
     import com.soebes.subversion.sapm.AccessRule;
     import com.soebes.subversion.sapm.AccessRules;
@@ -124,7 +125,7 @@ userpermission returns [ Access access; ]
     :	user EQUAL permission
         {
             System.out.println("User:" + $user.text + " perm:" + $permission.perm);
-            User userInstance = new User($user.text);
+            User userInstance = UserFactory.createInstance($user.text);
             $access = new Access(userInstance, $permission.perm);
         }
     ;

@@ -57,13 +57,13 @@ public class AccessRulesUserTest {
     public void beforeMethod() {
         accessRules = new AccessRules();
 
-        UserAsterik userAsterik = new UserAsterik();
+        User userAsterik = UserFactory.createInstance("*");
         AccessRule accessRuleRoot = new AccessRule("/");
         accessRuleRoot.add(userAsterik, AccessLevel.READ);
         accessRules.add(accessRuleRoot);
 
-        User userHarry = new User("harry");
-        User userMicheal = new User("michael");
+        User userHarry = UserFactory.createInstance("harry");
+        User userMicheal = UserFactory.createInstance("michael");
 
         AccessRule accessRule = new AccessRule("repository", "/test/trunk");
         accessRule.add(userHarry, AccessLevel.READ_WRITE);

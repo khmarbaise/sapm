@@ -53,9 +53,9 @@ public class AccessRuleUserAnyRepositoryTest {
 
     @BeforeMethod
     public void beforeMethod() {
-        User userHarry = new User("harry");
-        User userBrian = new User("brian");
-        User userMicheal = new User("michael");
+        User userHarry = UserFactory.createInstance("harry");
+        User userBrian = UserFactory.createInstance("brian");
+        User userMicheal = UserFactory.createInstance("michael");
 
         accessRule = new AccessRule("/test/trunk");
 

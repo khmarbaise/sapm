@@ -55,7 +55,7 @@ public class AccessRuleUserAsterikTest {
      */
     @BeforeMethod
     public void beforeMethod() {
-        UserAsterik userAstrik = new UserAsterik();
+        User userAstrik = UserFactory.createInstance("*");
 
         accessRule = new AccessRule("repository", "/test/trunk");
 
