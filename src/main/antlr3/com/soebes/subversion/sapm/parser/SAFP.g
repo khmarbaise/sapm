@@ -29,13 +29,16 @@ options {
     package com.soebes.subversion.sapm.parser;
 
     import com.soebes.subversion.sapm.User;
+    import com.soebes.subversion.sapm.Users;
     import com.soebes.subversion.sapm.UserFactory;
     import com.soebes.subversion.sapm.Group;
+    import com.soebes.subversion.sapm.Groups;
     import com.soebes.subversion.sapm.AccessRule;
     import com.soebes.subversion.sapm.AccessRules;
     import com.soebes.subversion.sapm.Access;
     import com.soebes.subversion.sapm.AccessLevel;
     import com.soebes.subversion.sapm.IReference;
+    import com.soebes.subversion.sapm.IPrincipal;
 
 }
 @lexer::header{
@@ -44,6 +47,10 @@ options {
 @members {
     private AccessRules accessRules = new AccessRules();
     public AccessRules getAccessRules() { return this.accessRules; }
+    private Groups groups = new Groups();
+    public Groups getGroups() { return this.groups; }
+    private Users users = new Users();
+    public Users getUsers() { return this.users; }
 }
 
 /*
@@ -63,33 +70,37 @@ statement
 groups
     :	sectiongroup NL (group EQUAL groupuserdefinition
         {
-            System.out.println("Group:" + $group.text + " def:" + $groupuserdefinition.text);
+          Group group = new Group($group.text);
+          getGroups().add(group);
+          System.out.println("Group:" + $group.text + " def:" + $groupuserdefinition.text);
         }
         NL)*
     ;
 
-repos returns [AccessRule accessrule; ] @init { System.out.println("Repository"); }
+repos returns [ AccessRule accessrule; ]
     :	sectionrule=sectionrepository NL
         perm=permissionrule {
-            System.out.println("permission: " + $perm.text);
+            //System.out.println("permission: " + $perm.text);
             $sectionrule.accessRule.add($perm.access);
         } NL?
         (
             perm1=permissionrule {
-                System.out.println("permission: " + $perm1.text);
+                //System.out.println("permission: " + $perm1.text);
                 $sectionrule.accessRule.add($perm1.access);
             }
             NL?
         )* { $accessrule = $sectionrule.accessRule; }
     ;
 
-aliases @init { System.out.println("Init:Aliases"); }
+aliases @init {
+  //System.out.println("Init:Aliases");
+  }
     :	sectionaliases NL
         (
             alias EQUAL useraliasdefinition NL
             {
-                System.out.println("ALIAS=" + $alias.text);
-                System.out.println("DEF:" + $useraliasdefinition.text);
+                //System.out.println("ALIAS=" + $alias.text);
+                //System.out.println("DEF:" + $useraliasdefinition.text);
             }
         )*
     ;
@@ -115,10 +126,10 @@ sectionrepository returns [ AccessRule accessRule; ]
         {
             if ($repository.text == null) {
               $accessRule = new AccessRule($repositorypath.text);
-              System.out.println("Repository->:" + $repositorypath.text);
+              //System.out.println("Repository->:" + $repositorypath.text);
             } else {
               $accessRule = new AccessRule($repository.repositoryId, $repositorypath.text);
-              System.out.println("Repository:" + $repository.repositoryId +" " + $repositorypath.text);
+              //System.out.println("Repository:" + $repository.repositoryId +" " + $repositorypath.text);
             }
         }
     ;
@@ -139,7 +150,7 @@ permissionrule returns [ Access access; ]
 userpermission returns [ Access access; ]
     :	user EQUAL permission
         {
-            System.out.println("User:" + $user.text + " perm:" + $permission.perm);
+            //System.out.println("User:" + $user.text + " perm:" + $permission.perm);
             User userInstance = UserFactory.createInstance($user.text);
             $access = new Access(userInstance, $permission.perm);
         }
@@ -152,7 +163,7 @@ user
 grouppermission returns [ Access access; ]
     :	groupreference EQUAL permission
         {
-            System.out.println("Group:" + $groupreference.text + " perm:" + $permission.perm);
+            //System.out.println("Group:" + $groupreference.text + " perm:" + $permission.perm);
             Group groupInstance = new Group($groupreference.text);
             $access = new Access(groupInstance, $permission.perm);
         }
@@ -196,22 +207,22 @@ groupuserdefinition returns [ArrayList<IReference> gud; ] @init { $gud = new Arr
     :	groupuserreference ( ',' groupuserreference )*
     ;
 
-groupuserreference
+groupuserreference returns [ IPrincipal principal; ]
     :	aliasreference
-    |	groupreference
-    |	userreference
+    |	groupreference { $principal = getGroups().getGroup($groupreference.refId); }
+    |	userreference { $principal = new User($userreference.refId); }
     ;
 
-aliasreference
-    :	'&' ID
+aliasreference returns [ String refId; ]
+    :	'&' ID { $refId = $ID.text; }
     ;
 
-groupreference
-    :	'@' ID
+groupreference returns [ String refId; ]
+    :	'@' ID { $refId = $ID.text; }
     ;
 
-userreference
-    :	ID
+userreference returns [ String refId;]
+    :	ID { $refId = $ID.text; }
     ;
 
 /*
