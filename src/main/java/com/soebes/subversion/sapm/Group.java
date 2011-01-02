@@ -28,12 +28,12 @@ import java.util.ArrayList;
 
 public class Group implements IPrincipal {
 
-    private ArrayList<User> userList;
+    private ArrayList<IPrincipal> principalList;
 
     private String name;
 
     private void init() {
-        setUserList(new ArrayList<User>());
+        setPrincipalList(new ArrayList<IPrincipal>());
     }
 
     public Group() {
@@ -53,18 +53,10 @@ public class Group implements IPrincipal {
         this.name = name;
     }
 
-    public void add(User user) {
-        if (!getUserList().contains(user)) {
-            getUserList().add(user);
+    public void add(IPrincipal principal) {
+        if (!getPrincipalList().contains(principal)) {
+            getPrincipalList().add(principal);
         }
-    }
-
-    public void setUserList(ArrayList<User> userList) {
-        this.userList = userList;
-    }
-
-    public ArrayList<User> getUserList() {
-        return userList;
     }
 
     public boolean contains(User user) {
@@ -73,27 +65,20 @@ public class Group implements IPrincipal {
 
     public boolean contains(String user) {
         boolean result = false;
-        for (User item : getUserList()) {
-            // TODO: Check if the equalsIgnoreCase() is correct?
-            if (item.getName().equalsIgnoreCase(user)) {
+        for (IPrincipal item : getPrincipalList()) {
+            if (item.contains(user)) {
                 result = true;
             }
         }
         return result;
     }
 
-    public boolean isEqual(User user) {
-        return isEqual(user.getName());
+    public ArrayList<IPrincipal> getPrincipalList() {
+        return principalList;
     }
 
-    public boolean isEqual(String user) {
-        boolean result = false;
-        for (User item : getUserList()) {
-            if (item.isEqual(user)) {
-                result = true;
-            }
-        }
-        return result;
+    public void setPrincipalList(ArrayList<IPrincipal> principalList) {
+        this.principalList = principalList;
     }
 
 }

@@ -30,5 +30,5 @@ public interface IPrincipal {
 
     void setName(String name);
 
-    boolean isEqual(String name);
+    boolean contains(String name);
 }

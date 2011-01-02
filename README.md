@@ -11,9 +11,16 @@ Status
 ======
 - Object model created and fit my needs.
 - ANTLR Grammar works reading
-- Combination of the above parts is not yet done.
-  - The first configuration can be read and produces a correct AccessRules instance.
+- Combination of the above parts is not completely done.
+  - The first configuration can be read and produces a correct AccessRules instance
+    via parsing the configuration file.
 
+TODOs
+======
+- Check to see if the last rule is the one which counts.
+
+Usage
+=====
 
 The following rule set can be handled with the classes:
 
@@ -41,8 +48,29 @@ The above configuration contents can be created by using the following code snip
     accessRules.add(accessRule);
 </code>
 
+
 And now finally you can ask the AccessRules class what kind of permission a particular user has whereas
 the user is the user name for example "harry" and the repository for which repository you would like to
 check the permission and the accessPath defines which path inside the repository the user tries to access.
 
     AccessLevel al_user = accessRules.getAccess(user, repository, accessPath);
+
+
+The following rule set works as well (see the following unit test AccessRulesGroupGroupTest.java):
+
+    [groups]
+    c-developer = harry, brian
+    d-developer = michael, sally
+    e-developer = jonas
+    all-developer = @c-developer, @d-developer, @e-developer
+    [/]
+    * = r
+    [repository:/project-c/trunk]
+    @c-developer = rw
+    [repository:/project-d/trunk]
+    @d-developer = rw
+    [repository:/project-e/trunk]
+    @e-developer = rw
+    [global:/project/trunk]
+    @all-developer = rw
+

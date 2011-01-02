@@ -169,7 +169,7 @@ public class AccessRule {
     public AccessLevel getAccessForPrincipal(String user) {
         AccessLevel result = AccessLevel.NOTHING;
         for (Access item : getAccessList()) {
-            if (item.getPrincipal().isEqual(user)) {
+            if (item.getPrincipal().contains(user)) {
                 result = item.getLevel();
             }
         }

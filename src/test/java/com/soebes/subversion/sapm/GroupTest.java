@@ -26,40 +26,61 @@ package com.soebes.subversion.sapm;
 
 import junit.framework.Assert;
 
-import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-
-import com.soebes.subversion.sapm.Group;
-import com.soebes.subversion.sapm.User;
 
 public class GroupTest extends TestBase {
 
-    private Group developerGroup;
-    private User userHarry;
-    private User userBrian;
-
-    @BeforeClass
-    public void beforeClass() {
-        userHarry = new User("harry");
-        userBrian = new User("brian");
-        developerGroup = new Group("developer");
+    @Test
+    public void groupAddTest() {
+        User userHarry = UserFactory.createInstance("harry");
+        User userBrian = UserFactory.createInstance("brian");
+        Group developerGroup = new Group("developer");
 
         // @developer = harry, brian
         developerGroup.add(userHarry);
         developerGroup.add(userBrian);
-    }
-
-    @Test
-    public void groupAddTest() {
-        Assert.assertEquals(2, developerGroup.getUserList().size());
+        Assert.assertEquals(2, developerGroup.getPrincipalList().size());
     }
 
     @Test
     public void groupContainsTest() {
+        User userHarry = UserFactory.createInstance("harry");
+        User userBrian = UserFactory.createInstance("brian");
+        Group developerGroup = new Group("developer");
+
+        // @developer = harry, brian
+        developerGroup.add(userHarry);
+        developerGroup.add(userBrian);
         Assert.assertTrue(developerGroup.contains(userHarry.getName()));
         Assert.assertTrue(developerGroup.contains(userHarry));
         Assert.assertTrue(developerGroup.contains(userBrian));
 
         Assert.assertFalse(developerGroup.contains("michael"));
+    }
+
+    @Test
+    public void groupContainsGroupTest() {
+        Group group1 = new Group("group1");
+        group1.add(UserFactory.createInstance("harry"));
+        group1.add(UserFactory.createInstance("michael"));
+
+        Group group2 = new Group("group2");
+        group2.add(UserFactory.createInstance("brian"));
+
+        Group group3 = new Group("group3");
+        group2.add(UserFactory.createInstance("sally"));
+
+        Group groupAll = new Group("groupAdd");
+        groupAll.add(group1);
+        groupAll.add(group2);
+        groupAll.add(group3);
+
+        Assert.assertTrue(groupAll.contains("harry"));
+        Assert.assertTrue(groupAll.contains("michael"));
+        Assert.assertTrue(groupAll.contains("sally"));
+        Assert.assertTrue(groupAll.contains("brian"));
+
+        Assert.assertFalse(groupAll.contains("hugo"));
+        Assert.assertFalse(groupAll.contains("fran"));
     }
 }

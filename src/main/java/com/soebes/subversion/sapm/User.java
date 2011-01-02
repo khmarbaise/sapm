@@ -41,8 +41,10 @@ public class User implements IPrincipal {
         this.name = name;
     }
 
-    public boolean isEqual(String user) {
-        return getName().equals(user);
+    @Override
+    //FIXME: Check if this is ok!
+    public boolean contains(String name) {
+        return getName().equals(name);
     }
 
 }
