@@ -37,7 +37,6 @@ options {
     import com.soebes.subversion.sapm.AccessRules;
     import com.soebes.subversion.sapm.Access;
     import com.soebes.subversion.sapm.AccessLevel;
-    import com.soebes.subversion.sapm.IReference;
     import com.soebes.subversion.sapm.IPrincipal;
 
 }
@@ -71,6 +70,9 @@ groups
     :	sectiongroup NL (group EQUAL groupuserdefinition
         {
           Group group = new Group($group.text);
+          for (IPrincipal item:$groupuserdefinition.gud) {
+            group.add(item);
+          }
           getGroups().add(group);
           System.out.println("Group:" + $group.text + " def:" + $groupuserdefinition.text);
         }
@@ -80,12 +82,10 @@ groups
 repos returns [ AccessRule accessrule; ]
     :	sectionrule=sectionrepository NL
         perm=permissionrule {
-            //System.out.println("permission: " + $perm.text);
             $sectionrule.accessRule.add($perm.access);
         } NL?
         (
             perm1=permissionrule {
-                //System.out.println("permission: " + $perm1.text);
                 $sectionrule.accessRule.add($perm1.access);
             }
             NL?
@@ -203,8 +203,9 @@ useralias
     :	ID EQUAL (ID)+
     ;
 
-groupuserdefinition returns [ArrayList<IReference> gud; ] @init { $gud = new ArrayList<IReference>(); }
-    :	groupuserreference ( ',' groupuserreference )*
+groupuserdefinition returns [ArrayList<IPrincipal> gud; ] @init { $gud = new ArrayList<IPrincipal>(); }
+    :	groupref1=groupuserreference { $gud.add($groupref1.principal); }
+        ( ',' groupreffollow=groupuserreference { $gud.add($groupreffollow.principal); } )*
     ;
 
 groupuserreference returns [ IPrincipal principal; ]
