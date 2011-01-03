@@ -63,7 +63,7 @@ prog
 
 statement
     :	groups
-    |	repos { accessRules.add($repos.accessrule); }
+    |	repos { getAccessRules().add($repos.accessrule); }
     |	aliases
     ;
 
