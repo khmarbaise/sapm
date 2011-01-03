@@ -74,7 +74,6 @@ groups
             group.add(item);
           }
           getGroups().add(group);
-          System.out.println("Group:" + $group.text + " def:" + $groupuserdefinition.text);
         }
         NL)*
     ;
@@ -126,10 +125,8 @@ sectionrepository returns [ AccessRule accessRule; ]
         {
             if ($repository.text == null) {
               $accessRule = new AccessRule($repositorypath.text);
-              //System.out.println("Repository->:" + $repositorypath.text);
             } else {
               $accessRule = new AccessRule($repository.repositoryId, $repositorypath.text);
-              //System.out.println("Repository:" + $repository.repositoryId +" " + $repositorypath.text);
             }
         }
     ;
@@ -150,7 +147,6 @@ permissionrule returns [ Access access; ]
 userpermission returns [ Access access; ]
     :	user EQUAL permission
         {
-            //System.out.println("User:" + $user.text + " perm:" + $permission.perm);
             User userInstance = UserFactory.createInstance($user.text);
             $access = new Access(userInstance, $permission.perm);
         }
@@ -163,8 +159,7 @@ user
 grouppermission returns [ Access access; ]
     :	groupreference EQUAL permission
         {
-            //System.out.println("Group:" + $groupreference.text + " perm:" + $permission.perm);
-            Group groupInstance = new Group($groupreference.text);
+            IPrincipal groupInstance = getGroups().getGroup($groupreference.refId);
             $access = new Access(groupInstance, $permission.perm);
         }
     ;

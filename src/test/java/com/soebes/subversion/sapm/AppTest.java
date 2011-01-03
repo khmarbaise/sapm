@@ -120,17 +120,26 @@ public class AppTest extends TestBase {
         SAFPParser parser = new SAFPParser(tokens);
         parser.prog();
         AccessRules accessRules = parser.getAccessRules();
-        System.out.println("Size:" + accessRules.getAccessRules().size());
-        for (AccessRule item : accessRules.getAccessRules()) {
-            System.out.print("[");
-            if (item.getRepositoryName() != null) {
-                System.out.print(item.getRepositoryName() + ":" );
-            }
-            System.out.println(item.getRepositoryPath() + "]");
-            for (Access accessItem : item.getAccessList()) {
-                System.out.println("-> " + accessItem.getPrincipal().getName() + " " + accessItem.getLevel());
-            }
-        }
+//        System.out.println("============= S T A R T ================================================");
+//        System.out.println("Size:" + accessRules.getAccessRules().size());
+//        for (AccessRule item : accessRules.getAccessRules()) {
+//            System.out.print("[");
+//            if (item.getRepositoryName() != null) {
+//                System.out.print(item.getRepositoryName() + ":" );
+//            }
+//            System.out.println(item.getRepositoryPath() + "]");
+//            for (Access accessItem : item.getAccessList()) {
+//                System.out.println("-> " + accessItem.getPrincipal().getName() + " " + accessItem.getLevel());
+//            }
+//        }
+//        Groups groups = parser.getGroups();
+//        for(Group item : groups.getGroupsList()) {
+//            System.out.println("Group:" + item.getName());
+//            for (IPrincipal pItem : item.getPrincipalList()) {
+//                System.out.println(" -> " + pItem.getName());
+//            }
+//        }
+//        System.out.println("=============================================================");
     }
 
     @Test
@@ -143,19 +152,26 @@ public class AppTest extends TestBase {
         SAFPParser parser = new SAFPParser(tokens);
         parser.prog();
         AccessRules accessRules = parser.getAccessRules();
-        System.out.println("=============================================================");
-        System.out.println("Size:" + accessRules.getAccessRules().size());
-        for (AccessRule item : accessRules.getAccessRules()) {
-            System.out.print("[");
-            if (item.getRepositoryName() != null) {
-                System.out.print(item.getRepositoryName() + ":" );
-            }
-            System.out.println(item.getRepositoryPath() + "]");
-            for (Access accessItem : item.getAccessList()) {
-                System.out.println("-> " + accessItem.getPrincipal().getName() + " " + accessItem.getLevel());
-            }
-        }
-        System.out.println("=============================================================");
+//        System.out.println("============= S T A R T ================================================");
+//        System.out.println("Size:" + accessRules.getAccessRules().size());
+//        for (AccessRule item : accessRules.getAccessRules()) {
+//            System.out.print("[");
+//            if (item.getRepositoryName() != null) {
+//                System.out.print(item.getRepositoryName() + ":" );
+//            }
+//            System.out.println(item.getRepositoryPath() + "]");
+//            for (Access accessItem : item.getAccessList()) {
+//                System.out.println("-> " + accessItem.getPrincipal().getName() + " " + accessItem.getLevel());
+//            }
+//        }
+//        Groups groups = parser.getGroups();
+//        for(Group item : groups.getGroupsList()) {
+//            System.out.println("Group:" + item.getName());
+//            for (IPrincipal pItem : item.getPrincipalList()) {
+//                System.out.println(" -> " + pItem.getName());
+//            }
+//        }
+//        System.out.println("=============================================================");
     }
 
 }

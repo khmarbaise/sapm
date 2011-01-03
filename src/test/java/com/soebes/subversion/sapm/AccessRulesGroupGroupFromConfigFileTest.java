@@ -1,4 +1,4 @@
-/**
+/**ÛØ
  * The Subversion Authentication Parse Module (SAPM for short).
  *
  * Copyright (c) 2010, 2011 by SoftwareEntwicklung Beratung Schulung (SoEBeS)
@@ -21,14 +21,30 @@
  */
 package com.soebes.subversion.sapm;
 
+import com.soebes.subversion.sapm.parser.SAFPLexer;
+import com.soebes.subversion.sapm.parser.SAFPParser;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import junit.framework.Assert;
+import org.antlr.runtime.ANTLRInputStream;
+import org.antlr.runtime.CommonTokenStream;
 
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 /**
- * This test will create an AccessRule as follows:
+ * This test will create access rules which are read from
+ * configuration file (svnaccess-groups-in-groups.conf) and
+ * the same as already defined in the
+ * {@link AccessRulesGroupGroupTest} file.
+ * This will make sure that the object tree which
+ * has been read via the parser is the same as it would be
+ * if it had been created manually as in {@link AccessRulesGroupGroupTest}.
+ *
+ * The following rules are read from the configuration file
+ * (svnaccess-groups-in-groups.conf).
  *
  * <pre>
  * [groups]
@@ -52,14 +68,10 @@ import org.testng.annotations.Test;
  * furthermore if the access to different directories inside this repository
  * will work well.
  *
- * Hint: The access rules in this file and the contents of the
- * configuration file svnaccess-groups-in-groups.conf should be the
- * same to have a possibility to compare the results of these two
- * tests.
  * @author Karl Heinz Marbaise
  *
  */
-public class AccessRulesGroupGroupTest {
+public class AccessRulesGroupGroupFromConfigFileTest extends TestBase {
 
     private AccessRules accessRules = new AccessRules();
 
@@ -86,54 +98,15 @@ public class AccessRulesGroupGroupTest {
      *
      */
     @BeforeMethod
-    public void beforeMethod() {
-        // @c-developer = harry, brian
-        Group c_developer = new Group("c-developer");
-        c_developer.add(UserFactory.createInstance("harry"));
-        c_developer.add(UserFactory.createInstance("brian"));
-
-        Group d_developer = new Group("d-developer");
-        d_developer.add(UserFactory.createInstance("michael"));
-        d_developer.add(UserFactory.createInstance("sally"));
-
-        Group e_developer = new Group("e-developer");
-        e_developer.add(UserFactory.createInstance("jonas"));
-
-        Group all_developer = new Group("all-developer");
-        all_developer.add(c_developer);
-        all_developer.add(d_developer);
-        all_developer.add(e_developer);
-
-        // [/]
-        // * = r
-        AccessRule accessRuleRoot = new AccessRule("/");
-        accessRuleRoot.add(new Access(UserFactory.createInstance("*"), AccessLevel.READ));
-
-        // [repository:/project-c/trunk]
-        // @c-developer = rw
-        AccessRule accessRuleProjectC = new AccessRule("repository", "/project-c/trunk");
-        accessRuleProjectC.add(c_developer, AccessLevel.READ_WRITE);
-
-        // [repository:/project-d/trunk]
-        // @d-developer = rw
-        AccessRule accessRuleProjectD = new AccessRule("repository", "/project-d/trunk");
-        accessRuleProjectD.add(d_developer, AccessLevel.READ_WRITE);
-
-        // [repository:/project-e/trunk]
-        // @e-developer = rw
-        AccessRule accessRuleProjectE = new AccessRule("repository", "/project-e/trunk");
-        accessRuleProjectE.add(e_developer, AccessLevel.READ_WRITE);
-
-        // [global:/project/trunk]
-        // @all-developer = rw
-        AccessRule accessRuleGlobal = new AccessRule("global", "/project/trunk");
-        accessRuleGlobal.add(all_developer, AccessLevel.READ_WRITE);
-
-        accessRules.add(accessRuleRoot);
-        accessRules.add(accessRuleProjectC);
-        accessRules.add(accessRuleProjectD);
-        accessRules.add(accessRuleProjectE);
-        accessRules.add(accessRuleGlobal);
+    public void beforeMethod() throws org.antlr.runtime.RecognitionException, FileNotFoundException, IOException {
+        FileInputStream fis = new FileInputStream(
+                getFileResource("/svnaccess-groups-in-groups.conf"));
+        ANTLRInputStream stream = new ANTLRInputStream(fis);
+        SAFPLexer lexer = new SAFPLexer(stream);
+        CommonTokenStream tokens = new CommonTokenStream(lexer);
+        SAFPParser parser = new SAFPParser(tokens);
+        parser.prog();
+        accessRules = parser.getAccessRules();
     }
 
     @DataProvider(name = "createAccessSet")
