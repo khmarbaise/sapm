@@ -17,8 +17,7 @@ Status
 - Object model created and fit my needs.
 - ANTLR Grammar works reading
 - Combination of the above parts is not completely done.
-  - The first configuration can be read and produces a correct AccessRules instance
-    via parsing the configuration file.
+  - Handling of aliases is not implemented (yet).
 
 TODOs
 -----
