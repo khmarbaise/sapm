@@ -166,7 +166,6 @@ grouppermission returns [ Access access; ]
 
 permission returns [ AccessLevel perm; ] @init { $perm = AccessLevel.NOTHING; }
     :	permission_read { $perm = AccessLevel.READ; }
-    |	permission_write { $perm = AccessLevel.WRITE; }
     |	permission_read_write { $perm = AccessLevel.READ_WRITE; }
     |	permission_nothing
     ;
