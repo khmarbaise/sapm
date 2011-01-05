@@ -16,11 +16,14 @@ Status
 ------
 - Object model created and fit my needs.
 - ANTLR Grammar works reading
-- Combination of the above parts is not completely done.
-  - Handling of aliases is not implemented (yet).
 
 TODOs
 -----
+- Grammar / Object Model
+  - Handling of aliases is not implemented (yet).
+- Create a better API
+  - convenient methods / classes
+- Examples
 - Check to see if the last rule is the one which counts.
 
 Usage
