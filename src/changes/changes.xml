@@ -3,7 +3,7 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://maven.apache.org/changes/1.0.0 http://maven.apache.org/xsd/changes-1.0.0.xsd">
     <properties>
-        <title>Subversion Authentication Parse Module .:: SAPM ::. Release History</title>
+        <title>Subversion Authentication Parse Module - Release History</title>
         <author
             email="sapm@soebes.de">Karl Heinz Marbaise</author>
     </properties>
