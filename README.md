@@ -16,13 +16,17 @@ Status
 ------
 - Object model created and fit my needs.
 - ANTLR Grammar works reading
+- Started with a simple API based on AuthorizationFile class.
 
 TODOs
 -----
 - Grammar / Object Model
-  - Handling of aliases is not implemented (yet).
-- Create a better API
-  - convenient methods / classes
+  - Handling of aliases (&alias) is not implemented (yet).
+  - Handling the tokens $anonymous and $authenticated is not implemented (yet).
+  - Handling of tilde rule ( ~@group = rw ).
+
+- Enhanced / Improve Authorization class.
+  - Check what to do?
 - Examples
 - Check to see if the last rule is the one which counts.
 
@@ -80,4 +84,21 @@ The following rule set works as well (see the following unit test AccessRulesGro
     @e-developer = rw
     [global:/project/trunk]
     @all-developer = rw
+
+How to load the authentication file?
+------------------------------------
+
+You can load the authentication file by using the following code snippet and check the permission
+of a given user against the repository and path inside the repository.
+
+
+    AuthorizationFile authorizationFile
+    try {
+        authorizationFile = new AuthorizationFile();
+        authorizationFile.load(new File("/path/to/svnaccess-groups-in-groups.conf"));
+    } catch (AuthorizationFileException e) {
+        System.out.println("Something has gone wrong: " + e.getMessage());
+    }
+
+    AccessLevel al_user = authorizationFile.getAccessRules().getAccess(user, repository, accessPath);
 
