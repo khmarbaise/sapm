@@ -107,7 +107,7 @@ public class AppTest extends TestBase {
         SAFPParser parser = new SAFPParser(tokens);
         SAFPParser.prog_return result = parser.prog();
         Tree t = (Tree) result.getTree();
-        //System.out.println("AST:" + t.toStringTree());
+        System.out.println("AST:" + t.toStringTree());
     }
 
     @Test
@@ -172,6 +172,19 @@ public class AppTest extends TestBase {
 //            }
 //        }
 //        System.out.println("=============================================================");
+    }
+
+    @Test
+    public void negativeRulesTest() throws IOException, RecognitionException {
+        FileInputStream fis = new FileInputStream(
+                getFileResource("/svnaccess-negative.conf"));
+        ANTLRInputStream stream = new ANTLRInputStream(fis);
+        SAFPLexer lexer = new SAFPLexer(stream);
+        CommonTokenStream tokens = new CommonTokenStream(lexer);
+        SAFPParser parser = new SAFPParser(tokens);
+        SAFPParser.prog_return result = parser.prog();
+        Tree t = (Tree) result.getTree();
+        System.out.println("AST:" + t.toStringTree());
     }
 
 }

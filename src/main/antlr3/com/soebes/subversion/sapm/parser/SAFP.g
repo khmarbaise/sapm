@@ -150,10 +150,10 @@ userpermission returns [ Access access; ]
             User userInstance = UserFactory.createInstance($user.text);
             $access = new Access(userInstance, $permission.perm);
         }
-    ;
-
-user
-    : (ID|'*')
+    | '~' user EQUAL permission
+        {
+            System.out.println("Negative User Permission rule");
+        }
     ;
 
 grouppermission returns [ Access access; ]
@@ -162,6 +162,14 @@ grouppermission returns [ Access access; ]
             IPrincipal groupInstance = getGroups().getGroup($groupreference.refId);
             $access = new Access(groupInstance, $permission.perm);
         }
+    | '~' groupreference EQUAL permission
+        {
+            System.out.println("Negative Group Permission rule");
+        }
+    ;
+
+user
+    : (ID|'*'|'$authenticated'|'$anonymous')
     ;
 
 permission returns [ AccessLevel perm; ] @init { $perm = AccessLevel.NOTHING; }
