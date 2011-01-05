@@ -28,7 +28,9 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 /**
- *
+ * This test will check if the given users and group members
+ * do have the correct access permissions within the different
+ * folders and/or repositories.
  *
  * <pre>
  * [groups]
@@ -37,8 +39,8 @@ import org.testng.annotations.Test;
  * [/]
  * * =
  * [repository:/test/trunk]
- * @developer = r
- * @admin = rw
+ * &#64;developer = r
+ * &#64;admin = rw
  * </pre>
  *
  * The tests will check if the AccessLevel will be extracted correctly and
@@ -50,39 +52,54 @@ import org.testng.annotations.Test;
  */
 public class AccessRulesDerivingPermissionsTest {
 
+    private AccessRules accessRules;
     private AccessRule accessRule;
-
     /**
+     * This will setup the following set of rules.
+     *
+     * <pre>
+     * [groups]
+     * developer = harry, brian
+     * admin = micheal
+     * [/]
+     * * =
+     * [repository:/test/trunk]
+     * &#64;developer = r
+     * &#64;admin = rw
+     * </pre>
      */
     @BeforeMethod
     public void beforeMethod() {
+
+        // &#64;developer = harry, brian
         User userHarry = UserFactory.createInstance("harry");
         User userBrian = UserFactory.createInstance("brian");
-        User userMicheal = UserFactory.createInstance("michael");
-
         Group developerGroup = new Group("developer");
-
-        // @developer = harry, brian
         developerGroup.add(userHarry);
         developerGroup.add(userBrian);
 
-        Group adminGroup = new Group("admin");
 
-        // @admin = michael
+        // &#64;admin = michael
+        Group adminGroup = new Group("admin");
+        User userMicheal = UserFactory.createInstance("michael");
         adminGroup.add(userMicheal);
 
-        // [repository:/test/trunk]
-        // @developer = r
-        // @admin = rw
-        accessRule = new AccessRule("repository", "/test/trunk");
+        // [/]
+        // * =
+        User userAsterik = UserFactory.createInstance("*");
+        AccessRule accessRuleRoot = new AccessRule("/");
+        accessRuleRoot.add(userAsterik, AccessLevel.NOTHING);
 
+        // [repository:/test/trunk]
+        // &#64;developer = r
+        // &#64;admin = rw
+        accessRule = new AccessRule("repository", "/test/trunk");
         accessRule.add(developerGroup, AccessLevel.READ);
         accessRule.add(adminGroup, AccessLevel.READ_WRITE);
 
-        UserAsterik userAsterik = new UserAsterik();
-        AccessRule accessRule1 = new AccessRule("", "/");
-
-        AccessRules accessRules = new AccessRules();
+        accessRules = new AccessRules();
+        accessRules.add(accessRuleRoot);
+        accessRules.add(accessRule);
     }
 
     @Test
@@ -104,19 +121,24 @@ public class AccessRulesDerivingPermissionsTest {
     public Object[][] createAccessSet() {
         return new Object[][] {
             { "harry",      "repository", "/",                          AccessLevel.NOTHING },
+            { "michael",    "repository", "/test/",                     AccessLevel.NOTHING },
+            { "brian",      "repository", "/test/",                     AccessLevel.NOTHING },
+
+            { "sally",      "repository", "/test/trunk/src/xyz.java",   AccessLevel.NOTHING }, //Unknown user
+            { "sally",      "repository", "/test/trunk/",               AccessLevel.NOTHING }, //Unknown user
+            { "harry",      "different", "/test/trunk/",                AccessLevel.NOTHING }, //different repository
+            { "michael",    "different", "/test/trunk/",                AccessLevel.NOTHING }, //different repository
+            { "brian",      "different", "/test/trunk/",                AccessLevel.NOTHING }, //different repository
+
             { "harry",      "repository", "/test/trunk/",               AccessLevel.READ },
             { "harry",      "repository", "/test/trunk/src/",           AccessLevel.READ },
             { "harry",      "repository", "/test/trunk/src/xyz.java",   AccessLevel.READ },
             { "harry",      "repository", "/test/trunk/src/CHANGELOG",  AccessLevel.READ },
 
+            { "brian",      "repository", "/test/",                     AccessLevel.NOTHING },
+            { "brian",      "repository", "/test/trunk/",               AccessLevel.READ },
             { "brian",      "repository", "/test/trunk/src/xyz.java",   AccessLevel.READ },
             { "brian",      "repository", "/test/trunk/src/CHANGELOG",  AccessLevel.READ },
-
-            { "sally",      "repository", "/test/trunk/src/xyz.java",   AccessLevel.NOTHING },
-            { "sally",      "repository", "/test/trunk/",               AccessLevel.NOTHING },
-            { "harry",      "different", "/test/trunk/",                AccessLevel.NOTHING },
-            { "michael",    "different", "/test/trunk/",                AccessLevel.NOTHING },
-            { "brian",      "different", "/test/trunk/",                AccessLevel.NOTHING },
 
             { "michael",    "repository", "/test/trunk/",               AccessLevel.READ_WRITE },
             { "michael",    "repository", "/test/trunk/",               AccessLevel.READ_WRITE },
@@ -133,7 +155,7 @@ public class AccessRulesDerivingPermissionsTest {
             String accessPath, AccessLevel expectedLevel) {
         // Check the permission of the current user in the repository within the
         // given accessPath
-        AccessLevel al_user = accessRule.getAccess(user, repository, accessPath);
+        AccessLevel al_user = accessRules.getAccess(user, repository, accessPath);
         Assert.assertEquals(expectedLevel, al_user);
     }
 
