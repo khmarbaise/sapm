@@ -141,7 +141,8 @@ repositorypath
 
 permissionrule returns [ Access access; ]
     :	userpermission { $access = $userpermission.access; }
-    |	grouppermission{ $access = $grouppermission.access; }
+    |	grouppermission { $access = $grouppermission.access; }
+    | aliaspermission { $access = $aliaspermission.access; }
     ;
 
 userpermission returns [ Access access; ]
@@ -152,7 +153,7 @@ userpermission returns [ Access access; ]
         }
     | '~' user EQUAL permission
         {
-            System.out.println("Negative User Permission rule");
+            System.out.println("Negative User permission rule");
         }
     ;
 
@@ -164,7 +165,20 @@ grouppermission returns [ Access access; ]
         }
     | '~' groupreference EQUAL permission
         {
-            System.out.println("Negative Group Permission rule");
+            System.out.println("Negative Group permission rule");
+        }
+    ;
+
+aliaspermission returns [ Access access; ]
+    : aliasreference EQUAL permission
+        {
+            System.out.println("Alias " + $aliasreference.refId + " permission rule");
+//            IPrincipal groupInstance = getGroups().getGroup($groupreference.refId);
+//            $access = new Access(groupInstance, $permission.perm);
+        }
+    | '~' aliasreference EQUAL permission
+        {
+            System.out.println("Negative Alias permission rule");
         }
     ;
 
