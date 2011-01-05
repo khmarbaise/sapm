@@ -47,18 +47,18 @@ import com.soebes.subversion.sapm.parser.SAFPParser;
  * [groups]
  * calc-developers = &harry, &sally, &joe
  * paint-developers = &frank,&sally, &jane
- * everyone = @calc-developers, @paint-developers
+ * everyone = &#64;calc-developers, &#64;paint-developers
  *
  * [groups]
  * calc-developers = harry, sally, joe
  * paint-developers = frank, sally, jane
- * everyone = @calc-developers, @paint-developers
+ * everyone = &#64;calc-developers, &#64;paint-developers
  *
  * [calc:/projects/calc]
- * @calc-developers = rw
+ * &#64;calc-developers = rw
  *
  * [paint:/projects/paint] jane = r
- * @paint-developers = rw
+ * &#64;paint-developers = rw
  * </pre>
  */
 public class AppTest extends TestBase {

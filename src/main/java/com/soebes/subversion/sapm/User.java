@@ -38,8 +38,10 @@ public class User implements IPrincipal {
         this.name = name;
     }
 
+    /* (non-Javadoc)
+     * @see com.soebes.subversion.sapm.IPrincipal#contains(java.lang.String)
+     */
     @Override
-    //FIXME: Check if this is ok!
     public boolean contains(String name) {
         return getName().equals(name);
     }

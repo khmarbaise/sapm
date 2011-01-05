@@ -1,4 +1,4 @@
-/**ÛØ
+/**
  * The Subversion Authentication Parse Module (SAPM for short).
  *
  * Copyright (c) 2010, 2011 by SoftwareEntwicklung Beratung Schulung (SoEBeS)
@@ -21,18 +21,20 @@
  */
 package com.soebes.subversion.sapm;
 
-import com.soebes.subversion.sapm.parser.SAFPLexer;
-import com.soebes.subversion.sapm.parser.SAFPParser;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+
 import junit.framework.Assert;
+
 import org.antlr.runtime.ANTLRInputStream;
 import org.antlr.runtime.CommonTokenStream;
-
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
+
+import com.soebes.subversion.sapm.parser.SAFPLexer;
+import com.soebes.subversion.sapm.parser.SAFPParser;
 
 /**
  * This test will create access rules which are read from
@@ -51,17 +53,17 @@ import org.testng.annotations.Test;
  * c-developer = harry, brian
  * d-developer = michael, sally
  * e-developer = jonas
- * all-developer = @c-developer, @d-developer, @e-developer
+ * all-developer = &#64;c-developer, &#64;d-developer, &#64;e-developer
  * [/]
  * * = r
  * [repository:/project-c/trunk]
- * @c-developer = rw
+ * &#64;c-developer = rw
  * [repository:/project-d/trunk]
- * @d-developer = rw
+ * &#64;d-developer = rw
  * [repository:/project-e/trunk]
- * @e-developer = rw
+ * &#64;e-developer = rw
  * [global:/project/trunk]
- * @all-developer = rw
+ * &#64;all-developer = rw
  * </pre>
  *
  * The tests will check if the AccessLevel will be extracted correctly and
@@ -83,17 +85,17 @@ public class AccessRulesGroupGroupFromConfigFileTest extends TestBase {
      * c-developer = harry, brian
      * d-developer = michael, sally
      * e-developer = jonas
-     * all-developer = @c-developer, @d-developer, @e-developer
+     * all-developer = &#64;c-developer, &#64;d-developer, &#64;e-developer
      * [/]
      * * = r
      * [repository:/project-c/trunk]
-     * @c-developer = rw
+     * &#64;c-developer = rw
      * [repository:/project-d/trunk]
-     * @d-developer = rw
+     * &#64;d-developer = rw
      * [repository:/project-e/trunk]
-     * @e-developer = rw
+     * &#64;e-developer = rw
      * [global:/project/trunk]
-     * @all-developer = rw
+     * &#64;all-developer = rw
      * </pre>
      *
      */
@@ -116,17 +118,17 @@ public class AccessRulesGroupGroupFromConfigFileTest extends TestBase {
      * c-developer = harry, brian
      * d-developer = michael, sally
      * e-developer = jonas
-     * all-developer = @c-developer, @d-developer, @e-developer
+     * all-developer = &#64;c-developer, &#64;d-developer, &#64;e-developer
      * [/]
      * * = r
      * [repository:/project-c/trunk]
-     * @c-developer = rw
+     * &#64;c-developer = rw
      * [repository:/project-d/trunk]
-     * @d-developer = rw
+     * &#64;d-developer = rw
      * [repository:/project-e/trunk]
-     * @e-developer = rw
+     * &#64;e-developer = rw
      * [global:/project/trunk]
-     * @all-developer = rw
+     * &#64;all-developer = rw
      * </pre>
      */
     public Object[][] createAccessSet() {

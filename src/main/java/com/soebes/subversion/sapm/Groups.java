@@ -23,6 +23,11 @@ package com.soebes.subversion.sapm;
 
 import java.util.ArrayList;
 
+/**
+ * Convenience class for the grammar to handle a list of {@link Group}s.
+ * @author Karl Heinz Marbaise
+ *
+ */
 public class Groups {
     private ArrayList<Group> groupsList;
 
@@ -34,14 +39,29 @@ public class Groups {
         this.groupsList = groupsList;
     }
 
+    /**
+     * Get the list of all groups
+     * @return The list of Groups.
+     */
     public ArrayList<Group> getGroupsList() {
         return groupsList;
     }
 
+    /**
+     * Add a single {@link Group group} to the list of groups.
+     * @param group The {@link Group group} which will added to the list.
+     */
     public void add(Group group) {
         getGroupsList().add(group);
     }
 
+    /**
+     * Check if a group with the given groupName exists in the
+     * list or not.
+     * The check will be done case-sensitive.
+     * @param groupName The name we are searching for.
+     * @return true if the group has been found false otherwise.
+     */
     public boolean hasGroup(String groupName) {
         boolean result = false;
         for (Group item : getGroupsList()) {
@@ -56,6 +76,12 @@ public class Groups {
         return getGroup(group.getName());
     }
 
+    /**
+     * Get the Group instance from the list by
+     * name.
+     * @param groupName The group for which will be searched.
+     * @return The Group instance for the given group name.
+     */
     public Group getGroup(String groupName) {
         Group result = null;
         for (Group item : getGroupsList()) {

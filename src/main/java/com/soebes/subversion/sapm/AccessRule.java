@@ -24,10 +24,30 @@ package com.soebes.subversion.sapm;
 import java.util.ArrayList;
 
 /**
+ * This class describes an AccessRule which comprises of an repository name and
+ * a repository path which is usually defined like the following in the
+ * Subversion Access file.
+ *
  * <pre>
  * [repository:/trunk]
- * @group = rw
- * user = r
+ * &#64;group = rw
+ * harry = r
+ * </pre>
+ *
+ * Example:
+ * <pre class="javacode">
+ * User userBrian = UserFactory.createInstance("brian");
+ * Group group = new Group("group");
+ * group.add(userBrian)
+ *
+ * User userHarry = UserFactory.createInstance("harry");
+ *
+ * AccessRule accessRule = new AccessRule("repository", "/test/trunk");
+ * accessRule.add(userHarry, AccessLevel.READ);
+ * accessRule.add(group, AccessLevel.READ_WRITE);
+ *
+ * AccessLevel level = accessRule.getAccess("hugo", "repository", "/trunk/test/Test.java");
+ * ....
  * </pre>
  *
  * @author Karl Heinz Marbaise
@@ -47,7 +67,8 @@ public class AccessRule {
     private String repositoryPath;
 
     /**
-     * This is used if you have no paritcular repository defined for exmample
+     * This is used if you have no particular repository defined for example
+     * like the following.
      *
      * <pre>
      * [/test/trunk]
@@ -61,6 +82,12 @@ public class AccessRule {
         init(null, path);
     }
 
+    /**
+     * This is used if you have given both the repository name
+     * and the path within the repository.
+     * @param repositoryName The name of the repository.
+     * @param path The path inside the repository.
+     */
     public AccessRule(String repositoryName, String path) {
         super();
         init(repositoryName, path);
@@ -100,37 +127,52 @@ public class AccessRule {
     }
 
     /**
-     * Add the user to the user list with it's appropriate {@link AccessLevel}.
+     * Add the user to the access list with it's appropriate {@link AccessLevel}.
      *
-     * @param user
-     * @param readWrite
+     * @param user The user which will be used.
+     * @param accessLevel The accessLevel which will be given to the user.
      */
-    public void add(User user, AccessLevel readWrite) {
-        getAccessList().add(new Access(user, readWrite));
+    public void add(User user, AccessLevel accessLevel) {
+        getAccessList().add(new Access(user, accessLevel));
     }
 
-    public void add(Group group, AccessLevel readWrite) {
-        getAccessList().add(new Access(group, readWrite));
+    /**
+     * Add the given group to the access list with it's appropriate {@link AccessLevel}.
+     * @param group The group which will be added to the access list.
+     * @param accessLevel The accessLevel which will be given to the group.
+     */
+    public void add(Group group, AccessLevel accessLevel) {
+        getAccessList().add(new Access(group, accessLevel));
     }
 
     /**
      * Convenience method for usage in grammar.
-     * @param access
+     * @param access The {@link Access}
      */
     public void add(Access access) {
         getAccessList().add(access);
     }
 
+    /**
+     * Convenience method if you have a {@link User} object instead of user name as a string.
+     * @param user The user for which you like to know the access level.
+     * @param repository The repository which will be checked for.
+     * @param path The path within the repository.
+     * @return The AccessLevel which represents the permission for the given user in
+     *  the repository and the given path.
+     */
     public AccessLevel getAccess(User user, String repository, String path) {
         return getAccess(user.getName(), repository, path);
     }
 
     /**
+     * Get the {@link AccessLevel} for the user who want's to get access to the path
+     * inside the given repository.
      *
-     * @param user
-     * @param repository
-     * @param path
-     * @return
+     * @param user The user who will be checked against the permission rules.
+     * @param repository The repository to which the user tries to get access.
+     * @param path The path within the repository.
+     * @return AccessLevel of the user within the given path and repository.
      */
     public AccessLevel getAccess(String user, String repository, String path) {
         AccessLevel result = AccessLevel.NOTHING;
@@ -158,9 +200,8 @@ public class AccessRule {
     /**
      * Will get the {@link AccessLevel} for the given user.
      *
-     * @param user
-     *            The user which will be searched for.
-     * @return The AccessLevel of the given user @{link AccessLevel.NOTHING} if
+     * @param user The user which will be searched for.
+     * @return The {@link AccessLevel} of the given user @{link AccessLevel.NOTHING} if
      *         the user will not be found.
      */
     public AccessLevel getAccessForPrincipal(String user) {

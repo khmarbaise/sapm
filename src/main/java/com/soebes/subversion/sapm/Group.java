@@ -23,10 +23,20 @@ package com.soebes.subversion.sapm;
 
 import java.util.ArrayList;
 
+/**
+ * A group which represents a number of individual {@link User users} or
+ * {@link Group groups}.
+ *
+ * @author Karl Heinz Marbaise
+ *
+ */
 public class Group implements IPrincipal {
 
     private ArrayList<IPrincipal> principalList;
 
+    /**
+     * The name of the group.
+     */
     private String name;
 
     private void init() {
@@ -50,16 +60,31 @@ public class Group implements IPrincipal {
         this.name = name;
     }
 
+    /**
+     * Add a new {@link User user} or {@link Group group}
+     * to this group.
+     * @param principal The instance either user or group.
+     */
     public void add(IPrincipal principal) {
         if (!getPrincipalList().contains(principal)) {
             getPrincipalList().add(principal);
         }
     }
 
+    /**
+     * Convenience method to check for a particular user
+     * in case you have the User instance instead of the
+     * user name as a string.
+     * @param user The User object.
+     * @return true if found false otherwise.
+     */
     public boolean contains(User user) {
         return contains(user.getName());
     }
 
+    /* (non-Javadoc)
+     * @see com.soebes.subversion.sapm.IPrincipal#contains(java.lang.String)
+     */
     public boolean contains(String user) {
         boolean result = false;
         for (IPrincipal item : getPrincipalList()) {
@@ -70,6 +95,10 @@ public class Group implements IPrincipal {
         return result;
     }
 
+    /**
+     * Get the whole list of users/groups.
+     * @return The list of users/groups.
+     */
     public ArrayList<IPrincipal> getPrincipalList() {
         return principalList;
     }

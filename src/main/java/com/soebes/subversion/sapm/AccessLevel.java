@@ -22,5 +22,18 @@
 package com.soebes.subversion.sapm;
 
 public enum AccessLevel {
-    NOTHING, READ, WRITE, READ_WRITE
+    /**
+     * This means no access.
+     */
+    NOTHING,
+    /**
+     * In Subversion you can checkout with such a permission, but you
+     * can't checkin.
+     */
+    READ,
+    /**
+     * In Subverison read/write means you can checkout and
+     * can checkin.
+     */
+    READ_WRITE
 }

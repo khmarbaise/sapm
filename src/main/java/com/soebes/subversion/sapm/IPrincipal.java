@@ -21,11 +21,26 @@
  */
 package com.soebes.subversion.sapm;
 
+/**
+ * This represents either a {@link User} or a {@link Group} or an
+ * {@link Alias}.
+ *
+ * @author Karl Heinz Marbaise
+ *
+ */
 public interface IPrincipal {
 
     String getName();
 
     void setName(String name);
 
+    /**
+     * Will check to see if the given name is contained
+     * in the group if the instance represents a {@link Group}
+     * or if the given name is the same if the instance
+     * represents a single {@link User}.
+     * @param name The name we check for.
+     * @return true if the name is the same or contained false otherwise.
+     */
     boolean contains(String name);
 }

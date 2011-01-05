@@ -35,17 +35,17 @@ import org.testng.annotations.Test;
  * c-developer = harry, brian
  * d-developer = michael, sally
  * e-developer = jonas
- * all-developer = @c-developer, @d-developer, @e-developer
+ * all-developer = &#64;c-developer, &#64;d-developer, &#64;e-developer
  * [/]
  * * = r
  * [repository:/project-c/trunk]
- * @c-developer = rw
+ * &#64;c-developer = rw
  * [repository:/project-d/trunk]
- * @d-developer = rw
+ * &#64;d-developer = rw
  * [repository:/project-e/trunk]
- * @e-developer = rw
+ * &#64;e-developer = rw
  * [global:/project/trunk]
- * @all-developer = rw
+ * &#64;all-developer = rw
  * </pre>
  *
  * The tests will check if the AccessLevel will be extracted correctly and
@@ -71,23 +71,22 @@ public class AccessRulesGroupGroupTest {
      * c-developer = harry, brian
      * d-developer = michael, sally
      * e-developer = jonas
-     * all-developer = @c-developer, @d-developer, @e-developer
+     * all-developer = &#64;c-developer, &#64;d-developer, &#64;e-developer
      * [/]
      * * = r
      * [repository:/project-c/trunk]
-     * @c-developer = rw
+     * &#64;c-developer = rw
      * [repository:/project-d/trunk]
-     * @d-developer = rw
+     * &#64;d-developer = rw
      * [repository:/project-e/trunk]
-     * @e-developer = rw
+     * &#64;e-developer = rw
      * [global:/project/trunk]
-     * @all-developer = rw
+     * &#64;all-developer = rw
      * </pre>
-     *
      */
     @BeforeMethod
     public void beforeMethod() {
-        // @c-developer = harry, brian
+        // &#64;c-developer = harry, brian
         Group c_developer = new Group("c-developer");
         c_developer.add(UserFactory.createInstance("harry"));
         c_developer.add(UserFactory.createInstance("brian"));
@@ -110,22 +109,22 @@ public class AccessRulesGroupGroupTest {
         accessRuleRoot.add(new Access(UserFactory.createInstance("*"), AccessLevel.READ));
 
         // [repository:/project-c/trunk]
-        // @c-developer = rw
+        // c-developer = rw
         AccessRule accessRuleProjectC = new AccessRule("repository", "/project-c/trunk");
         accessRuleProjectC.add(c_developer, AccessLevel.READ_WRITE);
 
         // [repository:/project-d/trunk]
-        // @d-developer = rw
+        // &#64;d-developer = rw
         AccessRule accessRuleProjectD = new AccessRule("repository", "/project-d/trunk");
         accessRuleProjectD.add(d_developer, AccessLevel.READ_WRITE);
 
         // [repository:/project-e/trunk]
-        // @e-developer = rw
+        // &#64;e-developer = rw
         AccessRule accessRuleProjectE = new AccessRule("repository", "/project-e/trunk");
         accessRuleProjectE.add(e_developer, AccessLevel.READ_WRITE);
 
         // [global:/project/trunk]
-        // @all-developer = rw
+        // &#64;all-developer = rw
         AccessRule accessRuleGlobal = new AccessRule("global", "/project/trunk");
         accessRuleGlobal.add(all_developer, AccessLevel.READ_WRITE);
 
@@ -143,18 +142,19 @@ public class AccessRulesGroupGroupTest {
      * c-developer = harry, brian
      * d-developer = michael, sally
      * e-developer = jonas
-     * all-developer = @c-developer, @d-developer, @e-developer
+     * all-developer = &#64;c-developer, &#64;d-developer, &#64;e-developer
      * [/]
      * * = r
      * [repository:/project-c/trunk]
-     * @c-developer = rw
+     * &#64;c-developer = rw
      * [repository:/project-d/trunk]
-     * @d-developer = rw
+     * &#64;d-developer = rw
      * [repository:/project-e/trunk]
-     * @e-developer = rw
+     * &#64;e-developer = rw
      * [global:/project/trunk]
-     * @all-developer = rw
+     * &#64;all-developer = rw
      * </pre>
+     *
      */
     public Object[][] createAccessSet() {
         return new Object[][] {

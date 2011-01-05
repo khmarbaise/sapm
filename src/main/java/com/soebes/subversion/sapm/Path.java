@@ -21,6 +21,11 @@
  */
 package com.soebes.subversion.sapm;
 
+/**
+ *
+ * @author Karl Heinz Marbaise
+ *
+ */
 public class Path {
 
     private String path;

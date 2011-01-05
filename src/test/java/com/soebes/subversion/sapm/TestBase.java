@@ -39,8 +39,8 @@ public class TestBase {
      * It will give you back an absolute path incl. the name which is in the
      * same directory as the the class you've called it from.
      *
-     * @param name
-     * @return
+     * @param name The which you like to get a file location for.
+     * @return The absolute location for the given name.
      */
     public String getFileResource(String name) {
         URL url = this.getClass().getResource(name);

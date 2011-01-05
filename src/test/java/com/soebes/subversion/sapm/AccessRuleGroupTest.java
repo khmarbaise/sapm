@@ -35,8 +35,8 @@ import org.testng.annotations.Test;
  * developer = harry, brian
  * admin = micheal
  * [repository:/test/trunk]
- * @developer = r
- * @admin = rw
+ * &#64;developer = r
+ * &#64;admin = rw
  * </pre>
  *
  * The tests will check if the AccessLevel will be extracted correctly and
@@ -58,8 +58,8 @@ public class AccessRuleGroupTest {
      * developer = harry, brian
      * admin = micheal
      * [repository:/test/trunk]
-     * @developer = r
-     * @admin = rw
+     * &#64;developer = r
+     * &#64;admin = rw
      * </pre>
      */
     @BeforeMethod

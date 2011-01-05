@@ -22,13 +22,17 @@
 package com.soebes.subversion.sapm;
 
 /**
+ * This class will support you to extract the <code>extension</code> of
+ * a file, the <code>path</code> and the
+ * <code>filename incl. the extension</code>.
+ *
+ * We define a extension as one of the following:
+ * <ul>
+ * <li>.tar.gz</li>
+ * </ul>
+ *
  * @author Karl Heinz Marbaise
- * 
- *         This class will support you to extract the <code>extension</code> of
- *         a file, the <code>path</code> and the
- *         <code>filename incl. the extension</code>.
- * 
- *         We define a extension as one of the following: <li></li>
+ *
  */
 public class FileName {
 

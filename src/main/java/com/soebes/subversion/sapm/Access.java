@@ -21,6 +21,12 @@
  */
 package com.soebes.subversion.sapm;
 
+/**
+ * This represents the {@link AccessLevel access level} plus the user/group for which
+ * this permission should be defined.
+ * @author Karl Heinz Marbaise
+ *
+ */
 public class Access {
 
     private IPrincipal principal;
@@ -31,6 +37,11 @@ public class Access {
         setLevel(AccessLevel.NOTHING);
     }
 
+    /**
+     * Create a new instance with the given parameters.
+     * @param principal Either a {@link User} or a {@link Group}.
+     * @param level The level for the access.
+     */
     public Access(IPrincipal principal, AccessLevel level) {
         super();
         setPrincipal(principal);

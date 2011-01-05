@@ -24,7 +24,7 @@ package com.soebes.subversion.sapm;
 import java.util.ArrayList;
 
 /**
- * This class can handle an access rule which comprises of multiple {@link AccessRules}.
+ * This class can handle an access rule which comprises of multiple {@link AccessRule}.
  *
  * <pre>
  * [/]
@@ -46,13 +46,22 @@ public class AccessRules {
         setAccessRules(new ArrayList<AccessRule>());
     }
 
+    /**
+     * Add an {@link AccessRule} to the list of access rules.
+     * @param accessRule The access rule which will be added.
+     */
     public void add(AccessRule accessRule) {
         getAccessRules().add(accessRule);
     }
 
+    /**
+     * Get the complete list of access rules.
+     * @return The list of access rules.
+     */
     public ArrayList<AccessRule> getAccessRules() {
         return accessRules;
     }
+
     public void setAccessRules(ArrayList<AccessRule> accessRules) {
         this.accessRules = accessRules;
     }
