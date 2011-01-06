@@ -91,7 +91,7 @@ everyone = @calc-developers, @paint-developers
 
 * Groups
 
-  In {{http://svnbook.red-bean.com/nightly/en/svn-book.html#svn.serverconfig.pathbasedauthz}Subversion authentication file}}
+  In {{{http://svnbook.red-bean.com/nightly/en/svn-book.html#svn.serverconfig.pathbasedauthz}Subversion authentication file}}
   as well as in SAPM you can define a Group which contains users, groups and
   alias as well. This means it's possible to define a Group of Groups like in
   the following example:

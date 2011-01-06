@@ -33,6 +33,11 @@
         </developer>
     </developers>
 
+    <issueManagement>
+        <system>github</system>
+        <url>https://github.com/khmarbaise/sapm/issues</url>
+    </issueManagement>
+
     <properties>
         <maven-license-plugin.version>1.9.0</maven-license-plugin.version>
         <antlr.version>3.3</antlr.version>
