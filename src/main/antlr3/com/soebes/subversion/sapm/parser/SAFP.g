@@ -153,7 +153,8 @@ userpermission returns [ Access access; ]
         }
     | '~' user EQUAL permission
         {
-            System.out.println("Negative User permission rule");
+            User userInstance = UserFactory.createInstance($user.text);
+            $access = new Access(userInstance, $permission.perm, true);
         }
     ;
 
@@ -165,7 +166,8 @@ grouppermission returns [ Access access; ]
         }
     | '~' groupreference EQUAL permission
         {
-            System.out.println("Negative Group permission rule");
+            IPrincipal groupInstance = getGroups().getGroup($groupreference.refId);
+            $access = new Access(groupInstance, $permission.perm, true);
         }
     ;
 
