@@ -3,14 +3,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title>Subversion Authentication Parser Module - Introduction</title>
+    <title>Subversion Authentication Parser Module - Project Information</title>
     <style type="text/css" media="all">
       @import url("./css/maven-base.css");
       @import url("./css/maven-theme.css");
       @import url("./css/site.css");
     </style>
     <link rel="stylesheet" href="./css/print.css" type="text/css" media="print" />
-      <meta name="author" content="Karl Heinz Marbaise" />
     <meta name="Date-Revision-yyyymmdd" content="20110106" />
     <meta http-equiv="Content-Language" content="en" />
         
@@ -45,8 +44,8 @@
                                 <h5>Overview</h5>
                   <ul>
                   <li class="none">
-            <strong>Introduction</strong>
-          </li>
+                          <a href="index.html" title="Introduction">Introduction</a>
+            </li>
                   <li class="none">
                           <a href="usage.html" title="Usage">Usage</a>
             </li>
@@ -59,12 +58,12 @@
           </ul>
                        <h5>Project Documentation</h5>
                   <ul>
-                                                                                                                                                                                                                                                                                    <li class="expanded">
-                          <a href="project-info.html" title="Project Information">Project Information</a>
-                    <ul>
+                                                                                                                                                                                                                                                                              <li class="expanded">
+            <strong>Project Information</strong>
+                  <ul>
                       <li class="none">
-            <strong>About</strong>
-          </li>
+                          <a href="index.html" title="About">About</a>
+            </li>
                       <li class="none">
                           <a href="integration.html" title="Continuous Integration">Continuous Integration</a>
             </li>
@@ -113,19 +112,7 @@
     </div>
     <div id="bodyColumn">
       <div id="contentBox">
-        <!-- Licensed to the Apache Software Foundation (ASF) under one --><!-- or more contributor license agreements.  See the NOTICE file --><!-- distributed with this work for additional information --><!-- regarding copyright ownership.  The ASF licenses this file --><!-- to you under the Apache License, Version 2.0 (the --><!-- "License"); you may not use this file except in compliance --><!-- with the License.  You may obtain a copy of the License at --><!--  --><!-- http://www.apache.org/licenses/LICENSE-2.0 --><!--  --><!-- Unless required by applicable law or agreed to in writing, --><!-- software distributed under the License is distributed on an --><!-- "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY --><!-- KIND, either express or implied.  See the License for the --><!-- specific language governing permissions and limitations --><!-- under the License. --><!-- NOTE: For help with the syntax of this file, see: --><!-- http://maven.apache.org/doxia/references/apt-format.html --><div class="section"><h2>Subversion Authentication Parser Module<a name="Subversion_Authentication_Parser_Module"></a></h2><p>The idea is to read the <a class="externalLink" href="http://svnbook.red-bean.com/nightly/en/svn-book.html#svn.serverconfig.pathbasedauthz">Subversion authentication file</a> and convert it into a object tree which can be used for applications and to handle their permissions.</p><div class="section"><h3>History<a name="History"></a></h3><p>The original idea for this module based upon the <a class="externalLink" href="http://supose.org/wiki/supose">SupoSE project</a> which reads the contents of the whole repository but has to limit the results of queries to the appropriate information which are allowed for particular users.</p></div><div class="section"><h3>Usage<a name="Usage"></a></h3><p>If you like to use the Subversion Authentication Parser Module (SAPM) inside your application the simplest way is (if you are using <a class="externalLink" href="http://maven.pache.org">Maven</a>) to define the dependency in your <a class="externalLink" href="http://maven.apache.org/guides/introduction/introduction-to-the-pom.html">pom.xml</a> and use the classes of the module otherwise you have to download the jar file and put it into your classpath.</p><div class="source"><pre>&lt;project&gt;
-  ...
-  &lt;build&gt;
-    &lt;plugins&gt;
-      &lt;plugin&gt;
-        &lt;groupId&gt;com.soebes.subversion.sapm&lt;/groupId&gt;
-        &lt;artifactId&gt;sapm&lt;/artifactId&gt;
-        &lt;version&gt;0.1-SNAPSHOT&lt;/version&gt;
-      &lt;/plugin&gt;
-    &lt;/plugins&gt;
-  &lt;/build&gt;
-  ...
-&lt;/project&gt;</pre></div></div></div>
+        <div class="section"><h2>Project Information<a name="Project_Information"></a></h2><p>This document provides an overview of the various documents and links that are part of this project's general information. All of this content is automatically generated by <a class="externalLink" href="http://maven.apache.org">Maven</a> on behalf of the project.</p><div class="section"><h3>Overview<a name="Overview"></a></h3><table border="0" class="bodyTable"><tr class="a"><th>Document</th><th>Description</th></tr><tr class="b"><td><a href="index.html">About</a></td><td>Will read the Subversion authentication file and give you access to this via Java API</td></tr><tr class="a"><td><a href="integration.html">Continuous Integration</a></td><td>This is a link to the definitions of all continuous integration processes that builds and tests code on a frequent, regular basis.</td></tr><tr class="b"><td><a href="dependencies.html">Dependencies</a></td><td>This document lists the project's dependencies and provides information on each dependency.</td></tr><tr class="a"><td><a href="distribution-management.html">Distribution Management</a></td><td>This document provides informations on the distribution management of this project.</td></tr><tr class="b"><td><a href="issue-tracking.html">Issue Tracking</a></td><td>This is a link to the issue management system for this project. Issues (bugs, features, change requests) can be created and queried using this link.</td></tr><tr class="a"><td><a href="mail-lists.html">Mailing Lists</a></td><td>This document provides subscription and archive information for this project's mailing lists.</td></tr><tr class="b"><td><a href="plugin-management.html">Plugin Management</a></td><td>This document lists the plugins that are defined through pluginManagement.</td></tr><tr class="a"><td><a href="license.html">Project License</a></td><td>This is a link to the definitions of project licenses.</td></tr><tr class="b"><td><a href="plugins.html">Project Plugins</a></td><td>This document lists the build plugins and the report plugins used by this project.</td></tr><tr class="a"><td><a href="project-summary.html">Project Summary</a></td><td>This document lists other related information of this project</td></tr><tr class="b"><td><a href="team-list.html">Project Team</a></td><td>This document provides information on the members of this project. These are the individuals who have contributed to the project in one form or another.</td></tr><tr class="a"><td><a href="source-repository.html">Source Repository</a></td><td>This is a link to the online source repository that can be viewed via a web browser.</td></tr></table></div></div>
       </div>
     </div>
     <div class="clear">
