@@ -54,10 +54,11 @@ public class NegativeAccessRuleUserTest {
      */
     @BeforeMethod
     public void beforeMethod() {
-        User userHarry = new NegativeUser("harry");
+        User userHarry = new User("harry");
 
         accessRule = new AccessRule("repository", "/test/trunk");
-        accessRule.add(userHarry, AccessLevel.READ);
+        accessRule.addNegative(userHarry, AccessLevel.READ);
+
     }
 
     @Test
@@ -95,12 +96,7 @@ public class NegativeAccessRuleUserTest {
     }
 
     @Test(dataProvider = "createAccessSet")
-    public void accessRuleCheck(
-        String user,
-        String repository,
-        String accessPath,
-        AccessLevel expectedLevel
-        ) {
+    public void accessRuleCheck(String user, String repository, String accessPath, AccessLevel expectedLevel) {
         AccessLevel al_user = accessRule.getAccess(user, repository, accessPath);
         Assert.assertEquals(expectedLevel, al_user);
     }

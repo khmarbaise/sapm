@@ -16,6 +16,7 @@ Status
 ------
 - Object model created and fit my needs.
 - ANTLR Grammar works reading
+- Supports ~user, ~group rule
 - Started with a simple API based on AuthorizationFile class.
 
 TODOs
@@ -23,7 +24,6 @@ TODOs
 - Grammar / Object Model
   - Handling of aliases (&alias) is not implemented (yet).
   - Handling the tokens $anonymous and $authenticated is not implemented (yet).
-  - Handling of tilde rule ( ~@group = rw ).
 
 - Enhanced / Improve Authorization class.
   - Check what to do?

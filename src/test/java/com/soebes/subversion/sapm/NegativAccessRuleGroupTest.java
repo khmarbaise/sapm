@@ -33,14 +33,16 @@ import org.testng.annotations.Test;
  * <pre>
  * [groups]
  * developer = harry, brian
- * admin = micheal
+ *
  * [repository:/test/trunk]
- * ~&#64;developer = rw
+ * ~&#64;developer = r
+ * harry = rw
  * </pre>
  *
- * The tests will check if the AccessLevel will be extracted correctly and
- * furthermore if the access to different directories inside this repository
- * will work well.
+ * This test will check if harry inside the repository in /test/trunk has RW
+ * and outside NOTHING.
+ * Any other user has to be having NOTHING but hte users brian must have
+ * READ in repository and path /test/trunk.
  *
  * @author Karl Heinz Marbaise
  *
@@ -55,17 +57,16 @@ public class NegativAccessRuleGroupTest {
      * <pre>
      * [groups]
      * developer = harry, brian
-     * admin = micheal
+     *
      * [repository:/test/trunk]
-     * &#64;developer = r
-     * &#64;admin = rw
+     * ~&#64;developer = r
+     * harry = rw
      * </pre>
      */
     @BeforeMethod
     public void beforeMethod() {
         User userHarry = UserFactory.createInstance("harry");
         User userBrian = UserFactory.createInstance("brian");
-        User userMicheal = UserFactory.createInstance("michael");
 
         Group developerGroup = new Group("developer");
 
@@ -73,71 +74,53 @@ public class NegativAccessRuleGroupTest {
         developerGroup.add(userHarry);
         developerGroup.add(userBrian);
 
-        Group adminGroup = new Group("admin");
-
-        // @admin = michael
-        adminGroup.add(userMicheal);
-
         // [repository:/test/trunk]
-        // @developer = r
-        // @admin = rw
+        // ~@developer = r
+        // harry = rw
         accessRule = new AccessRule("repository", "/test/trunk");
-
-        accessRule.add(developerGroup, AccessLevel.READ);
-        accessRule.add(adminGroup, AccessLevel.READ_WRITE);
-
+        accessRule.addNegative(developerGroup, AccessLevel.READ);
+        accessRule.add(userHarry, AccessLevel.READ_WRITE);
     }
 
     @Test
     public void accessTest() {
         AccessLevel al_harry = accessRule.getAccessForPrincipal("harry");
-        Assert.assertEquals(AccessLevel.READ, al_harry);
+        Assert.assertEquals(AccessLevel.READ_WRITE, al_harry);
 
         AccessLevel al_brian = accessRule.getAccessForPrincipal("brian");
-        Assert.assertEquals(AccessLevel.READ, al_brian);
+        Assert.assertEquals(AccessLevel.NOTHING, al_brian);
 
         AccessLevel al_hugo = accessRule.getAccessForPrincipal("hugo");
-        Assert.assertEquals(AccessLevel.NOTHING, al_hugo);
+        Assert.assertEquals(AccessLevel.READ, al_hugo);
 
-        AccessLevel al_micheal = accessRule.getAccessForPrincipal("michael");
-        Assert.assertEquals(AccessLevel.READ_WRITE, al_micheal);
     }
 
     @DataProvider(name = "createAccessSet")
     public Object[][] createAccessSet() {
         return new Object[][] {
             { "harry",      "repository", "/",                          AccessLevel.NOTHING },
-            { "harry",      "repository", "/test/trunk/",               AccessLevel.READ },
-            { "harry",      "repository", "/test/trunk/src/",           AccessLevel.READ },
-            { "harry",      "repository", "/test/trunk/src/xyz.java",   AccessLevel.READ },
-            { "harry",      "repository", "/test/trunk/src/CHANGELOG",  AccessLevel.READ },
+            { "harry",      "repository", "/test/trunk/",               AccessLevel.READ_WRITE },
+            { "harry",      "repository", "/test/trunk/src/",           AccessLevel.READ_WRITE },
 
-            { "brian",      "repository", "/test/trunk/src/xyz.java",   AccessLevel.READ },
-            { "brian",      "repository", "/test/trunk/src/CHANGELOG",  AccessLevel.READ },
+            { "brian",      "repository", "/test/trunk/",               AccessLevel.NOTHING },
+            { "brian",      "repository", "/test/trunk/src/CHANGELOG",  AccessLevel.NOTHING },
 
-            { "sally",      "repository", "/test/trunk/src/xyz.java",   AccessLevel.NOTHING },
-            { "sally",      "repository", "/test/trunk/",               AccessLevel.NOTHING },
+            { "sally",      "repository", "/test/trunk/src/xyz.java",   AccessLevel.READ },
+            { "sally",      "repository", "/test/trunk/",               AccessLevel.READ },
+
+            { "michael",    "repository", "/test/trunk/src/xyz.java",   AccessLevel.READ },
+            { "michael",    "repository", "/test/trunk/",               AccessLevel.READ },
+
             { "harry",      "different", "/test/trunk/",                AccessLevel.NOTHING },
             { "michael",    "different", "/test/trunk/",                AccessLevel.NOTHING },
             { "brian",      "different", "/test/trunk/",                AccessLevel.NOTHING },
 
-            { "michael",    "repository", "/test/trunk/",               AccessLevel.READ_WRITE },
-            { "michael",    "repository", "/test/trunk/",               AccessLevel.READ_WRITE },
-            { "michael",    "repository", "/test/trunk/src/",           AccessLevel.READ_WRITE },
-            { "michael",    "repository", "/test/trunk/src/xyz.java",   AccessLevel.READ_WRITE },
-            { "michael",    "repository", "/test/trunk/src/CHANGELOG",  AccessLevel.READ_WRITE },
-
-            { "michael",    "repository", "/test/trunk/src/xyz.java",   AccessLevel.READ_WRITE },
-            { "michael",    "repository", "/test/trunk/src/CHANGELOG",  AccessLevel.READ_WRITE }, };
+        };
     }
 
     @Test(dataProvider = "createAccessSet")
-    public void accessRuleCheck(String user, String repository,
-            String accessPath, AccessLevel expectedLevel) {
-        // Check the permission of the current user in the repository within the
-        // given accessPath
-        AccessLevel al_user = accessRule
-        .getAccess(user, repository, accessPath);
+    public void accessRuleCheck(String user, String repository, String accessPath, AccessLevel expectedLevel) {
+        AccessLevel al_user = accessRule.getAccess(user, repository, accessPath);
         Assert.assertEquals(expectedLevel, al_user);
     }
 

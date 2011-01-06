@@ -57,5 +57,5 @@ public class AuthorizationFileSaveTest extends TestBase {
 
         System.out.println(accessRule);
 
-}
+    }
 }

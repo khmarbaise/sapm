@@ -32,9 +32,12 @@ public class Access {
     private IPrincipal principal;
     private AccessLevel level;
 
+    private boolean negativeRule;
+
     public Access() {
         setPrincipal(null);
         setLevel(AccessLevel.NOTHING);
+        setNegativeRule(false);
     }
 
     /**
@@ -46,6 +49,14 @@ public class Access {
         super();
         setPrincipal(principal);
         setLevel(level);
+        setNegativeRule(false);
+    }
+
+    public Access(IPrincipal principal, AccessLevel level, boolean negativeRule) {
+        super();
+        setPrincipal(principal);
+        setLevel(level);
+        setNegativeRule(negativeRule);
     }
 
     public IPrincipal getPrincipal() {
@@ -62,5 +73,13 @@ public class Access {
 
     public void setLevel(AccessLevel level) {
         this.level = level;
+    }
+
+    public void setNegativeRule(boolean negativeRule) {
+        this.negativeRule = negativeRule;
+    }
+
+    public boolean isNegativeRule() {
+        return negativeRule;
     }
 }

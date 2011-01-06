@@ -137,12 +137,37 @@ public class AccessRule {
     }
 
     /**
+     * Add the user to the access list with it's appropriate {@link AccessLevel}
+     * but this rule means not this user (~user)
+     * @param user The user which it shouldn't be.
+     * @param accessLevel The level of access for the non users.
+     */
+    public void addNegative(User user, AccessLevel accessLevel) {
+        getAccessList().add(new Access(user, accessLevel, true));
+    }
+
+    /**
      * Add the given group to the access list with it's appropriate {@link AccessLevel}.
      * @param group The group which will be added to the access list.
      * @param accessLevel The accessLevel which will be given to the group.
      */
     public void add(Group group, AccessLevel accessLevel) {
         getAccessList().add(new Access(group, accessLevel));
+    }
+
+    /**
+     * Add the given group to the access list with it's appropriate {@link AccessLevel}.
+     * Negate the rule.
+     * <pre>
+     * ~group = rw
+     * </pre>
+     * This means that everybody who is NOT member of the group will
+     * get the permission (rw).
+     * @param group The group which will be added to the access list.
+     * @param accessLevel The accessLevel which will be given to the group.
+     */
+    public void addNegative(Group group, AccessLevel accessLevel) {
+        getAccessList().add(new Access(group, accessLevel, true));
     }
 
     /**
@@ -207,8 +232,14 @@ public class AccessRule {
     public AccessLevel getAccessForPrincipal(String user) {
         AccessLevel result = AccessLevel.NOTHING;
         for (Access item : getAccessList()) {
-            if (item.getPrincipal().contains(user)) {
-                result = item.getLevel();
+            if (item.isNegativeRule()) {
+                if (!item.getPrincipal().contains(user)) {
+                    result = item.getLevel();
+                }
+            } else {
+                if (item.getPrincipal().contains(user)) {
+                    result = item.getLevel();
+                }
             }
         }
         return result;
