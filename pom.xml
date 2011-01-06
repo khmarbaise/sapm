@@ -4,7 +4,7 @@
 
     <groupId>com.soebes.subversion.sapm</groupId>
     <artifactId>sapm</artifactId>
-    <version>0.1</version>
+    <version>0.2-SNAPSHOT</version>
 
     <name>Subversion Authentication Parse Module</name>
     <description>Will read the Subversion authentication file and give you access to this via Java API</description>
