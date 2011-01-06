@@ -31,7 +31,7 @@ Examples
 * First simple example
 
   You would like to define a configuration like the following
-  with SAPM.
+  with the Subversion Authentication Parser Module (SAPM for short).
 
 +----
 [/]
@@ -93,3 +93,27 @@ AccessLevel userPermission = accessRules.getAccess(user, repository, accessPath)
 
   The user represents the <<<user>>> which tries to get access
   to the <<<repository>>> in the given <<<path>>>.
+
+* Enhanced Examples
+
+  You have defined the following rule set in your configuration file. Either
+  you can load that file by using the AuthenticationFile class or you can create
+  that structure in memory to use this as a permission system.
+
++----
+[groups]
+c-developer = harry, brian
+d-developer = michael, sally
+e-developer = jonas
+all-developer = @c-developer, @d-developer, @e-developer
+[/]
+* = r
+[repository:/project-c/trunk]
+@c-developer = rw
+[repository:/project-d/trunk]
+@d-developer = rw
+[repository:/project-e/trunk]
+@e-developer = rw
+[global:/project/trunk]
+@all-developer = rw
++----
