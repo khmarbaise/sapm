@@ -46,4 +46,7 @@ public class User implements IPrincipal {
         return getName().equals(name);
     }
 
+    public String toString() {
+        return getName();
+    }
 }

@@ -35,5 +35,23 @@ public enum AccessLevel {
      * In Subverison read/write means you can checkout and
      * can checkin.
      */
-    READ_WRITE
+    READ_WRITE;
+
+    public String toString() {
+        String result = "";
+        switch (this) {
+        case NOTHING:
+            result = "";
+            break;
+        case READ:
+            result = "r";
+            break;
+        case READ_WRITE:
+            result = "rw";
+            break;
+        default:
+            break;
+        }
+        return result;
+    }
 }

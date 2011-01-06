@@ -49,5 +49,9 @@ public class Alias implements IPrincipal {
         return false;
     }
 
+    public String toString() {
+        return "&" + getName();
+    }
+
 
 }

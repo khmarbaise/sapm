@@ -214,4 +214,16 @@ public class AccessRule {
         return result;
     }
 
+
+    public String toString() {
+        StringBuilder result = new StringBuilder("[");
+        if (getRepositoryName() != null) {
+            result.append(getRepositoryName() + ":");
+        }
+        result.append(getRepositoryPath() + "]" + "\n");
+        for (Access item : getAccessList()) {
+            result.append(item.getPrincipal() + " = " + item.getLevel() + "\n");
+        }
+        return result.toString();
+    }
 }

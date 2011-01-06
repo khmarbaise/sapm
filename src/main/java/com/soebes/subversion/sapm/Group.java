@@ -107,4 +107,8 @@ public class Group implements IPrincipal {
         this.principalList = principalList;
     }
 
+    public String toString() {
+        return "@" + getName();
+    }
+
 }
