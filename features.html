@@ -48,7 +48,7 @@
                           <a href="index.html" title="Introduction">Introduction</a>
             </li>
                   <li class="none">
-                          <a href="usage.html" title="Usage">Usage</a>
+                          <a href="examples.html" title="Examples">Examples</a>
             </li>
                   <li class="none">
                           <a href="load.html" title="Load File">Load File</a>
@@ -86,7 +86,7 @@ joe = CN=Gerald I. Joseph,OU=Engineers,DC=red-bean,DC=com
 [groups]
 calc-developers = &amp;harry, &amp;sally, &amp;joe
 paint-developers = &amp;frank, &amp;sally, &amp;jane
-everyone = @calc-developers, @paint-developers</pre></div><p>Further documentation later.</p></div><div class="section"><h3>Groups<a name="Groups"></a></h3><p>In <a class="externalLink" href="http://svnbook.red-bean.com/nightly/en/svn-book.html#svn.serverconfig.pathbasedauthz}Subversion authentication file">http://svnbook.red-bean.com/nightly/en/svn-book.html#svn.serverconfig.pathbasedauthz}Subversion authentication file</a> as well as in SAPM you can define a Group which contains users, groups and alias as well. This means it's possible to define a Group of Groups like in the following example:</p><div class="source"><pre>[groups]
+everyone = @calc-developers, @paint-developers</pre></div><p>Further documentation later.</p></div><div class="section"><h3>Groups<a name="Groups"></a></h3><p>In <a class="externalLink" href="http://svnbook.red-bean.com/nightly/en/svn-book.html#svn.serverconfig.pathbasedauthz">Subversion authentication file</a> as well as in SAPM you can define a Group which contains users, groups and alias as well. This means it's possible to define a Group of Groups like in the following example:</p><div class="source"><pre>[groups]
 project-a = harry, brian
 project-b = michael, sally
 project-c = jonas
