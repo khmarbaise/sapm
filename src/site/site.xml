@@ -26,7 +26,7 @@ under the License.
   <body>
     <menu name="Overview">
       <item name="Introduction" href="index.html"/>
-      <item name="Usage" href="usage.html"/>
+      <item name="Examples" href="examples.html"/>
       <item name="Load File" href="load.html"/>
       <item name="Features" href="features.html"/>
     </menu>
