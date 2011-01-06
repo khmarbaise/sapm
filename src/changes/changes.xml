@@ -33,10 +33,12 @@
     <body>
         <release
             version="0.1.0 Han Solo"
-            date="2011-XX-XX"
+            date="2011-01-06"
             description="First public Release">
             <action
+                type="add"
                 dev="Karl Heinz Marbaise">
+                The first public release.
             </action>
         </release>
     </body>
