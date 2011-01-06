@@ -14,10 +14,16 @@
     <url>https://github.com/khmarbaise/sapm</url>
     <inceptionYear>2010</inceptionYear>
 
+    <organization>
+        <name>SoftwareEntwicklung Beratung Schulung</name>
+        <url>http://www.soebes.com</url>
+    </organization>
+
     <licenses>
         <license>
             <name>Apache License 2.0</name>
             <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <distribution>repo</distribution>
         </license>
     </licenses>
 
@@ -34,7 +40,7 @@
     </developers>
 
     <issueManagement>
-        <system>github</system>
+        <system>default</system>
         <url>https://github.com/khmarbaise/sapm/issues</url>
     </issueManagement>
 
@@ -50,6 +56,21 @@
         <connection>scm:git:git://github.com/khmarbaise/sapm.git</connection>
         <url>https://github.com/khmarbaise/sapm</url>
     </scm>
+
+    <distributionManagement>
+        <repository>
+            <id>ossrh-staging</id>
+            <url>http://oss.sonatype.org/service/local/staging/deploy/maven2</url>
+        </repository>
+        <snapshotRepository>
+            <id>ossrh-snapshots</id>
+            <url>http://oss.sonatype.org/content/repositories/snapshots</url>
+        </snapshotRepository>
+        <site>
+            <id>site.supose.org</id>
+            <url>scp://minden205.server4you.de:/usr/local/vhosts/site.supose.org/sapm/${project.version}/</url>
+        </site>
+    </distributionManagement>
 
     <build>
         <plugins>
@@ -141,7 +162,7 @@
                 <version>2.3</version>
                 <configuration>
                     <issueLinkTemplatePerSystem>
-                        <default>http://www.supose.org/issues/show/%ISSUE%</default>
+                        <default>https://github.com/khmarbaise/sapm/issues/%ISSUE%</default>
                     </issueLinkTemplatePerSystem>
                 </configuration>
                 <reportSets>
@@ -252,6 +273,37 @@
         </dependency>
     </dependencies>
 
+    <!--
+        mvn -Darguments="-Dgpg.passphrase=xxxx" release:perform
+    -->
+    <profiles>
+        <profile>
+            <activation>
+                <property>
+                    <name>performRelease</name>
+                    <value>true</value>
+                </property>
+            </activation>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-gpg-plugin</artifactId>
+                        <version>1.1</version>
+                        <executions>
+                            <execution>
+                                <id>sign-artifacts</id>
+                                <phase>verify</phase>
+                                <goals>
+                                    <goal>sign</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
 <!--
     <profiles>
         <profile>
