@@ -16,7 +16,7 @@ Homepage
 
 (currently generated maven site)
 
-http://khmarbaise.github.com/sapm
+[http://khmarbaise.github.com/sapm](http://khmarbaise.github.com/sapm)
 
 Status
 ------
