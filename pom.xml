@@ -104,6 +104,7 @@
                     </excludes>
                     <mapping>
                         <g>DOUBLESLASH_STYLE</g>
+                        <apt.vm>DOUBLETILDE_STYLE</apt.vm>
                         <apt>DOUBLETILDE_STYLE</apt>
                     </mapping>
                     <properties>
