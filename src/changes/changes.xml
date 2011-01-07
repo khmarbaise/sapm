@@ -37,9 +37,15 @@
             description="Enhancement Release">
             <action
                 type="fix"
-		issue="2"
+                issue="2"
                 dev="Karl Heinz Marbaise">
-		Implemented parsing of Aliases.
+                Implemented parsing of Aliases.
+            </action>
+            <action
+                type="fix"
+                issue="1"
+                dev="Karl Heinz Marbaise">
+                Fixed warnings during mvn release:perform for missing versions of plugins.
             </action>
         </release>
         <release
