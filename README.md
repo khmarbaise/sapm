@@ -27,7 +27,6 @@ Status
 TODOs
 -----
 - Grammar / Object Model
-  - Handling of aliases (&alias) is not implemented (yet).
   - Handling the tokens $anonymous and $authenticated is not implemented (yet).
 
 - Enhanced / Improve Authorization class.

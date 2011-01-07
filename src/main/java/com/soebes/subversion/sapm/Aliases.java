@@ -21,8 +21,47 @@
  */
 package com.soebes.subversion.sapm;
 
+import java.util.ArrayList;
+
 public class Aliases {
 
-    private String name;
+    private ArrayList<Alias> aliasesList;
+
+    public Aliases() {
+        setAliasesList(new ArrayList<Alias>());
+    }
+
+    public void add(Alias alias) {
+        getAliasesList().add(alias);
+    }
+
+    public boolean hasAlias(String aliasName) {
+        boolean result = false;
+
+        for (Alias item : getAliasesList()) {
+            if (item.getName().equals(aliasName)) {
+                result = true;
+            }
+        }
+        return result;
+    }
+
+    public void setAliasesList(ArrayList<Alias> aliasesList) {
+        this.aliasesList = aliasesList;
+    }
+
+    public ArrayList<Alias> getAliasesList() {
+        return aliasesList;
+    }
+
+    public Alias getAlias(String aliasName) {
+        Alias result = null;
+        for (Alias item : getAliasesList()) {
+            if (item.getName().equals(aliasName)) {
+                result = item;
+            }
+        }
+        return result;
+    }
 
 }

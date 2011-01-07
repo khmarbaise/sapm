@@ -44,6 +44,7 @@ public class AuthorizationFile {
 
     private AccessRules accessRules;
     private Groups groups;
+    private Aliases aliases;
 
     public AuthorizationFile() {
         setAccessRules(new AccessRules());
@@ -67,6 +68,7 @@ public class AuthorizationFile {
             parser.prog();
             setAccessRules(parser.getAccessRules());
             setGroups(parser.getGroups());
+            setAliases(parser.getAliases());
             fis.close();
         } catch (FileNotFoundException e) {
             throw new AuthorizationFileException("FileNotFoundException: ", e);
@@ -97,6 +99,14 @@ public class AuthorizationFile {
 
     public Groups getGroups() {
         return groups;
+    }
+
+    public void setAliases(Aliases aliases) {
+        this.aliases = aliases;
+    }
+
+    public Aliases getAliases() {
+        return aliases;
     }
 
 

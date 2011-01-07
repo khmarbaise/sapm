@@ -25,7 +25,12 @@ package com.soebes.subversion.sapm;
  * This represents an alias.
  *
  * [aliases]
- * aliasa = xyz
+ * alias_user = xyz
+ *
+ * name = alias_user
+ * definition = xyz
+ *
+ * search for name => ?
  *
  * @author Karl Heinz Marbaise
  *
@@ -35,23 +40,44 @@ public class Alias implements IPrincipal {
     private String name;
     private String definition;
 
+    public Alias() {
+        setName(null);
+        setDefinition(null);
+    }
+
+    public Alias(String name, String definition) {
+        super();
+        setName(name);
+        setDefinition(definition);
+    }
+
     @Override
     public String getName() {
-        // TODO Auto-generated method stub
-        return null;
+        return this.name;
     }
+
     @Override
     public void setName(String name) {
+        this.name = name;
     }
-    @Override
+
+    /* (non-Javadoc)
+     * @see com.soebes.subversion.sapm.IPrincipal#contains(java.lang.String)
+     */
     public boolean contains(String name) {
-        // TODO Auto-generated method stub
-        return false;
+        return getName().equals(name);
+    }
+
+    public void setDefinition(String definition) {
+        this.definition = definition;
+    }
+
+    public String getDefinition() {
+        return definition;
     }
 
     public String toString() {
         return "&" + getName();
     }
-
 
 }

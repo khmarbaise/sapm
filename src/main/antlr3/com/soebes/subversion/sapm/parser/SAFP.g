@@ -33,6 +33,8 @@ options {
     import com.soebes.subversion.sapm.UserFactory;
     import com.soebes.subversion.sapm.Group;
     import com.soebes.subversion.sapm.Groups;
+    import com.soebes.subversion.sapm.Alias;
+    import com.soebes.subversion.sapm.Aliases;
     import com.soebes.subversion.sapm.AccessRule;
     import com.soebes.subversion.sapm.AccessRules;
     import com.soebes.subversion.sapm.Access;
@@ -50,6 +52,8 @@ options {
     public Groups getGroups() { return this.groups; }
     private Users users = new Users();
     public Users getUsers() { return this.users; }
+    private Aliases aliases = new Aliases();
+    public Aliases getAliases() { return this.aliases; }
 }
 
 /*
@@ -91,15 +95,13 @@ repos returns [ AccessRule accessrule; ]
         )* { $accessrule = $sectionrule.accessRule; }
     ;
 
-aliases @init {
-  //System.out.println("Init:Aliases");
-  }
+aliases
     :	sectionaliases NL
         (
             alias EQUAL useraliasdefinition NL
             {
-                //System.out.println("ALIAS=" + $alias.text);
-                //System.out.println("DEF:" + $useraliasdefinition.text);
+              Alias alias = new Alias($alias.text, $useraliasdefinition.text);
+              getAliases().add(alias);
             }
         )*
     ;
@@ -174,13 +176,13 @@ grouppermission returns [ Access access; ]
 aliaspermission returns [ Access access; ]
     : aliasreference EQUAL permission
         {
-            System.out.println("Alias " + $aliasreference.refId + " permission rule");
-//            IPrincipal groupInstance = getGroups().getGroup($groupreference.refId);
-//            $access = new Access(groupInstance, $permission.perm);
+            IPrincipal aliasInstance = getAliases().getAlias($aliasreference.refId);
+            $access = new Access(aliasInstance, $permission.perm);
         }
     | '~' aliasreference EQUAL permission
         {
-            System.out.println("Negative Alias permission rule");
+            IPrincipal aliasInstance = getAliases().getAlias($aliasreference.refId);
+            $access = new Access(aliasInstance, $permission.perm, true);
         }
     ;
 
@@ -227,7 +229,7 @@ groupuserdefinition returns [ArrayList<IPrincipal> gud; ] @init { $gud = new Arr
     ;
 
 groupuserreference returns [ IPrincipal principal; ]
-    :	aliasreference
+    :	aliasreference { $principal = getAliases().getAlias($aliasreference.refId); }
     |	groupreference { $principal = getGroups().getGroup($groupreference.refId); }
     |	userreference { $principal = new User($userreference.refId); }
     ;
