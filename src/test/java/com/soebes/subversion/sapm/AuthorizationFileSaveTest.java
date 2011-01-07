@@ -54,8 +54,6 @@ public class AuthorizationFileSaveTest extends TestBase {
 
         accessRule.add(developerGroup, AccessLevel.READ);
         accessRule.add(adminGroup, AccessLevel.READ_WRITE);
-
-        System.out.println(accessRule);
-
+//        System.out.println(accessRule);
     }
 }
