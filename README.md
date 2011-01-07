@@ -14,12 +14,11 @@ License
 Homepage
 --------
 
-(currently generated maven site)
-
-[http://khmarbaise.github.com/sapm](http://khmarbaise.github.com/sapm)
+The Maven Site for Release sapm-0.1 [http://khmarbaise.github.com/sapm](http://khmarbaise.github.com/sapm)
 
 Status
 ------
+- [Module is available via maven central](http://repo1.maven.org/maven2)
 - Object model created and fit my needs.
 - ANTLR Grammar works reading
 - Supports ~user, ~group rule
