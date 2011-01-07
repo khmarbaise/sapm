@@ -37,6 +37,12 @@
             description="Enhancement Release">
             <action
                 type="fix"
+                issue="3"
+                dev="Karl Heinz Marbaise">
+                Fixed problem with maven-changes-plugin to define the version.
+            </action>
+            <action
+                type="fix"
                 issue="2"
                 dev="Karl Heinz Marbaise">
                 Implemented parsing of Aliases.
