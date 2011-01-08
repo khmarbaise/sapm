@@ -33,8 +33,16 @@
     <body>
         <release
             version="0.2.0 Chewbacca"
-            date="2011-01-07"
+            date="2011-01-08"
             description="Enhancement Release">
+            <action
+                type="fix"
+                issue="3"
+                dev="Karl Heinz Marbaise">
+		<fixed issue="4"/>
+		<fixed issue="5"/>
+		Based on the usage of the parent pom now Maven 2.2.1 works
+            </action>
             <action
                 type="fix"
                 issue="3"
