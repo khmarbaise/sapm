@@ -36,12 +36,11 @@
             date="2011-01-08"
             description="Enhancement Release">
             <action
-                type="fix"
-                issue="3"
+		type="fix"
                 dev="Karl Heinz Marbaise">
-		<fixed issue="4"/>
-		<fixed issue="5"/>
 		Based on the usage of the parent pom now Maven 2.2.1 works
+		<fixes issue="4"/>
+		<fixes issue="5"/>
             </action>
             <action
                 type="fix"
