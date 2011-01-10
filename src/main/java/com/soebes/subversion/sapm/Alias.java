@@ -64,6 +64,7 @@ public class Alias implements IPrincipal {
     /* (non-Javadoc)
      * @see com.soebes.subversion.sapm.IPrincipal#contains(java.lang.String)
      */
+    @Override
     public boolean contains(String name) {
         return getName().equals(name);
     }

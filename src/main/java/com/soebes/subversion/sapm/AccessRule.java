@@ -202,14 +202,14 @@ public class AccessRule {
     public AccessLevel getAccess(String user, String repository, String path) {
         AccessLevel result = AccessLevel.NOTHING;
         if (getRepositoryName() == null) {
-            Path repositoryPath = new Path(getRepositoryPath());
-            if (repositoryPath.contains(path)) {
+            Path localRepositoryPath = new Path(getRepositoryPath());
+            if (localRepositoryPath.contains(path)) {
                 result = getAccessForPrincipal(user);
             }
         } else {
             if (getRepositoryName().equals(repository)) {
-                Path repositoryPath = new Path(getRepositoryPath());
-                if (repositoryPath.contains(path)) {
+                Path localRepositoryPath = new Path(getRepositoryPath());
+                if (localRepositoryPath.contains(path)) {
                     result = getAccessForPrincipal(user);
                 }
             }
