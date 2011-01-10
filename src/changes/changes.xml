@@ -32,15 +32,21 @@
     </properties>
     <body>
         <release
+            version="0.3.0 Leia"
+            date="2011-01-10"
+            description="Enhancement Release">
+        </release>
+        <action dev="Karl Heinz Marbaise" type="add" issue="XX">
+            Support for $authenticated and $anonymous added.
+        </action>
+        <release
             version="0.2.0 Chewbacca"
             date="2011-01-08"
             description="Enhancement Release">
-            <action
-		type="fix"
-                dev="Karl Heinz Marbaise">
-		Based on the usage of the parent pom now Maven 2.2.1 works
-		<fixes issue="4"/>
-		<fixes issue="5"/>
+            <action type="fix" dev="Karl Heinz Marbaise">
+                Based on the usage of the parent pom now Maven 2.2.1 works
+                <fixes issue="4"/>
+                <fixes issue="5"/>
             </action>
             <action
                 type="fix"

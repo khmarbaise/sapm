@@ -142,13 +142,13 @@ repositorypath
     ;
 
 permissionrule returns [ Access access; ]
-    :	userpermission { $access = $userpermission.access; }
-    |	grouppermission { $access = $grouppermission.access; }
+    : userpermission { $access = $userpermission.access; }
+    | grouppermission { $access = $grouppermission.access; }
     | aliaspermission { $access = $aliaspermission.access; }
     ;
 
 userpermission returns [ Access access; ]
-    :	user EQUAL permission
+    : user EQUAL permission
         {
             User userInstance = UserFactory.createInstance($user.text);
             $access = new Access(userInstance, $permission.perm);
@@ -161,7 +161,7 @@ userpermission returns [ Access access; ]
     ;
 
 grouppermission returns [ Access access; ]
-    :	groupreference EQUAL permission
+    : groupreference EQUAL permission
         {
             IPrincipal groupInstance = getGroups().getGroup($groupreference.refId);
             $access = new Access(groupInstance, $permission.perm);

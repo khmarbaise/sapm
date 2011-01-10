@@ -22,28 +22,26 @@
 package com.soebes.subversion.sapm;
 
 /**
- * Factory to create {@link User} instances.
+ * This user is the user who represents anonymous.
+ *
+ * In our case this means the user does not exist, cause
+ * no user has been authenticated. So no user name is available.
  *
  * @author Karl Heinz Marbaise
  *
  */
-public class UserFactory {
+public class UserAnonymous extends User {
 
-    /**
-     * The factory method to create the particular
-     * instances.
-     * @param user The user name which will be used.
-     * @return The instance of the {@link User} class.
-     */
-    public static User createInstance(String user) {
-        if (user.equals("$authenticated")) {
-            return new UserAuthenticated();
-        } else if (user.equals("$anonymous")) {
-            return new UserAnonymous();
-        } else if (user.equals("*")) {
-            return new UserAsterik();
-        } else {
-            return new User(user);
-        }
+    public UserAnonymous() {
+        super(null);
     }
+
+    /* (non-Javadoc)
+     * @see com.soebes.subversion.sapm.User#contains(java.lang.String)
+     */
+    @Override
+    public boolean contains(String user) {
+        return user == null;
+    }
+
 }

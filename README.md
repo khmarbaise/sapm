@@ -23,17 +23,16 @@ Status
 - ANTLR Grammar works reading
   - Support of ~user, ~group and ~alias rule
   - Support of user, groups
+  - Support of $anonymous and $authenticated
 - Started with a simple API based on AuthorizationFile class.
 
 TODOs
 -----
 - Grammar / Object Model
   - Handling the tokens $anonymous and $authenticated is not implemented (yet).
-    $anonymous means no username exists, cause the user doesn't have authenticated.
-    so we assume a username equal to "" means anonymous otherwise $authenticated.
-    $authenticated means the user has a username. Based on this we have to change
-    the behaviour of the UserAsterik, cause this user should check if the length
-    of the user is greater zero.
+    $anonymous means no username exists, cause the user does not have authenticated.
+    so we assume a username equal to null means anonymous otherwise $authenticated.
+    $authenticated means the user has a username. 
 
 - Enhanced / Improve Authorization class.
   - Check what to do?

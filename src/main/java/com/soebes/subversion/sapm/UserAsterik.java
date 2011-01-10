@@ -36,6 +36,7 @@ public class UserAsterik extends User {
     /* (non-Javadoc)
      * @see com.soebes.subversion.sapm.User#contains(java.lang.String)
      */
+    @Override
     public boolean contains(String user) {
         return true;
     }
