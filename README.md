@@ -14,30 +14,47 @@ License
 Homepage
 --------
 
-The Maven Site for Release sapm-0.1 [http://khmarbaise.github.com/sapm](http://khmarbaise.github.com/sapm)
+The Maven Site for Release sapm-0.2 [http://khmarbaise.github.com/sapm](http://khmarbaise.github.com/sapm)
 
 Status
 ------
 - [Module is available via maven central](http://repo1.maven.org/maven2)
 - Object model created and fit my needs.
 - ANTLR Grammar works reading
-- Supports ~user, ~group rule
+  - Support of ~user, ~group and ~alias rule
+  - Support of user, groups
 - Started with a simple API based on AuthorizationFile class.
 
 TODOs
 -----
 - Grammar / Object Model
   - Handling the tokens $anonymous and $authenticated is not implemented (yet).
+    $anonymous means no username exists, cause the user doesn't have authenticated.
+    so we assume a username equal to "" means anonymous otherwise $authenticated.
+    $authenticated means the user has a username. Based on this we have to change
+    the behaviour of the UserAsterik, cause this user should check if the length
+    of the user is greater zero.
 
 - Enhanced / Improve Authorization class.
   - Check what to do?
-- Examples
-- Check to see if the last rule is the one which counts.
+- May be more Examples
+- Check to see if the last rule is the one which counts (check the SVN Book?)
+
+  -  Check if the following example works?
+
+      [groups]
+      groupa = jenny, joe, danny
+      [calc:/project/]
+      @groupa = rw
+      [calc:/project/tags]
+      jenny = r
+
 
 Usage
 -----
 
-The following rule set can be handled with the classes:
+The following rule set can be handled either via the following code example
+or directly using a configuration file which can be loaded via AuthorizationFile class:
 
     [/]
     * = r
@@ -46,7 +63,7 @@ The following rule set can be handled with the classes:
     brian = rw
 
 The above configuration contents can be created by using the following code snippet:
-<code>
+
     AccessRules accessRules = new AccessRules();
 
     User user = UserFactory.createInstance("*");
@@ -61,15 +78,12 @@ The above configuration contents can be created by using the following code snip
     accessRule.add(userHarry, AccessLevel.READ_WRITE);
     accessRule.add(userMicheal, AccessLevel.READ_WRITE);
     accessRules.add(accessRule);
-</code>
-
 
 And now finally you can ask the AccessRules class what kind of permission a particular user has whereas
 the user is the user name for example "harry" and the repository for which repository you would like to
 check the permission and the accessPath defines which path inside the repository the user tries to access.
 
     AccessLevel al_user = accessRules.getAccess(user, repository, accessPath);
-
 
 The following rule set works as well (see the following unit test AccessRulesGroupGroupTest.java):
 
