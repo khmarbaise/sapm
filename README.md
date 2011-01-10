@@ -22,7 +22,7 @@ Status
 - Object model created and fit my needs.
 - ANTLR Grammar works reading
   - Support of ~user, ~group and ~alias rule
-  - Support of user, groups
+  - Support of user, groups and aliases rule
   - Support of $anonymous and $authenticated
 - Started with a simple API based on AuthorizationFile class.
 
@@ -38,16 +38,6 @@ TODOs
   - Check what to do?
 - May be more Examples
 - Check to see if the last rule is the one which counts (check the SVN Book?)
-
-  -  Check if the following example works?
-
-      [groups]
-      groupa = jenny, joe, danny
-      [calc:/project/]
-      @groupa = rw
-      [calc:/project/tags]
-      jenny = r
-
 
 Usage
 -----
@@ -101,6 +91,32 @@ The following rule set works as well (see the following unit test AccessRulesGro
     @e-developer = rw
     [global:/project/trunk]
     @all-developer = rw
+
+Order of permission rules
+-------------------------
+
+If you have the following rule set what kind of permission would you expect
+for jenny in repository "calc" and folder "/project/" ? READ/WRITE? No.
+She will get only the READ permission cause the last rule defines
+READ permision explicit for her. This means the order counts.
+
+    [groups]
+    groupa = jenny, joe, danny
+    [calc:/project/]
+    @groupa = rw
+    jenny = r
+
+If you do the previous case exactly reverse order like this:
+    
+    [groups]
+    groupa = jenny, joe, danny
+    [calc:/project/]
+    jenny = r
+    @groupa = rw
+
+Than you will get READ/WRITE permission for jenny, cause the last
+rule counts.
+
 
 How to load the authentication file?
 ------------------------------------

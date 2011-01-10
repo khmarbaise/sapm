@@ -39,6 +39,10 @@
         <action dev="Karl Heinz Marbaise" type="add" issue="XX">
             Support for $authenticated and $anonymous added.
         </action>
+        <action dev="Karl Heinz Marbaise" type="add" issue="XX">
+            Order of rules is now working correctly proofed by unit tests.
+        </action>
+        </release>
         <release
             version="0.2.0 Chewbacca"
             date="2011-01-08"

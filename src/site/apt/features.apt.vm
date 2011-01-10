@@ -120,9 +120,8 @@ all-developer = @project-a, @project-b, @project-c
 
 * Tokens
 
-  Currently the two tokens <<<$authenticated>>> and <<<$anonymous>>> are not supported.
-
-  Further documentation will follow.
+  There existing two special tokens <<<$authenticated>>> and <<<$anonymous>>> which
+  represent an authenticated user (has a username) or a unauthorized user (no user name).
 
 * Exclusion Marker
 
@@ -187,3 +186,32 @@ ar_2.addNegative(calcOwners, AccessLevel.READ);
 accessRules.add(ar_1);
 accessRules.add(ar_2);
 +----
+
+* Order of rules
+
+  Based on the following rule set the user <jenny>
+  will get a READ permission to the repository <<calc>>
+  in the folder <</project/>>.
+
++----
+[groups]
+groupa = jenny, joe, danny
+[calc:/project/]
+@groupa = rw
+jenny = r
++----
+
+  But if we just change the order of the last rule like this:
+
++----
+[groups]
+groupa = jenny, joe, danny
+[calc:/project/]
+jenny = r
+@groupa = rw
++----
+
+  The user <jenny> will get a READ/WRITE permission based on the
+  membership to the group <<groupa>> instead of READ as before.
+
+  This means the order of the rules counts.
