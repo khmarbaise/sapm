@@ -69,7 +69,6 @@ public class AuthorizationFile {
             setAccessRules(parser.getAccessRules());
             setGroups(parser.getGroups());
             setAliases(parser.getAliases());
-            fis.close();
         } catch (FileNotFoundException e) {
             throw new AuthorizationFileException("FileNotFoundException: ", e);
         } catch (IOException e) {
