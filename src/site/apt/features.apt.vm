@@ -74,7 +74,8 @@ username_b = r
 
 * Aliases
 
-  Currently not supported. (Example from the Subversion Book).
+  The alias is a way to define a complicate user name which
+  can be used to simplify the maintenance of the access file.
 
 +----
 [aliases]
@@ -88,7 +89,6 @@ paint-developers = &frank, &sally, &jane
 everyone = @calc-developers, @paint-developers
 +----
 
-  Further documentation later.
 
 * Groups
 

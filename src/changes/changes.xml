@@ -35,6 +35,9 @@
             version="0.3.0 Leia"
             date="2011-01-10"
             description="Enhancement Release">
+          <action dev="Karl Heinz Marbaise" type="add" issue="7">
+              Updated feature list with aliases.
+          </action>
           <action dev="Karl Heinz Marbaise" type="add" issue="8">
               Support for $authenticated and $anonymous added.
           </action>
