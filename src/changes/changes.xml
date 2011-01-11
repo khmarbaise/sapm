@@ -35,13 +35,12 @@
             version="0.3.0 Leia"
             date="2011-01-10"
             description="Enhancement Release">
-        </release>
-        <action dev="Karl Heinz Marbaise" type="add" issue="XX">
-            Support for $authenticated and $anonymous added.
-        </action>
-        <action dev="Karl Heinz Marbaise" type="add" issue="XX">
-            Order of rules is now working correctly proofed by unit tests.
-        </action>
+          <action dev="Karl Heinz Marbaise" type="add" issue="8">
+              Support for $authenticated and $anonymous added.
+          </action>
+          <action dev="Karl Heinz Marbaise" type="add" issue="9">
+              Order of rules is now working correctly proofed by unit tests.
+          </action>
         </release>
         <release
             version="0.2.0 Chewbacca"
@@ -49,8 +48,8 @@
             description="Enhancement Release">
             <action type="fix" dev="Karl Heinz Marbaise">
                 Based on the usage of the parent pom now Maven 2.2.1 works
-                <fixes issue="4"/>
-                <fixes issue="5"/>
+                <fixes issue="4" />
+                <fixes issue="5" />
             </action>
             <action
                 type="fix"
