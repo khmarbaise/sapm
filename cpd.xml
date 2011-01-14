@@ -1,3 +1,420 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <pmd-cpd>
+<duplication lines="32" tokens="184">
+<file line="12" path="/home/kama/ws-git/sapm/target/checkout/target/generated-sources/antlr3/com/soebes/subversion/sapm/parser/SAFPLexer.java"/>
+<file line="32" path="/home/kama/ws-git/sapm/target/checkout/target/generated-sources/antlr3/com/soebes/subversion/sapm/parser/SAFPParser.java"/>
+<codefragment>
+<![CDATA[
+    public static final int EOF=-1;
+    public static final int T__13=13;
+    public static final int T__14=14;
+    public static final int T__15=15;
+    public static final int T__16=16;
+    public static final int T__17=17;
+    public static final int T__18=18;
+    public static final int T__19=19;
+    public static final int T__20=20;
+    public static final int T__21=21;
+    public static final int T__22=22;
+    public static final int T__23=23;
+    public static final int T__24=24;
+    public static final int T__25=25;
+    public static final int T__26=26;
+    public static final int T__27=27;
+    public static final int T__28=28;
+    public static final int NL=4;
+    public static final int EQUAL=5;
+    public static final int ID=6;
+    public static final int GROUPS=7;
+    public static final int ALIASES=8;
+    public static final int PATH=9;
+    public static final int WS=10;
+    public static final int CHARACTERS=11;
+    public static final int INTEGER_DIGITS=12;
+
+    // delegates
+    // delegators
+
+
+        public SAFPParser(TokenStream input) {
+]]>
+</codefragment>
+</duplication>
+<duplication lines="57" tokens="176">
+<file line="600" path="/home/kama/ws-git/sapm/target/checkout/target/generated-sources/antlr3/com/soebes/subversion/sapm/parser/SAFPLexer.java"/>
+<file line="722" path="/home/kama/ws-git/sapm/target/checkout/target/generated-sources/antlr3/com/soebes/subversion/sapm/parser/SAFPLexer.java"/>
+<codefragment>
+<![CDATA[
+                switch ( input.LA(1) ) {
+                case '-':
+                case '.':
+                case 'A':
+                case 'B':
+                case 'C':
+                case 'D':
+                case 'E':
+                case 'F':
+                case 'G':
+                case 'H':
+                case 'I':
+                case 'J':
+                case 'K':
+                case 'L':
+                case 'M':
+                case 'N':
+                case 'O':
+                case 'P':
+                case 'Q':
+                case 'R':
+                case 'S':
+                case 'T':
+                case 'U':
+                case 'V':
+                case 'W':
+                case 'X':
+                case 'Y':
+                case 'Z':
+                case '_':
+                case 'a':
+                case 'b':
+                case 'c':
+                case 'd':
+                case 'e':
+                case 'f':
+                case 'g':
+                case 'h':
+                case 'i':
+                case 'j':
+                case 'k':
+                case 'l':
+                case 'm':
+                case 'n':
+                case 'o':
+                case 'p':
+                case 'q':
+                case 'r':
+                case 's':
+                case 't':
+                case 'u':
+                case 'v':
+                case 'w':
+                case 'x':
+                case 'y':
+                case 'z':
+                    {
+]]>
+</codefragment>
+</duplication>
+<duplication lines="30" tokens="118">
+<file line="1679" path="/home/kama/ws-git/sapm/target/checkout/target/generated-sources/antlr3/com/soebes/subversion/sapm/parser/SAFPParser.java"/>
+<file line="1850" path="/home/kama/ws-git/sapm/target/checkout/target/generated-sources/antlr3/com/soebes/subversion/sapm/parser/SAFPParser.java"/>
+<file line="1905" path="/home/kama/ws-git/sapm/target/checkout/target/generated-sources/antlr3/com/soebes/subversion/sapm/parser/SAFPParser.java"/>
+<file line="1960" path="/home/kama/ws-git/sapm/target/checkout/target/generated-sources/antlr3/com/soebes/subversion/sapm/parser/SAFPParser.java"/>
+<codefragment>
+<![CDATA[
+                adaptor.addChild(root_0, (Object)adaptor.create(set65));
+                state.errorRecovery=false;
+            }
+            else {
+                MismatchedSetException mse = new MismatchedSetException(null,input);
+                throw mse;
+            }
+
+
+            }
+
+            retval.stop = input.LT(-1);
+
+            retval.tree = (Object)adaptor.rulePostProcessing(root_0);
+            adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop);
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+    	retval.tree = (Object)adaptor.errorNode(input, retval.start, input.LT(-1), re);
+
+        }
+        finally {
+        }
+        return retval;
+    }
+    // $ANTLR end "permission_read_write"
+
+    public static class permission_nothing_return extends ParserRuleReturnScope {
+]]>
+</codefragment>
+</duplication>
+<duplication lines="26" tokens="105">
+<file line="1364" path="/home/kama/ws-git/sapm/target/checkout/target/generated-sources/antlr3/com/soebes/subversion/sapm/parser/SAFPParser.java"/>
+<file line="1496" path="/home/kama/ws-git/sapm/target/checkout/target/generated-sources/antlr3/com/soebes/subversion/sapm/parser/SAFPParser.java"/>
+<file line="1628" path="/home/kama/ws-git/sapm/target/checkout/target/generated-sources/antlr3/com/soebes/subversion/sapm/parser/SAFPParser.java"/>
+<codefragment>
+<![CDATA[
+                                retval.access = new Access(aliasInstance, (permission58!=null?permission58.perm:null), true);
+                            
+
+                    }
+                    break;
+
+            }
+            retval.stop = input.LT(-1);
+
+            retval.tree = (Object)adaptor.rulePostProcessing(root_0);
+            adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop);
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+    	retval.tree = (Object)adaptor.errorNode(input, retval.start, input.LT(-1), re);
+
+        }
+        finally {
+        }
+        return retval;
+    }
+    // $ANTLR end "aliaspermission"
+
+    public static class user_return extends ParserRuleReturnScope {
+]]>
+</codefragment>
+</duplication>
+<duplication lines="23" tokens="102">
+<file line="1037" path="/home/kama/ws-git/sapm/target/checkout/target/generated-sources/antlr3/com/soebes/subversion/sapm/parser/SAFPParser.java"/>
+<file line="2460" path="/home/kama/ws-git/sapm/target/checkout/target/generated-sources/antlr3/com/soebes/subversion/sapm/parser/SAFPParser.java"/>
+<file line="2516" path="/home/kama/ws-git/sapm/target/checkout/target/generated-sources/antlr3/com/soebes/subversion/sapm/parser/SAFPParser.java"/>
+<codefragment>
+<![CDATA[
+             retval.refId = (ID80!=null?ID80.getText():null); 
+
+            }
+
+            retval.stop = input.LT(-1);
+
+            retval.tree = (Object)adaptor.rulePostProcessing(root_0);
+            adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop);
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+    	retval.tree = (Object)adaptor.errorNode(input, retval.start, input.LT(-1), re);
+
+        }
+        finally {
+        }
+        return retval;
+    }
+    // $ANTLR end "groupreference"
+
+    public static class userreference_return extends ParserRuleReturnScope {
+]]>
+</codefragment>
+</duplication>
+<duplication lines="25" tokens="102">
+<file line="270" path="/home/kama/ws-git/sapm/target/checkout/target/generated-sources/antlr3/com/soebes/subversion/sapm/parser/SAFPParser.java"/>
+<file line="1800" path="/home/kama/ws-git/sapm/target/checkout/target/generated-sources/antlr3/com/soebes/subversion/sapm/parser/SAFPParser.java"/>
+<codefragment>
+<![CDATA[
+                    adaptor.addChild(root_0, permission_nothing62.getTree());
+
+                    }
+                    break;
+
+            }
+            retval.stop = input.LT(-1);
+
+            retval.tree = (Object)adaptor.rulePostProcessing(root_0);
+            adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop);
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+    	retval.tree = (Object)adaptor.errorNode(input, retval.start, input.LT(-1), re);
+
+        }
+        finally {
+        }
+        return retval;
+    }
+    // $ANTLR end "permission"
+
+    public static class permission_read_return extends ParserRuleReturnScope {
+]]>
+</codefragment>
+</duplication>
+<duplication lines="28" tokens="101">
+<file line="2460" path="/home/kama/ws-git/sapm/target/checkout/target/generated-sources/antlr3/com/soebes/subversion/sapm/parser/SAFPParser.java"/>
+<file line="2566" path="/home/kama/ws-git/sapm/target/checkout/target/generated-sources/antlr3/com/soebes/subversion/sapm/parser/SAFPParser.java"/>
+<codefragment>
+<![CDATA[
+             retval.refId = (ID81!=null?ID81.getText():null); 
+
+            }
+
+            retval.stop = input.LT(-1);
+
+            retval.tree = (Object)adaptor.rulePostProcessing(root_0);
+            adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop);
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+    	retval.tree = (Object)adaptor.errorNode(input, retval.start, input.LT(-1), re);
+
+        }
+        finally {
+        }
+        return retval;
+    }
+    // $ANTLR end "userreference"
+
+    // Delegated rules
+
+
+ 
+
+    public static final BitSet FOLLOW_statement_in_prog75 = new BitSet(new long[]{0x0000000000002002L});
+]]>
+</codefragment>
+</duplication>
+<duplication lines="25" tokens="101">
+<file line="2103" path="/home/kama/ws-git/sapm/target/checkout/target/generated-sources/antlr3/com/soebes/subversion/sapm/parser/SAFPParser.java"/>
+<file line="2288" path="/home/kama/ws-git/sapm/target/checkout/target/generated-sources/antlr3/com/soebes/subversion/sapm/parser/SAFPParser.java"/>
+<codefragment>
+<![CDATA[
+                }
+            } while (true);
+
+
+            }
+
+            retval.stop = input.LT(-1);
+
+            retval.tree = (Object)adaptor.rulePostProcessing(root_0);
+            adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop);
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+    	retval.tree = (Object)adaptor.errorNode(input, retval.start, input.LT(-1), re);
+
+        }
+        finally {
+        }
+        return retval;
+    }
+    // $ANTLR end "groupuserdefinition"
+
+    public static class groupuserreference_return extends ParserRuleReturnScope {
+]]>
+</codefragment>
+</duplication>
+<duplication lines="28" tokens="101">
+<file line="1037" path="/home/kama/ws-git/sapm/target/checkout/target/generated-sources/antlr3/com/soebes/subversion/sapm/parser/SAFPParser.java"/>
+<file line="2566" path="/home/kama/ws-git/sapm/target/checkout/target/generated-sources/antlr3/com/soebes/subversion/sapm/parser/SAFPParser.java"/>
+<codefragment>
+<![CDATA[
+             retval.refId = (ID81!=null?ID81.getText():null); 
+
+            }
+
+            retval.stop = input.LT(-1);
+
+            retval.tree = (Object)adaptor.rulePostProcessing(root_0);
+            adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop);
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+    	retval.tree = (Object)adaptor.errorNode(input, retval.start, input.LT(-1), re);
+
+        }
+        finally {
+        }
+        return retval;
+    }
+    // $ANTLR end "userreference"
+
+    // Delegated rules
+
+
+ 
+
+    public static final BitSet FOLLOW_statement_in_prog75 = new BitSet(new long[]{0x0000000000002002L});
+]]>
+</codefragment>
+</duplication>
+<duplication lines="25" tokens="101">
+<file line="146" path="/home/kama/ws-git/sapm/target/checkout/target/generated-sources/antlr3/com/soebes/subversion/sapm/parser/SAFPParser.java"/>
+<file line="387" path="/home/kama/ws-git/sapm/target/checkout/target/generated-sources/antlr3/com/soebes/subversion/sapm/parser/SAFPParser.java"/>
+<file line="665" path="/home/kama/ws-git/sapm/target/checkout/target/generated-sources/antlr3/com/soebes/subversion/sapm/parser/SAFPParser.java"/>
+<file line="2103" path="/home/kama/ws-git/sapm/target/checkout/target/generated-sources/antlr3/com/soebes/subversion/sapm/parser/SAFPParser.java"/>
+<codefragment>
+<![CDATA[
+                }
+            } while (true);
+
+
+            }
+
+            retval.stop = input.LT(-1);
+
+            retval.tree = (Object)adaptor.rulePostProcessing(root_0);
+            adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop);
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+    	retval.tree = (Object)adaptor.errorNode(input, retval.start, input.LT(-1), re);
+
+        }
+        finally {
+        }
+        return retval;
+    }
+    // $ANTLR end "useraliasdefinition"
+
+    public static class useralias_return extends ParserRuleReturnScope {
+]]>
+</codefragment>
+</duplication>
+<duplication lines="24" tokens="100">
+<file line="147" path="/home/kama/ws-git/sapm/target/checkout/target/generated-sources/antlr3/com/soebes/subversion/sapm/parser/SAFPParser.java"/>
+<file line="2195" path="/home/kama/ws-git/sapm/target/checkout/target/generated-sources/antlr3/com/soebes/subversion/sapm/parser/SAFPParser.java"/>
+<codefragment>
+<![CDATA[
+            } while (true);
+
+
+            }
+
+            retval.stop = input.LT(-1);
+
+            retval.tree = (Object)adaptor.rulePostProcessing(root_0);
+            adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop);
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+    	retval.tree = (Object)adaptor.errorNode(input, retval.start, input.LT(-1), re);
+
+        }
+        finally {
+        }
+        return retval;
+    }
+    // $ANTLR end "useralias"
+
+    public static class groupuserdefinition_return extends ParserRuleReturnScope {
+]]>
+</codefragment>
+</duplication>
 </pmd-cpd>
