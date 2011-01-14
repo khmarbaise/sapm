@@ -33,7 +33,7 @@
     <body>
         <release
             version="0.3.0 Leia"
-            date="2011-01-10"
+            date="2011-01-14"
             description="Enhancement Release">
           <action dev="Karl Heinz Marbaise" type="add" issue="7">
               Updated feature list with aliases.
