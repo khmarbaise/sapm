@@ -14,7 +14,7 @@ License
 Homepage
 --------
 
-The Maven Site for Release sapm-0.2 [http://khmarbaise.github.com/sapm](http://khmarbaise.github.com/sapm)
+The Maven Site for Release sapm-0.3 [http://khmarbaise.github.com/sapm](http://khmarbaise.github.com/sapm)
 
 Status
 ------
