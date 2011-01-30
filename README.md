@@ -28,12 +28,6 @@ Status
 
 TODOs
 -----
-- Grammar / Object Model
-  - Handling the tokens $anonymous and $authenticated is not implemented (yet).
-    $anonymous means no username exists, cause the user does not have authenticated.
-    so we assume a username equal to null means anonymous otherwise $authenticated.
-    $authenticated means the user has a username. 
-
 - Enhanced / Improve Authorization class.
   - Check what to do?
 - May be more Examples
