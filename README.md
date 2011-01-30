@@ -18,7 +18,7 @@ The Maven Site for Release sapm-0.3 [http://khmarbaise.github.com/sapm](http://k
 
 Status
 ------
-- [Module is available via maven central](http://repo1.maven.org/maven2)
+- [Module is available via maven central](http://repo1.maven.org/maven2/com/soebes/subversion/sapm/sapm/)
 - Object model created and fit my needs.
 - ANTLR Grammar works reading
   - Support of ~user, ~group and ~alias rule
