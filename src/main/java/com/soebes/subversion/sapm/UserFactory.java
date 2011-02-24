@@ -32,6 +32,14 @@ public class UserFactory {
     /**
      * The factory method to create the particular
      * instances.
+     * This means you can give one of the following
+     * user names:
+     * <ul>
+     * <li>$authenticated which results in using {@link UserAuthenticated}</li>
+     * <li>$anonymous which results in using {@link UserAnonymous}</li>
+     * <li>* which results in using {@link UserAsterik}</li>
+     * <li>Any other user name results in using {@link User}</li>
+     * </ul>
      * @param user The user name which will be used.
      * @return The instance of the {@link User} class.
      */

@@ -145,7 +145,7 @@
           <artifactId>maven-pmd-plugin</artifactId>
           <version>2.5</version>
           <configuration>
-        <excludeRoots>${project.build.outputDirectory}/generated-sources</excludeRoots>
+          <excludeRoots>${project.build.outputDirectory}/generated-sources</excludeRoots>
           </configuration>
         </plugin>
     </plugins>

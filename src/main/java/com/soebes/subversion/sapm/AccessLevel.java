@@ -21,6 +21,13 @@
  */
 package com.soebes.subversion.sapm;
 
+/**
+ * This enumeration represents the three different
+ * permission levels inside a Subversion repository.
+ * 
+ * @author Karl Heinz Marbaise
+ *
+ */
 public enum AccessLevel {
     /**
      * This means no access.
@@ -28,12 +35,12 @@ public enum AccessLevel {
     NOTHING,
     /**
      * In Subversion you can checkout with such a permission, but you
-     * can't checkin.
+     * can't check in.
      */
     READ,
     /**
-     * In Subverison read/write means you can checkout and
-     * can checkin.
+     * In Subversion read/write means you can checkout and
+     * can check in.
      */
     READ_WRITE;
 

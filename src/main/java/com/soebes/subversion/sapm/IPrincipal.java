@@ -22,7 +22,7 @@
 package com.soebes.subversion.sapm;
 
 /**
- * This represents either a {@link User} or a {@link Group} or an
+ * This represents either a {@link User}, a {@link Group} or an
  * {@link Alias}.
  *
  * @author Karl Heinz Marbaise

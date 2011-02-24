@@ -54,10 +54,10 @@ public class Users {
     }
 
     /**
-     * Check to see if a given username is within
+     * Check to see if a given user name is within
      * the list of users.
      * Checking will be done case sensitive.
-     * @param userName The name of the user.
+     * @param userName The name of the user which should be checked for.
      * @return true if the user has been found false otherwise.
      */
     public boolean hasUser(String userName) {
@@ -70,6 +70,14 @@ public class Users {
         return result;
     }
 
+    /**
+     * Get the particular User instance if the user 
+     * can be found. Null otherwise.
+     * @param userName The name for which we search 
+     *   in the list of users.
+     * @return The instance of the particular user
+     *   or null otherwise.
+     */
     public User getUser(String userName) {
         User result = null;
         for (User item : getUsersList()) {

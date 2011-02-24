@@ -21,6 +21,13 @@
  */
 package com.soebes.subversion.sapm;
 
+/**
+ * This class represents a single user which 
+ * has a name.
+ * 
+ * @author Karl Heinz Marbaise
+ *
+ */
 public class User implements IPrincipal {
 
     private String name;

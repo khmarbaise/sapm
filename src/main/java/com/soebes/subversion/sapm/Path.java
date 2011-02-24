@@ -22,7 +22,9 @@
 package com.soebes.subversion.sapm;
 
 /**
- *
+ * This class represents a path in the meaning 
+ * of a folder.
+ * 
  * @author Karl Heinz Marbaise
  *
  */
@@ -47,6 +49,14 @@ public class Path {
         this.path = path;
     }
 
+    /**
+     * This will check if the given path
+     * is part of the path which is represented by 
+     * this instance.
+     * @see {@link PathTest}
+     * @param path The path to check for.
+     * @return true if the given path is contained in false otherwise.
+     */
     public boolean contains(String path) {
         boolean result = false;
         FileName fn = new FileName(path);

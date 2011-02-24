@@ -23,6 +23,12 @@ package com.soebes.subversion.sapm;
 
 import java.util.ArrayList;
 
+/**
+ * This is a convenience class for the parser.
+ * 
+ * @author Karl Heinz Marbaise
+ *
+ */
 public class Aliases {
 
     private ArrayList<Alias> aliasesList;
@@ -31,10 +37,21 @@ public class Aliases {
         setAliasesList(new ArrayList<Alias>());
     }
 
+    /**
+     * Add an alias to the list of aliases.
+     * @param alias The alias which will be added 
+     *   to the list.
+     */
     public void add(Alias alias) {
         getAliasesList().add(alias);
     }
 
+    /**
+     * Check if the given alias exists in
+     * the list of aliases or not.
+     * @param aliasName The alias name which will be checked for.
+     * @return true if the alias has been found false otherwise.
+     */
     public boolean hasAlias(String aliasName) {
         boolean result = false;
 
@@ -54,6 +71,13 @@ public class Aliases {
         return aliasesList;
     }
 
+    /**
+     * Get the {@link Alias} instance for the given
+     * alias name.
+     * @param aliasName The name of the alias for which will be 
+     *   searched.
+     * @return The instance of the Alias or null if not found.
+     */
     public Alias getAlias(String aliasName) {
         Alias result = null;
         for (Alias item : getAliasesList()) {
