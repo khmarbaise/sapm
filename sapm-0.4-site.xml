@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xsi:schemaLocation="http://maven.apache.org/DECORATION/1.0.1 http://maven.apache.org/xsd/decoration-1.0.1.xsd" name="Subversion Authentication Parser Module" xmlns="http://maven.apache.org/DECORATION/1.0.1"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <body>
+    <menu name="Overview">
+      <item name="Introduction" href="index.html" />
+      <item name="Examples" href="examples.html" />
+      <item name="Load File" href="load.html" />
+      <item name="Features" href="features.html" />
+    </menu>
+    <menu ref="reports" />
+  </body>
+</project>

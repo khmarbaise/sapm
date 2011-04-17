@@ -1,0 +1,2524 @@
+<html>
+<head>
+<title>TestNG:  Command line test</title>
+<link href="../testng.css" rel="stylesheet" type="text/css" />
+<link href="../my-testng.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+.log { display: none;} 
+.stack-trace { display: none;} 
+</style>
+<script type="text/javascript">
+<!--
+function flip(e) {
+  current = e.style.display;
+  if (current == 'block') {
+    e.style.display = 'none';
+    return 0;
+  }
+  else {
+    e.style.display = 'block';
+    return 1;
+  }
+}
+
+function toggleBox(szDivId, elem, msg1, msg2)
+{
+  var res = -1;  if (document.getElementById) {
+    res = flip(document.getElementById(szDivId));
+  }
+  else if (document.all) {
+    // this is the way old msie versions work
+    res = flip(document.all[szDivId]);
+  }
+  if(elem) {
+    if(res == 0) elem.innerHTML = msg1; else elem.innerHTML = msg2;
+  }
+
+}
+
+function toggleAllBoxes() {
+  if (document.getElementsByTagName) {
+    d = document.getElementsByTagName('div');
+    for (i = 0; i < d.length; i++) {
+      if (d[i].className == 'log') {
+        flip(d[i]);
+      }
+    }
+  }
+}
+
+// -->
+</script>
+
+</head>
+<body>
+<h2 align='center'>Command line test</h2><table border='1' align="center">
+<tr>
+<td>Tests passed/Failed/Skipped:</td><td>489/0/0</td>
+</tr><tr>
+<td>Started on:</td><td>Sun Apr 17 20:02:55 CEST 2011</td>
+</tr>
+<tr><td>Total time:</td><td>1 seconds (1123 ms)</td>
+</tr><tr>
+<td>Included groups:</td><td></td>
+</tr><tr>
+<td>Excluded groups:</td><td></td>
+</tr>
+</table><p/>
+<small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRuleGroupTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRuleGroupTest<br>Parameters: harry, repository, /, NOTHING</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRuleGroupTest@ee7a14</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRuleGroupTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRuleGroupTest<br>Parameters: harry, repository, /test/trunk/, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRuleGroupTest@ee7a14</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRuleGroupTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRuleGroupTest<br>Parameters: harry, repository, /test/trunk/src/, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRuleGroupTest@ee7a14</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRuleGroupTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRuleGroupTest<br>Parameters: harry, repository, /test/trunk/src/xyz.java, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRuleGroupTest@ee7a14</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRuleGroupTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRuleGroupTest<br>Parameters: harry, repository, /test/trunk/src/CHANGELOG, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRuleGroupTest@ee7a14</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRuleGroupTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRuleGroupTest<br>Parameters: brian, repository, /test/trunk/src/xyz.java, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRuleGroupTest@ee7a14</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRuleGroupTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRuleGroupTest<br>Parameters: brian, repository, /test/trunk/src/CHANGELOG, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRuleGroupTest@ee7a14</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRuleGroupTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRuleGroupTest<br>Parameters: sally, repository, /test/trunk/src/xyz.java, NOTHING</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRuleGroupTest@ee7a14</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRuleGroupTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRuleGroupTest<br>Parameters: sally, repository, /test/trunk/, NOTHING</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRuleGroupTest@ee7a14</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRuleGroupTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRuleGroupTest<br>Parameters: harry, different, /test/trunk/, NOTHING</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRuleGroupTest@ee7a14</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRuleGroupTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRuleGroupTest<br>Parameters: michael, different, /test/trunk/, NOTHING</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRuleGroupTest@ee7a14</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRuleGroupTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRuleGroupTest<br>Parameters: brian, different, /test/trunk/, NOTHING</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRuleGroupTest@ee7a14</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRuleGroupTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRuleGroupTest<br>Parameters: michael, repository, /test/trunk/, READ_WRITE</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRuleGroupTest@ee7a14</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRuleGroupTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRuleGroupTest<br>Parameters: michael, repository, /test/trunk/, READ_WRITE</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRuleGroupTest@ee7a14</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRuleGroupTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRuleGroupTest<br>Parameters: michael, repository, /test/trunk/src/, READ_WRITE</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRuleGroupTest@ee7a14</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRuleGroupTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRuleGroupTest<br>Parameters: michael, repository, /test/trunk/src/xyz.java, READ_WRITE</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRuleGroupTest@ee7a14</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRuleGroupTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRuleGroupTest<br>Parameters: michael, repository, /test/trunk/src/CHANGELOG, READ_WRITE</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRuleGroupTest@ee7a14</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRuleGroupTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRuleGroupTest<br>Parameters: michael, repository, /test/trunk/src/xyz.java, READ_WRITE</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRuleGroupTest@ee7a14</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRuleGroupTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRuleGroupTest<br>Parameters: michael, repository, /test/trunk/src/CHANGELOG, READ_WRITE</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRuleGroupTest@ee7a14</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRuleUserAnyRepositoryTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRuleUserAnyRepositoryTest<br>Parameters: harry, repository, /, NOTHING</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRuleUserAnyRepositoryTest@90cb03</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRuleUserAnyRepositoryTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRuleUserAnyRepositoryTest<br>Parameters: harry, repository, /test/trunk/, READ_WRITE</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRuleUserAnyRepositoryTest@90cb03</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRuleUserAnyRepositoryTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRuleUserAnyRepositoryTest<br>Parameters: harry, repository, /test/trunk/src/, READ_WRITE</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRuleUserAnyRepositoryTest@90cb03</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRuleUserAnyRepositoryTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRuleUserAnyRepositoryTest<br>Parameters: harry, repository, /test/trunk/src/xyz.java, READ_WRITE</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRuleUserAnyRepositoryTest@90cb03</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRuleUserAnyRepositoryTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRuleUserAnyRepositoryTest<br>Parameters: harry, repository, /test/trunk/src/CHANGELOG, READ_WRITE</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRuleUserAnyRepositoryTest@90cb03</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRuleUserAnyRepositoryTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRuleUserAnyRepositoryTest<br>Parameters: brian, repository, /test/trunk/src/xyz.java, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRuleUserAnyRepositoryTest@90cb03</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRuleUserAnyRepositoryTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRuleUserAnyRepositoryTest<br>Parameters: brian, repository, /test/trunk/src/CHANGELOG, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRuleUserAnyRepositoryTest@90cb03</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRuleUserAnyRepositoryTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRuleUserAnyRepositoryTest<br>Parameters: sally, repository, /test/trunk/src/xyz.java, NOTHING</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRuleUserAnyRepositoryTest@90cb03</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRuleUserAnyRepositoryTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRuleUserAnyRepositoryTest<br>Parameters: brian, repository, /test/trunk/, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRuleUserAnyRepositoryTest@90cb03</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRuleUserAnyRepositoryTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRuleUserAnyRepositoryTest<br>Parameters: sally, repository, /test/trunk/, NOTHING</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRuleUserAnyRepositoryTest@90cb03</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRuleUserAnyRepositoryTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRuleUserAnyRepositoryTest<br>Parameters: harry, different, /test/trunk/, READ_WRITE</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRuleUserAnyRepositoryTest@90cb03</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRuleUserAsterikTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRuleUserAsterikTest<br>Parameters: harry, repository, /, NOTHING</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRuleUserAsterikTest@6cb8</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRuleUserAsterikTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRuleUserAsterikTest<br>Parameters: harry, repository, /test/trunk/, READ_WRITE</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRuleUserAsterikTest@6cb8</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRuleUserAsterikTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRuleUserAsterikTest<br>Parameters: harry, repository, /test/trunk/src/, READ_WRITE</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRuleUserAsterikTest@6cb8</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRuleUserAsterikTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRuleUserAsterikTest<br>Parameters: harry, repository, /test/trunk/src/xyz.java, READ_WRITE</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRuleUserAsterikTest@6cb8</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRuleUserAsterikTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRuleUserAsterikTest<br>Parameters: harry, repository, /test/trunk/src/CHANGELOG, READ_WRITE</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRuleUserAsterikTest@6cb8</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRuleUserAsterikTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRuleUserAsterikTest<br>Parameters: brian, repository, /test/trunk/src/xyz.java, READ_WRITE</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRuleUserAsterikTest@6cb8</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRuleUserAsterikTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRuleUserAsterikTest<br>Parameters: brian, repository, /test/trunk/src/CHANGELOG, READ_WRITE</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRuleUserAsterikTest@6cb8</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRuleUserAsterikTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRuleUserAsterikTest<br>Parameters: sally, repository, /test/trunk/src/xyz.java, READ_WRITE</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRuleUserAsterikTest@6cb8</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRuleUserAsterikTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRuleUserAsterikTest<br>Parameters: brian, repository, /test/trunk/, READ_WRITE</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRuleUserAsterikTest@6cb8</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRuleUserAsterikTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRuleUserAsterikTest<br>Parameters: sally, repository, /test/trunk/, READ_WRITE</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRuleUserAsterikTest@6cb8</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRuleUserAsterikTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRuleUserAsterikTest<br>Parameters: harry, different, /test/trunk/, NOTHING</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRuleUserAsterikTest@6cb8</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRuleUserTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRuleUserTest<br>Parameters: harry, repository, /, NOTHING</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRuleUserTest@1e1a408</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRuleUserTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRuleUserTest<br>Parameters: harry, repository, /test/trunk/, READ_WRITE</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRuleUserTest@1e1a408</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRuleUserTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRuleUserTest<br>Parameters: harry, repository, /test/trunk/src/, READ_WRITE</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRuleUserTest@1e1a408</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRuleUserTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRuleUserTest<br>Parameters: harry, repository, /test/trunk/src/xyz.java, READ_WRITE</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRuleUserTest@1e1a408</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRuleUserTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRuleUserTest<br>Parameters: harry, repository, /test/trunk/src/CHANGELOG, READ_WRITE</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRuleUserTest@1e1a408</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRuleUserTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRuleUserTest<br>Parameters: brian, repository, /test/trunk/src/xyz.java, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRuleUserTest@1e1a408</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRuleUserTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRuleUserTest<br>Parameters: brian, repository, /test/trunk/src/CHANGELOG, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRuleUserTest@1e1a408</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRuleUserTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRuleUserTest<br>Parameters: sally, repository, /test/trunk/src/xyz.java, NOTHING</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRuleUserTest@1e1a408</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRuleUserTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRuleUserTest<br>Parameters: brian, repository, /test/trunk/, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRuleUserTest@1e1a408</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRuleUserTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRuleUserTest<br>Parameters: sally, repository, /test/trunk/, NOTHING</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRuleUserTest@1e1a408</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRuleUserTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRuleUserTest<br>Parameters: harry, different, /test/trunk/, NOTHING</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRuleUserTest@1e1a408</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesConfigAuthenticatedAnonmyousTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesConfigAuthenticatedAnonmyousTest<br>Parameters: harry, repository, /, NOTHING</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesConfigAuthenticatedAnonmyousTest@d81784</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesConfigAuthenticatedAnonmyousTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesConfigAuthenticatedAnonmyousTest<br>Parameters: brian, repository, /, NOTHING</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesConfigAuthenticatedAnonmyousTest@d81784</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesConfigAuthenticatedAnonmyousTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesConfigAuthenticatedAnonmyousTest<br>Parameters: micheal, repository, /, NOTHING</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesConfigAuthenticatedAnonmyousTest@d81784</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesConfigAuthenticatedAnonmyousTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesConfigAuthenticatedAnonmyousTest<br>Parameters: sally, repository, /, NOTHING</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesConfigAuthenticatedAnonmyousTest@d81784</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesConfigAuthenticatedAnonmyousTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesConfigAuthenticatedAnonmyousTest<br>Parameters: joe, repository, /, NOTHING</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesConfigAuthenticatedAnonmyousTest@d81784</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesConfigAuthenticatedAnonmyousTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesConfigAuthenticatedAnonmyousTest<br>Parameters: decon, repository, /, NOTHING</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesConfigAuthenticatedAnonmyousTest@d81784</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesConfigAuthenticatedAnonmyousTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesConfigAuthenticatedAnonmyousTest<br>Parameters: harry, calc, /, NOTHING</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesConfigAuthenticatedAnonmyousTest@d81784</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesConfigAuthenticatedAnonmyousTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesConfigAuthenticatedAnonmyousTest<br>Parameters: brian, calc, /, NOTHING</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesConfigAuthenticatedAnonmyousTest@d81784</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesConfigAuthenticatedAnonmyousTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesConfigAuthenticatedAnonmyousTest<br>Parameters: micheal, calc, /, NOTHING</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesConfigAuthenticatedAnonmyousTest@d81784</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesConfigAuthenticatedAnonmyousTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesConfigAuthenticatedAnonmyousTest<br>Parameters: sally, calc, /, NOTHING</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesConfigAuthenticatedAnonmyousTest@d81784</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesConfigAuthenticatedAnonmyousTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesConfigAuthenticatedAnonmyousTest<br>Parameters: joe, calc, /, NOTHING</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesConfigAuthenticatedAnonmyousTest@d81784</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesConfigAuthenticatedAnonmyousTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesConfigAuthenticatedAnonmyousTest<br>Parameters: decon, calc, /, NOTHING</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesConfigAuthenticatedAnonmyousTest@d81784</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesConfigAuthenticatedAnonmyousTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesConfigAuthenticatedAnonmyousTest<br>Parameters: harry, calc, /project-c/, READ_WRITE</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesConfigAuthenticatedAnonmyousTest@d81784</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesConfigAuthenticatedAnonmyousTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesConfigAuthenticatedAnonmyousTest<br>Parameters: brian, calc, /project-c/, READ_WRITE</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesConfigAuthenticatedAnonmyousTest@d81784</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesConfigAuthenticatedAnonmyousTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesConfigAuthenticatedAnonmyousTest<br>Parameters: micheal, calc, /project-c/, READ_WRITE</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesConfigAuthenticatedAnonmyousTest@d81784</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesConfigAuthenticatedAnonmyousTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesConfigAuthenticatedAnonmyousTest<br>Parameters: sally, calc, /project-c/, READ_WRITE</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesConfigAuthenticatedAnonmyousTest@d81784</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesConfigAuthenticatedAnonmyousTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesConfigAuthenticatedAnonmyousTest<br>Parameters: joe, calc, /project-c/, READ_WRITE</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesConfigAuthenticatedAnonmyousTest@d81784</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesConfigAuthenticatedAnonmyousTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesConfigAuthenticatedAnonmyousTest<br>Parameters: decon, calc, /project-c/, READ_WRITE</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesConfigAuthenticatedAnonmyousTest@d81784</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesConfigAuthenticatedAnonmyousTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesConfigAuthenticatedAnonmyousTest<br>Parameters: null, calc, /project-c/, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesConfigAuthenticatedAnonmyousTest@d81784</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesConfigAuthenticatedAnonmyousTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesConfigAuthenticatedAnonmyousTest<br>Parameters: harry, calc, /project-d/, READ_WRITE</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesConfigAuthenticatedAnonmyousTest@d81784</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesConfigAuthenticatedAnonmyousTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesConfigAuthenticatedAnonmyousTest<br>Parameters: brian, calc, /project-d/, READ_WRITE</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesConfigAuthenticatedAnonmyousTest@d81784</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesConfigAuthenticatedAnonmyousTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesConfigAuthenticatedAnonmyousTest<br>Parameters: micheal, calc, /project-d/, READ_WRITE</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesConfigAuthenticatedAnonmyousTest@d81784</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesConfigAuthenticatedAnonmyousTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesConfigAuthenticatedAnonmyousTest<br>Parameters: sally, calc, /project-d/, READ_WRITE</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesConfigAuthenticatedAnonmyousTest@d81784</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesConfigAuthenticatedAnonmyousTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesConfigAuthenticatedAnonmyousTest<br>Parameters: joe, calc, /project-d/, READ_WRITE</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesConfigAuthenticatedAnonmyousTest@d81784</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesConfigAuthenticatedAnonmyousTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesConfigAuthenticatedAnonmyousTest<br>Parameters: decon, calc, /project-d/, READ_WRITE</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesConfigAuthenticatedAnonmyousTest@d81784</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesConfigAuthenticatedAnonmyousTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesConfigAuthenticatedAnonmyousTest<br>Parameters: null, calc, /project-d/, NOTHING</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesConfigAuthenticatedAnonmyousTest@d81784</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesConfigReducePermissionDifferentOrderTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesConfigReducePermissionDifferentOrderTest<br>Parameters: harry, repository, /, NOTHING</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesConfigReducePermissionDifferentOrderTest@f01a1e</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesConfigReducePermissionDifferentOrderTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesConfigReducePermissionDifferentOrderTest<br>Parameters: brian, repository, /, NOTHING</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesConfigReducePermissionDifferentOrderTest@f01a1e</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesConfigReducePermissionDifferentOrderTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesConfigReducePermissionDifferentOrderTest<br>Parameters: micheal, repository, /, NOTHING</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesConfigReducePermissionDifferentOrderTest@f01a1e</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesConfigReducePermissionDifferentOrderTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesConfigReducePermissionDifferentOrderTest<br>Parameters: sally, repository, /, NOTHING</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesConfigReducePermissionDifferentOrderTest@f01a1e</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesConfigReducePermissionDifferentOrderTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesConfigReducePermissionDifferentOrderTest<br>Parameters: joe, repository, /, NOTHING</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesConfigReducePermissionDifferentOrderTest@f01a1e</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesConfigReducePermissionDifferentOrderTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesConfigReducePermissionDifferentOrderTest<br>Parameters: decon, repository, /, NOTHING</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesConfigReducePermissionDifferentOrderTest@f01a1e</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesConfigReducePermissionDifferentOrderTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesConfigReducePermissionDifferentOrderTest<br>Parameters: harry, calc, /, NOTHING</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesConfigReducePermissionDifferentOrderTest@f01a1e</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesConfigReducePermissionDifferentOrderTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesConfigReducePermissionDifferentOrderTest<br>Parameters: brian, calc, /, NOTHING</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesConfigReducePermissionDifferentOrderTest@f01a1e</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesConfigReducePermissionDifferentOrderTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesConfigReducePermissionDifferentOrderTest<br>Parameters: micheal, calc, /, NOTHING</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesConfigReducePermissionDifferentOrderTest@f01a1e</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesConfigReducePermissionDifferentOrderTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesConfigReducePermissionDifferentOrderTest<br>Parameters: sally, calc, /, NOTHING</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesConfigReducePermissionDifferentOrderTest@f01a1e</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesConfigReducePermissionDifferentOrderTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesConfigReducePermissionDifferentOrderTest<br>Parameters: joe, calc, /, NOTHING</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesConfigReducePermissionDifferentOrderTest@f01a1e</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesConfigReducePermissionDifferentOrderTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesConfigReducePermissionDifferentOrderTest<br>Parameters: decon, calc, /, NOTHING</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesConfigReducePermissionDifferentOrderTest@f01a1e</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesConfigReducePermissionDifferentOrderTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesConfigReducePermissionDifferentOrderTest<br>Parameters: jenny, calc, /project/, READ_WRITE</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesConfigReducePermissionDifferentOrderTest@f01a1e</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesConfigReducePermissionDifferentOrderTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesConfigReducePermissionDifferentOrderTest<br>Parameters: joe, calc, /project/, READ_WRITE</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesConfigReducePermissionDifferentOrderTest@f01a1e</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesConfigReducePermissionDifferentOrderTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesConfigReducePermissionDifferentOrderTest<br>Parameters: danny, calc, /project/, READ_WRITE</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesConfigReducePermissionDifferentOrderTest@f01a1e</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesConfigReducePermissionDifferentOrderTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesConfigReducePermissionDifferentOrderTest<br>Parameters: sally, calc, /project/, NOTHING</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesConfigReducePermissionDifferentOrderTest@f01a1e</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesConfigReducePermissionDifferentOrderTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesConfigReducePermissionDifferentOrderTest<br>Parameters: decon, calc, /project/, NOTHING</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesConfigReducePermissionDifferentOrderTest@f01a1e</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesConfigReducePermissionTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesConfigReducePermissionTest<br>Parameters: harry, repository, /, NOTHING</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesConfigReducePermissionTest@142a80d</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesConfigReducePermissionTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesConfigReducePermissionTest<br>Parameters: brian, repository, /, NOTHING</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesConfigReducePermissionTest@142a80d</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesConfigReducePermissionTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesConfigReducePermissionTest<br>Parameters: micheal, repository, /, NOTHING</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesConfigReducePermissionTest@142a80d</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesConfigReducePermissionTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesConfigReducePermissionTest<br>Parameters: sally, repository, /, NOTHING</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesConfigReducePermissionTest@142a80d</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesConfigReducePermissionTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesConfigReducePermissionTest<br>Parameters: joe, repository, /, NOTHING</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesConfigReducePermissionTest@142a80d</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesConfigReducePermissionTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesConfigReducePermissionTest<br>Parameters: decon, repository, /, NOTHING</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesConfigReducePermissionTest@142a80d</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesConfigReducePermissionTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesConfigReducePermissionTest<br>Parameters: harry, calc, /, NOTHING</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesConfigReducePermissionTest@142a80d</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesConfigReducePermissionTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesConfigReducePermissionTest<br>Parameters: brian, calc, /, NOTHING</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesConfigReducePermissionTest@142a80d</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesConfigReducePermissionTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesConfigReducePermissionTest<br>Parameters: micheal, calc, /, NOTHING</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesConfigReducePermissionTest@142a80d</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesConfigReducePermissionTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesConfigReducePermissionTest<br>Parameters: sally, calc, /, NOTHING</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesConfigReducePermissionTest@142a80d</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesConfigReducePermissionTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesConfigReducePermissionTest<br>Parameters: joe, calc, /, NOTHING</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesConfigReducePermissionTest@142a80d</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesConfigReducePermissionTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesConfigReducePermissionTest<br>Parameters: decon, calc, /, NOTHING</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesConfigReducePermissionTest@142a80d</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesConfigReducePermissionTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesConfigReducePermissionTest<br>Parameters: jenny, calc, /project/, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesConfigReducePermissionTest@142a80d</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesConfigReducePermissionTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesConfigReducePermissionTest<br>Parameters: joe, calc, /project/, READ_WRITE</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesConfigReducePermissionTest@142a80d</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesConfigReducePermissionTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesConfigReducePermissionTest<br>Parameters: danny, calc, /project/, READ_WRITE</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesConfigReducePermissionTest@142a80d</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesConfigReducePermissionTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesConfigReducePermissionTest<br>Parameters: sally, calc, /project/, NOTHING</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesConfigReducePermissionTest@142a80d</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesConfigReducePermissionTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesConfigReducePermissionTest<br>Parameters: decon, calc, /project/, NOTHING</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesConfigReducePermissionTest@142a80d</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesDerivingPermissionsTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesDerivingPermissionsTest<br>Parameters: harry, repository, /, NOTHING</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesDerivingPermissionsTest@126f75b</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesDerivingPermissionsTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesDerivingPermissionsTest<br>Parameters: michael, repository, /test/, NOTHING</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesDerivingPermissionsTest@126f75b</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesDerivingPermissionsTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesDerivingPermissionsTest<br>Parameters: brian, repository, /test/, NOTHING</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesDerivingPermissionsTest@126f75b</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesDerivingPermissionsTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesDerivingPermissionsTest<br>Parameters: sally, repository, /test/trunk/src/xyz.java, NOTHING</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesDerivingPermissionsTest@126f75b</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesDerivingPermissionsTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesDerivingPermissionsTest<br>Parameters: sally, repository, /test/trunk/, NOTHING</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesDerivingPermissionsTest@126f75b</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesDerivingPermissionsTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesDerivingPermissionsTest<br>Parameters: harry, different, /test/trunk/, NOTHING</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesDerivingPermissionsTest@126f75b</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesDerivingPermissionsTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesDerivingPermissionsTest<br>Parameters: michael, different, /test/trunk/, NOTHING</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesDerivingPermissionsTest@126f75b</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesDerivingPermissionsTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesDerivingPermissionsTest<br>Parameters: brian, different, /test/trunk/, NOTHING</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesDerivingPermissionsTest@126f75b</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesDerivingPermissionsTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesDerivingPermissionsTest<br>Parameters: harry, repository, /test/trunk/, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesDerivingPermissionsTest@126f75b</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesDerivingPermissionsTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesDerivingPermissionsTest<br>Parameters: harry, repository, /test/trunk/src/, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesDerivingPermissionsTest@126f75b</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesDerivingPermissionsTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesDerivingPermissionsTest<br>Parameters: harry, repository, /test/trunk/src/xyz.java, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesDerivingPermissionsTest@126f75b</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesDerivingPermissionsTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesDerivingPermissionsTest<br>Parameters: harry, repository, /test/trunk/src/CHANGELOG, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesDerivingPermissionsTest@126f75b</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesDerivingPermissionsTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesDerivingPermissionsTest<br>Parameters: brian, repository, /test/, NOTHING</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesDerivingPermissionsTest@126f75b</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesDerivingPermissionsTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesDerivingPermissionsTest<br>Parameters: brian, repository, /test/trunk/, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesDerivingPermissionsTest@126f75b</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesDerivingPermissionsTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesDerivingPermissionsTest<br>Parameters: brian, repository, /test/trunk/src/xyz.java, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesDerivingPermissionsTest@126f75b</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesDerivingPermissionsTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesDerivingPermissionsTest<br>Parameters: brian, repository, /test/trunk/src/CHANGELOG, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesDerivingPermissionsTest@126f75b</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesDerivingPermissionsTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesDerivingPermissionsTest<br>Parameters: michael, repository, /test/trunk/, READ_WRITE</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesDerivingPermissionsTest@126f75b</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesDerivingPermissionsTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesDerivingPermissionsTest<br>Parameters: michael, repository, /test/trunk/, READ_WRITE</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesDerivingPermissionsTest@126f75b</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesDerivingPermissionsTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesDerivingPermissionsTest<br>Parameters: michael, repository, /test/trunk/src/, READ_WRITE</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesDerivingPermissionsTest@126f75b</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesDerivingPermissionsTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesDerivingPermissionsTest<br>Parameters: michael, repository, /test/trunk/src/xyz.java, READ_WRITE</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesDerivingPermissionsTest@126f75b</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesDerivingPermissionsTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesDerivingPermissionsTest<br>Parameters: michael, repository, /test/trunk/src/CHANGELOG, READ_WRITE</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesDerivingPermissionsTest@126f75b</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesDerivingPermissionsTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesDerivingPermissionsTest<br>Parameters: michael, repository, /test/trunk/src/xyz.java, READ_WRITE</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesDerivingPermissionsTest@126f75b</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesDerivingPermissionsTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesDerivingPermissionsTest<br>Parameters: michael, repository, /test/trunk/src/CHANGELOG, READ_WRITE</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesDerivingPermissionsTest@126f75b</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupContainsTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupContainsTest<br>Parameters: harry, calc, /, NOTHING</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupContainsTest@139b78e</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupContainsTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupContainsTest<br>Parameters: harry, calc, /projects/, NOTHING</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupContainsTest@139b78e</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupContainsTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupContainsTest<br>Parameters: sally, calc, /, NOTHING</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupContainsTest@139b78e</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupContainsTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupContainsTest<br>Parameters: sally, calc, /projects/, NOTHING</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupContainsTest@139b78e</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupContainsTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupContainsTest<br>Parameters: joe, calc, /, NOTHING</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupContainsTest@139b78e</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupContainsTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupContainsTest<br>Parameters: joes, calc, /projects/, NOTHING</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupContainsTest@139b78e</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupContainsTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupContainsTest<br>Parameters: hewlett, calc, /, NOTHING</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupContainsTest@139b78e</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupContainsTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupContainsTest<br>Parameters: hewlett, calc, /projects/, NOTHING</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupContainsTest@139b78e</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupContainsTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupContainsTest<br>Parameters: packard, calc, /, NOTHING</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupContainsTest@139b78e</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupContainsTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupContainsTest<br>Parameters: packard, calc, /projects/, NOTHING</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupContainsTest@139b78e</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupContainsTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupContainsTest<br>Parameters: harry, calc, /projects/calc/, READ_WRITE</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupContainsTest@139b78e</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupContainsTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupContainsTest<br>Parameters: harry, calc, /projects/calc/trunk/, READ_WRITE</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupContainsTest@139b78e</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupContainsTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupContainsTest<br>Parameters: harry, calc, /projects/calc/branches/, READ_WRITE</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupContainsTest@139b78e</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupContainsTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupContainsTest<br>Parameters: sally, calc, /projects/calc/, READ_WRITE</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupContainsTest@139b78e</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupContainsTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupContainsTest<br>Parameters: sally, calc, /projects/calc/trunk/, READ_WRITE</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupContainsTest@139b78e</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupContainsTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupContainsTest<br>Parameters: sally, calc, /projects/calc/branches/, READ_WRITE</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupContainsTest@139b78e</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupContainsTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupContainsTest<br>Parameters: joe, calc, /projects/calc/, READ_WRITE</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupContainsTest@139b78e</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupContainsTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupContainsTest<br>Parameters: joe, calc, /projects/calc/trunk/, READ_WRITE</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupContainsTest@139b78e</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupContainsTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupContainsTest<br>Parameters: joe, calc, /projects/calc/branches/, READ_WRITE</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupContainsTest@139b78e</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupContainsTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupContainsTest<br>Parameters: hewlett, calc, /projects/calc/, READ_WRITE</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupContainsTest@139b78e</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupContainsTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupContainsTest<br>Parameters: hewlett, calc, /projects/calc/trunk/, READ_WRITE</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupContainsTest@139b78e</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupContainsTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupContainsTest<br>Parameters: hewlett, calc, /projects/calc/branches/, READ_WRITE</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupContainsTest@139b78e</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupContainsTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupContainsTest<br>Parameters: packard, calc, /projects/calc/, READ_WRITE</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupContainsTest@139b78e</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupContainsTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupContainsTest<br>Parameters: packard, calc, /projects/calc/trunk/, READ_WRITE</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupContainsTest@139b78e</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupContainsTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupContainsTest<br>Parameters: packard, calc, /projects/calc/branches/, READ_WRITE</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupContainsTest@139b78e</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupContainsTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupContainsTest<br>Parameters: harry, calc, /projects/calc/tags/, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupContainsTest@139b78e</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupContainsTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupContainsTest<br>Parameters: sally, calc, /projects/calc/tags/, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupContainsTest@139b78e</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupContainsTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupContainsTest<br>Parameters: joe, calc, /projects/calc/tags/, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupContainsTest@139b78e</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupContainsTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupContainsTest<br>Parameters: hewlett, calc, /projects/calc/tags/, READ_WRITE</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupContainsTest@139b78e</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupContainsTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupContainsTest<br>Parameters: packard, calc, /projects/calc/tags/, READ_WRITE</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupContainsTest@139b78e</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupContainsTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupContainsTest<br>Parameters: harry, calc, /projects/calc/tags, READ_WRITE</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupContainsTest@139b78e</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupContainsTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupContainsTest<br>Parameters: sally, calc, /projects/calc/tags, READ_WRITE</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupContainsTest@139b78e</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupContainsTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupContainsTest<br>Parameters: joe, calc, /projects/calc/tags, READ_WRITE</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupContainsTest@139b78e</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileTest<br>Parameters: harry, repository, /, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileTest@41d05d</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileTest<br>Parameters: brian, repository, /, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileTest@41d05d</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileTest<br>Parameters: micheal, repository, /, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileTest@41d05d</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileTest<br>Parameters: sally, repository, /, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileTest@41d05d</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileTest<br>Parameters: jonas, repository, /, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileTest@41d05d</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileTest<br>Parameters: decon, repository, /, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileTest@41d05d</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileTest<br>Parameters: harry, repository, /project-c/, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileTest@41d05d</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileTest<br>Parameters: harry, repository, /project-d/, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileTest@41d05d</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileTest<br>Parameters: harry, repository, /project-e/, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileTest@41d05d</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileTest<br>Parameters: brian, repository, /project-c/, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileTest@41d05d</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileTest<br>Parameters: brian, repository, /project-d/, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileTest@41d05d</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileTest<br>Parameters: brian, repository, /project-e/, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileTest@41d05d</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileTest<br>Parameters: michael, repository, /project-c/, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileTest@41d05d</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileTest<br>Parameters: micheal, repository, /project-d/, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileTest@41d05d</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileTest<br>Parameters: micheal, repository, /project-e/, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileTest@41d05d</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileTest<br>Parameters: sally, repository, /project-c/, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileTest@41d05d</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileTest<br>Parameters: sally, repository, /project-d/, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileTest@41d05d</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileTest<br>Parameters: sally, repository, /project-e/, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileTest@41d05d</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileTest<br>Parameters: jonas, repository, /project-c/, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileTest@41d05d</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileTest<br>Parameters: jonas, repository, /project-d/, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileTest@41d05d</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileTest<br>Parameters: jonas, repository, /project-e/, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileTest@41d05d</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileTest<br>Parameters: decon, repository, /project-c/, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileTest@41d05d</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileTest<br>Parameters: decon, repository, /project-d/, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileTest@41d05d</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileTest<br>Parameters: decon, repository, /project-e/, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileTest@41d05d</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileTest<br>Parameters: harry, repository, /project-c/trunk/, READ_WRITE</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileTest@41d05d</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileTest<br>Parameters: brian, repository, /project-c/trunk/, READ_WRITE</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileTest@41d05d</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileTest<br>Parameters: micheal, repository, /project-c/trunk/, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileTest@41d05d</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileTest<br>Parameters: sally, repository, /project-c/trunk/, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileTest@41d05d</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileTest<br>Parameters: jonas, repository, /project-c/trunk/, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileTest@41d05d</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileTest<br>Parameters: decon, repository, /project-c/trunk/, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileTest@41d05d</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileTest<br>Parameters: harry, repository, /project-d/trunk/, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileTest@41d05d</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileTest<br>Parameters: brian, repository, /project-d/trunk/, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileTest@41d05d</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileTest<br>Parameters: michael, repository, /project-d/trunk/, READ_WRITE</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileTest@41d05d</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileTest<br>Parameters: sally, repository, /project-d/trunk/, READ_WRITE</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileTest@41d05d</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileTest<br>Parameters: jonas, repository, /project-d/trunk/, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileTest@41d05d</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileTest<br>Parameters: decon, repository, /project-d/trunk/, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileTest@41d05d</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileTest<br>Parameters: harry, repository, /project-e/trunk/, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileTest@41d05d</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileTest<br>Parameters: brian, repository, /project-e/trunk/, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileTest@41d05d</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileTest<br>Parameters: michael, repository, /project-e/trunk/, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileTest@41d05d</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileTest<br>Parameters: sally, repository, /project-e/trunk/, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileTest@41d05d</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileTest<br>Parameters: jonas, repository, /project-e/trunk/, READ_WRITE</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileTest@41d05d</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileTest<br>Parameters: decon, repository, /project-e/trunk/, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileTest@41d05d</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileTest<br>Parameters: harry, global, /project/trunk/, READ_WRITE</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileTest@41d05d</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileTest<br>Parameters: brian, global, /project/trunk/, READ_WRITE</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileTest@41d05d</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileTest<br>Parameters: michael, global, /project/trunk/, READ_WRITE</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileTest@41d05d</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileTest<br>Parameters: sally, global, /project/trunk/, READ_WRITE</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileTest@41d05d</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileTest<br>Parameters: jonas, global, /project/trunk/, READ_WRITE</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileTest@41d05d</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileTest<br>Parameters: decon, global, /project/trunk/, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileTest@41d05d</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileTest<br>Parameters: harry, global, /project/, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileTest@41d05d</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileTest<br>Parameters: brian, global, /project/, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileTest@41d05d</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileTest<br>Parameters: michael, global, /project/, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileTest@41d05d</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileTest<br>Parameters: sally, global, /project/, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileTest@41d05d</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileTest<br>Parameters: jonas, global, /project/, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileTest@41d05d</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileTest<br>Parameters: decon, global, /project/, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileTest@41d05d</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileWithAliasesTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileWithAliasesTest<br>Parameters: harry, repository, /, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileWithAliasesTest@d6a05e</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileWithAliasesTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileWithAliasesTest<br>Parameters: brian, repository, /, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileWithAliasesTest@d6a05e</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileWithAliasesTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileWithAliasesTest<br>Parameters: micheal, repository, /, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileWithAliasesTest@d6a05e</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileWithAliasesTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileWithAliasesTest<br>Parameters: sally, repository, /, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileWithAliasesTest@d6a05e</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileWithAliasesTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileWithAliasesTest<br>Parameters: joe, repository, /, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileWithAliasesTest@d6a05e</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileWithAliasesTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileWithAliasesTest<br>Parameters: decon, repository, /, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileWithAliasesTest@d6a05e</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileWithAliasesTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileWithAliasesTest<br>Parameters: harry, repository, /project-c/, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileWithAliasesTest@d6a05e</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileWithAliasesTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileWithAliasesTest<br>Parameters: harry, repository, /project-d/, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileWithAliasesTest@d6a05e</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileWithAliasesTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileWithAliasesTest<br>Parameters: harry, repository, /project-e/, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileWithAliasesTest@d6a05e</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileWithAliasesTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileWithAliasesTest<br>Parameters: brian, repository, /project-c/, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileWithAliasesTest@d6a05e</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileWithAliasesTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileWithAliasesTest<br>Parameters: brian, repository, /project-d/, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileWithAliasesTest@d6a05e</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileWithAliasesTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileWithAliasesTest<br>Parameters: brian, repository, /project-e/, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileWithAliasesTest@d6a05e</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileWithAliasesTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileWithAliasesTest<br>Parameters: michael, repository, /project-c/, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileWithAliasesTest@d6a05e</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileWithAliasesTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileWithAliasesTest<br>Parameters: micheal, repository, /project-d/, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileWithAliasesTest@d6a05e</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileWithAliasesTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileWithAliasesTest<br>Parameters: micheal, repository, /project-e/, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileWithAliasesTest@d6a05e</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileWithAliasesTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileWithAliasesTest<br>Parameters: sally, repository, /project-c/, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileWithAliasesTest@d6a05e</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileWithAliasesTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileWithAliasesTest<br>Parameters: sally, repository, /project-d/, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileWithAliasesTest@d6a05e</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileWithAliasesTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileWithAliasesTest<br>Parameters: sally, repository, /project-e/, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileWithAliasesTest@d6a05e</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileWithAliasesTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileWithAliasesTest<br>Parameters: joe, repository, /project-c/, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileWithAliasesTest@d6a05e</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileWithAliasesTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileWithAliasesTest<br>Parameters: joe, repository, /project-d/, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileWithAliasesTest@d6a05e</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileWithAliasesTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileWithAliasesTest<br>Parameters: joe, repository, /project-e/, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileWithAliasesTest@d6a05e</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileWithAliasesTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileWithAliasesTest<br>Parameters: decon, repository, /project-c/, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileWithAliasesTest@d6a05e</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileWithAliasesTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileWithAliasesTest<br>Parameters: decon, repository, /project-d/, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileWithAliasesTest@d6a05e</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileWithAliasesTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileWithAliasesTest<br>Parameters: decon, repository, /project-e/, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileWithAliasesTest@d6a05e</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileWithAliasesTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileWithAliasesTest<br>Parameters: harry, repository, /project-c/trunk/, READ_WRITE</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileWithAliasesTest@d6a05e</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileWithAliasesTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileWithAliasesTest<br>Parameters: brian, repository, /project-c/trunk/, READ_WRITE</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileWithAliasesTest@d6a05e</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileWithAliasesTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileWithAliasesTest<br>Parameters: micheal, repository, /project-c/trunk/, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileWithAliasesTest@d6a05e</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileWithAliasesTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileWithAliasesTest<br>Parameters: sally, repository, /project-c/trunk/, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileWithAliasesTest@d6a05e</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileWithAliasesTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileWithAliasesTest<br>Parameters: joe, repository, /project-c/trunk/, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileWithAliasesTest@d6a05e</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileWithAliasesTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileWithAliasesTest<br>Parameters: decon, repository, /project-c/trunk/, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileWithAliasesTest@d6a05e</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileWithAliasesTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileWithAliasesTest<br>Parameters: harry, repository, /project-d/trunk/, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileWithAliasesTest@d6a05e</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileWithAliasesTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileWithAliasesTest<br>Parameters: brian, repository, /project-d/trunk/, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileWithAliasesTest@d6a05e</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileWithAliasesTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileWithAliasesTest<br>Parameters: michael, repository, /project-d/trunk/, READ_WRITE</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileWithAliasesTest@d6a05e</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileWithAliasesTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileWithAliasesTest<br>Parameters: sally, repository, /project-d/trunk/, READ_WRITE</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileWithAliasesTest@d6a05e</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileWithAliasesTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileWithAliasesTest<br>Parameters: joe, repository, /project-d/trunk/, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileWithAliasesTest@d6a05e</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileWithAliasesTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileWithAliasesTest<br>Parameters: decon, repository, /project-d/trunk/, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileWithAliasesTest@d6a05e</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileWithAliasesTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileWithAliasesTest<br>Parameters: harry, repository, /project-e/trunk/, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileWithAliasesTest@d6a05e</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileWithAliasesTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileWithAliasesTest<br>Parameters: brian, repository, /project-e/trunk/, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileWithAliasesTest@d6a05e</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileWithAliasesTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileWithAliasesTest<br>Parameters: michael, repository, /project-e/trunk/, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileWithAliasesTest@d6a05e</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileWithAliasesTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileWithAliasesTest<br>Parameters: sally, repository, /project-e/trunk/, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileWithAliasesTest@d6a05e</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileWithAliasesTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileWithAliasesTest<br>Parameters: joe, repository, /project-e/trunk/, READ_WRITE</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileWithAliasesTest@d6a05e</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileWithAliasesTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileWithAliasesTest<br>Parameters: decon, repository, /project-e/trunk/, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileWithAliasesTest@d6a05e</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileWithAliasesTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileWithAliasesTest<br>Parameters: harry, global, /project/trunk/, READ_WRITE</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileWithAliasesTest@d6a05e</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileWithAliasesTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileWithAliasesTest<br>Parameters: brian, global, /project/trunk/, READ_WRITE</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileWithAliasesTest@d6a05e</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileWithAliasesTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileWithAliasesTest<br>Parameters: michael, global, /project/trunk/, READ_WRITE</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileWithAliasesTest@d6a05e</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileWithAliasesTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileWithAliasesTest<br>Parameters: sally, global, /project/trunk/, READ_WRITE</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileWithAliasesTest@d6a05e</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileWithAliasesTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileWithAliasesTest<br>Parameters: joe, global, /project/trunk/, READ_WRITE</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileWithAliasesTest@d6a05e</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileWithAliasesTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileWithAliasesTest<br>Parameters: decon, global, /project/trunk/, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileWithAliasesTest@d6a05e</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileWithAliasesTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileWithAliasesTest<br>Parameters: harry, global, /project/, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileWithAliasesTest@d6a05e</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileWithAliasesTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileWithAliasesTest<br>Parameters: brian, global, /project/, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileWithAliasesTest@d6a05e</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileWithAliasesTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileWithAliasesTest<br>Parameters: michael, global, /project/, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileWithAliasesTest@d6a05e</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileWithAliasesTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileWithAliasesTest<br>Parameters: sally, global, /project/, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileWithAliasesTest@d6a05e</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileWithAliasesTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileWithAliasesTest<br>Parameters: joe, global, /project/, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileWithAliasesTest@d6a05e</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileWithAliasesTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileWithAliasesTest<br>Parameters: decon, global, /project/, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupGroupFromConfigFileWithAliasesTest@d6a05e</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupGroupTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupGroupTest<br>Parameters: harry, repository, /, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupGroupTest@ba8602</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupGroupTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupGroupTest<br>Parameters: brian, repository, /, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupGroupTest@ba8602</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupGroupTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupGroupTest<br>Parameters: micheal, repository, /, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupGroupTest@ba8602</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupGroupTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupGroupTest<br>Parameters: sally, repository, /, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupGroupTest@ba8602</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupGroupTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupGroupTest<br>Parameters: jonas, repository, /, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupGroupTest@ba8602</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupGroupTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupGroupTest<br>Parameters: decon, repository, /, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupGroupTest@ba8602</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupGroupTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupGroupTest<br>Parameters: harry, repository, /project-c/, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupGroupTest@ba8602</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupGroupTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupGroupTest<br>Parameters: harry, repository, /project-d/, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupGroupTest@ba8602</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupGroupTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupGroupTest<br>Parameters: harry, repository, /project-e/, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupGroupTest@ba8602</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupGroupTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupGroupTest<br>Parameters: brian, repository, /project-c/, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupGroupTest@ba8602</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupGroupTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupGroupTest<br>Parameters: brian, repository, /project-d/, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupGroupTest@ba8602</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupGroupTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupGroupTest<br>Parameters: brian, repository, /project-e/, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupGroupTest@ba8602</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupGroupTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupGroupTest<br>Parameters: michael, repository, /project-c/, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupGroupTest@ba8602</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupGroupTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupGroupTest<br>Parameters: micheal, repository, /project-d/, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupGroupTest@ba8602</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupGroupTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupGroupTest<br>Parameters: micheal, repository, /project-e/, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupGroupTest@ba8602</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupGroupTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupGroupTest<br>Parameters: sally, repository, /project-c/, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupGroupTest@ba8602</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupGroupTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupGroupTest<br>Parameters: sally, repository, /project-d/, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupGroupTest@ba8602</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupGroupTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupGroupTest<br>Parameters: sally, repository, /project-e/, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupGroupTest@ba8602</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupGroupTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupGroupTest<br>Parameters: jonas, repository, /project-c/, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupGroupTest@ba8602</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupGroupTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupGroupTest<br>Parameters: jonas, repository, /project-d/, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupGroupTest@ba8602</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupGroupTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupGroupTest<br>Parameters: jonas, repository, /project-e/, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupGroupTest@ba8602</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupGroupTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupGroupTest<br>Parameters: decon, repository, /project-c/, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupGroupTest@ba8602</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupGroupTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupGroupTest<br>Parameters: decon, repository, /project-d/, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupGroupTest@ba8602</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupGroupTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupGroupTest<br>Parameters: decon, repository, /project-e/, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupGroupTest@ba8602</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupGroupTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupGroupTest<br>Parameters: harry, repository, /project-c/trunk/, READ_WRITE</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupGroupTest@ba8602</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupGroupTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupGroupTest<br>Parameters: brian, repository, /project-c/trunk/, READ_WRITE</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupGroupTest@ba8602</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupGroupTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupGroupTest<br>Parameters: micheal, repository, /project-c/trunk/, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupGroupTest@ba8602</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupGroupTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupGroupTest<br>Parameters: sally, repository, /project-c/trunk/, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupGroupTest@ba8602</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupGroupTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupGroupTest<br>Parameters: jonas, repository, /project-c/trunk/, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupGroupTest@ba8602</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupGroupTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupGroupTest<br>Parameters: decon, repository, /project-c/trunk/, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupGroupTest@ba8602</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupGroupTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupGroupTest<br>Parameters: harry, repository, /project-d/trunk/, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupGroupTest@ba8602</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupGroupTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupGroupTest<br>Parameters: brian, repository, /project-d/trunk/, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupGroupTest@ba8602</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupGroupTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupGroupTest<br>Parameters: michael, repository, /project-d/trunk/, READ_WRITE</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupGroupTest@ba8602</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupGroupTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupGroupTest<br>Parameters: sally, repository, /project-d/trunk/, READ_WRITE</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupGroupTest@ba8602</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupGroupTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupGroupTest<br>Parameters: jonas, repository, /project-d/trunk/, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupGroupTest@ba8602</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupGroupTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupGroupTest<br>Parameters: decon, repository, /project-d/trunk/, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupGroupTest@ba8602</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupGroupTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupGroupTest<br>Parameters: harry, repository, /project-e/trunk/, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupGroupTest@ba8602</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupGroupTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupGroupTest<br>Parameters: brian, repository, /project-e/trunk/, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupGroupTest@ba8602</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupGroupTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupGroupTest<br>Parameters: michael, repository, /project-e/trunk/, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupGroupTest@ba8602</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupGroupTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupGroupTest<br>Parameters: sally, repository, /project-e/trunk/, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupGroupTest@ba8602</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupGroupTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupGroupTest<br>Parameters: jonas, repository, /project-e/trunk/, READ_WRITE</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupGroupTest@ba8602</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupGroupTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupGroupTest<br>Parameters: decon, repository, /project-e/trunk/, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupGroupTest@ba8602</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupGroupTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupGroupTest<br>Parameters: harry, global, /project/trunk/, READ_WRITE</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupGroupTest@ba8602</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupGroupTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupGroupTest<br>Parameters: brian, global, /project/trunk/, READ_WRITE</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupGroupTest@ba8602</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupGroupTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupGroupTest<br>Parameters: michael, global, /project/trunk/, READ_WRITE</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupGroupTest@ba8602</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupGroupTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupGroupTest<br>Parameters: sally, global, /project/trunk/, READ_WRITE</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupGroupTest@ba8602</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupGroupTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupGroupTest<br>Parameters: jonas, global, /project/trunk/, READ_WRITE</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupGroupTest@ba8602</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupGroupTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupGroupTest<br>Parameters: decon, global, /project/trunk/, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupGroupTest@ba8602</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupGroupTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupGroupTest<br>Parameters: harry, global, /project/, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupGroupTest@ba8602</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupGroupTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupGroupTest<br>Parameters: brian, global, /project/, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupGroupTest@ba8602</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupGroupTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupGroupTest<br>Parameters: michael, global, /project/, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupGroupTest@ba8602</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupGroupTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupGroupTest<br>Parameters: sally, global, /project/, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupGroupTest@ba8602</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupGroupTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupGroupTest<br>Parameters: jonas, global, /project/, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupGroupTest@ba8602</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesGroupGroupTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesGroupGroupTest<br>Parameters: decon, global, /project/, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesGroupGroupTest@ba8602</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesUserTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesUserTest<br>Parameters: harry, repository, /, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesUserTest@1b3f8f6</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesUserTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesUserTest<br>Parameters: harry, repository, /test/trunk/, READ_WRITE</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesUserTest@1b3f8f6</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesUserTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesUserTest<br>Parameters: harry, repository, /test/trunk/src/, READ_WRITE</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesUserTest@1b3f8f6</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesUserTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesUserTest<br>Parameters: harry, repository, /test/trunk/src/xyz.java, READ_WRITE</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesUserTest@1b3f8f6</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesUserTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesUserTest<br>Parameters: harry, repository, /test/trunk/src/CHANGELOG, READ_WRITE</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesUserTest@1b3f8f6</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesUserTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesUserTest<br>Parameters: michael, repository, /test/trunk/, READ_WRITE</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesUserTest@1b3f8f6</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesUserTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesUserTest<br>Parameters: michael, repository, /test/trunk/src/, READ_WRITE</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesUserTest@1b3f8f6</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesUserTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesUserTest<br>Parameters: brian, repository, /test/trunk/src/xyz.java, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesUserTest@1b3f8f6</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesUserTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesUserTest<br>Parameters: brian, repository, /test/trunk/src/CHANGELOG, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesUserTest@1b3f8f6</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesUserTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesUserTest<br>Parameters: sally, repository, /test/trunk/src/xyz.java, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesUserTest@1b3f8f6</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesUserTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesUserTest<br>Parameters: brian, repository, /test/trunk/, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesUserTest@1b3f8f6</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesUserTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesUserTest<br>Parameters: sally, repository, /test/trunk/, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesUserTest@1b3f8f6</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesUserTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesUserTest<br>Parameters: harry, different, /test/trunk/, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesUserTest@1b3f8f6</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesUserTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AccessRulesUserTest<br>Parameters: michale, different, /test/, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesUserTest@1b3f8f6</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AuthorizationFileTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AuthorizationFileTest<br>Parameters: harry, repository, /, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AuthorizationFileTest@1016632</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AuthorizationFileTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AuthorizationFileTest<br>Parameters: brian, repository, /, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AuthorizationFileTest@1016632</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AuthorizationFileTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AuthorizationFileTest<br>Parameters: micheal, repository, /, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AuthorizationFileTest@1016632</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AuthorizationFileTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AuthorizationFileTest<br>Parameters: sally, repository, /, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AuthorizationFileTest@1016632</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AuthorizationFileTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AuthorizationFileTest<br>Parameters: jonas, repository, /, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AuthorizationFileTest@1016632</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AuthorizationFileTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AuthorizationFileTest<br>Parameters: decon, repository, /, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AuthorizationFileTest@1016632</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AuthorizationFileTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AuthorizationFileTest<br>Parameters: harry, repository, /project-c/, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AuthorizationFileTest@1016632</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AuthorizationFileTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AuthorizationFileTest<br>Parameters: harry, repository, /project-d/, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AuthorizationFileTest@1016632</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AuthorizationFileTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AuthorizationFileTest<br>Parameters: harry, repository, /project-e/, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AuthorizationFileTest@1016632</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AuthorizationFileTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AuthorizationFileTest<br>Parameters: brian, repository, /project-c/, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AuthorizationFileTest@1016632</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AuthorizationFileTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AuthorizationFileTest<br>Parameters: brian, repository, /project-d/, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AuthorizationFileTest@1016632</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AuthorizationFileTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AuthorizationFileTest<br>Parameters: brian, repository, /project-e/, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AuthorizationFileTest@1016632</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AuthorizationFileTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AuthorizationFileTest<br>Parameters: michael, repository, /project-c/, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AuthorizationFileTest@1016632</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AuthorizationFileTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AuthorizationFileTest<br>Parameters: micheal, repository, /project-d/, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AuthorizationFileTest@1016632</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AuthorizationFileTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AuthorizationFileTest<br>Parameters: micheal, repository, /project-e/, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AuthorizationFileTest@1016632</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AuthorizationFileTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AuthorizationFileTest<br>Parameters: sally, repository, /project-c/, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AuthorizationFileTest@1016632</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AuthorizationFileTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AuthorizationFileTest<br>Parameters: sally, repository, /project-d/, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AuthorizationFileTest@1016632</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AuthorizationFileTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AuthorizationFileTest<br>Parameters: sally, repository, /project-e/, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AuthorizationFileTest@1016632</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AuthorizationFileTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AuthorizationFileTest<br>Parameters: jonas, repository, /project-c/, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AuthorizationFileTest@1016632</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AuthorizationFileTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AuthorizationFileTest<br>Parameters: jonas, repository, /project-d/, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AuthorizationFileTest@1016632</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AuthorizationFileTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AuthorizationFileTest<br>Parameters: jonas, repository, /project-e/, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AuthorizationFileTest@1016632</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AuthorizationFileTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AuthorizationFileTest<br>Parameters: decon, repository, /project-c/, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AuthorizationFileTest@1016632</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AuthorizationFileTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AuthorizationFileTest<br>Parameters: decon, repository, /project-d/, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AuthorizationFileTest@1016632</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AuthorizationFileTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AuthorizationFileTest<br>Parameters: decon, repository, /project-e/, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AuthorizationFileTest@1016632</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AuthorizationFileTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AuthorizationFileTest<br>Parameters: harry, repository, /project-c/trunk/, READ_WRITE</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AuthorizationFileTest@1016632</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AuthorizationFileTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AuthorizationFileTest<br>Parameters: brian, repository, /project-c/trunk/, READ_WRITE</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AuthorizationFileTest@1016632</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AuthorizationFileTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AuthorizationFileTest<br>Parameters: micheal, repository, /project-c/trunk/, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AuthorizationFileTest@1016632</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AuthorizationFileTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AuthorizationFileTest<br>Parameters: sally, repository, /project-c/trunk/, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AuthorizationFileTest@1016632</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AuthorizationFileTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AuthorizationFileTest<br>Parameters: jonas, repository, /project-c/trunk/, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AuthorizationFileTest@1016632</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AuthorizationFileTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AuthorizationFileTest<br>Parameters: decon, repository, /project-c/trunk/, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AuthorizationFileTest@1016632</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AuthorizationFileTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AuthorizationFileTest<br>Parameters: harry, repository, /project-d/trunk/, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AuthorizationFileTest@1016632</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AuthorizationFileTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AuthorizationFileTest<br>Parameters: brian, repository, /project-d/trunk/, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AuthorizationFileTest@1016632</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AuthorizationFileTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AuthorizationFileTest<br>Parameters: michael, repository, /project-d/trunk/, READ_WRITE</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AuthorizationFileTest@1016632</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AuthorizationFileTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AuthorizationFileTest<br>Parameters: sally, repository, /project-d/trunk/, READ_WRITE</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AuthorizationFileTest@1016632</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AuthorizationFileTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AuthorizationFileTest<br>Parameters: jonas, repository, /project-d/trunk/, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AuthorizationFileTest@1016632</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AuthorizationFileTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AuthorizationFileTest<br>Parameters: decon, repository, /project-d/trunk/, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AuthorizationFileTest@1016632</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AuthorizationFileTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AuthorizationFileTest<br>Parameters: harry, repository, /project-e/trunk/, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AuthorizationFileTest@1016632</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AuthorizationFileTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AuthorizationFileTest<br>Parameters: brian, repository, /project-e/trunk/, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AuthorizationFileTest@1016632</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AuthorizationFileTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AuthorizationFileTest<br>Parameters: michael, repository, /project-e/trunk/, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AuthorizationFileTest@1016632</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AuthorizationFileTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AuthorizationFileTest<br>Parameters: sally, repository, /project-e/trunk/, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AuthorizationFileTest@1016632</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AuthorizationFileTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AuthorizationFileTest<br>Parameters: jonas, repository, /project-e/trunk/, READ_WRITE</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AuthorizationFileTest@1016632</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AuthorizationFileTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AuthorizationFileTest<br>Parameters: decon, repository, /project-e/trunk/, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AuthorizationFileTest@1016632</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AuthorizationFileTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AuthorizationFileTest<br>Parameters: harry, global, /project/trunk/, READ_WRITE</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AuthorizationFileTest@1016632</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AuthorizationFileTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AuthorizationFileTest<br>Parameters: brian, global, /project/trunk/, READ_WRITE</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AuthorizationFileTest@1016632</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AuthorizationFileTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AuthorizationFileTest<br>Parameters: michael, global, /project/trunk/, READ_WRITE</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AuthorizationFileTest@1016632</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AuthorizationFileTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AuthorizationFileTest<br>Parameters: sally, global, /project/trunk/, READ_WRITE</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AuthorizationFileTest@1016632</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AuthorizationFileTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AuthorizationFileTest<br>Parameters: jonas, global, /project/trunk/, READ_WRITE</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AuthorizationFileTest@1016632</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AuthorizationFileTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AuthorizationFileTest<br>Parameters: decon, global, /project/trunk/, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AuthorizationFileTest@1016632</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AuthorizationFileTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AuthorizationFileTest<br>Parameters: harry, global, /project/, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AuthorizationFileTest@1016632</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AuthorizationFileTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AuthorizationFileTest<br>Parameters: brian, global, /project/, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AuthorizationFileTest@1016632</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AuthorizationFileTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AuthorizationFileTest<br>Parameters: michael, global, /project/, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AuthorizationFileTest@1016632</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AuthorizationFileTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AuthorizationFileTest<br>Parameters: sally, global, /project/, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AuthorizationFileTest@1016632</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AuthorizationFileTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AuthorizationFileTest<br>Parameters: jonas, global, /project/, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AuthorizationFileTest@1016632</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AuthorizationFileTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.AuthorizationFileTest<br>Parameters: decon, global, /project/, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AuthorizationFileTest@1016632</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.NegativAccessRuleGroupTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.NegativAccessRuleGroupTest<br>Parameters: harry, repository, /, NOTHING</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.NegativAccessRuleGroupTest@c1f10e</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.NegativAccessRuleGroupTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.NegativAccessRuleGroupTest<br>Parameters: harry, repository, /test/trunk/, READ_WRITE</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.NegativAccessRuleGroupTest@c1f10e</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.NegativAccessRuleGroupTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.NegativAccessRuleGroupTest<br>Parameters: harry, repository, /test/trunk/src/, READ_WRITE</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.NegativAccessRuleGroupTest@c1f10e</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.NegativAccessRuleGroupTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.NegativAccessRuleGroupTest<br>Parameters: brian, repository, /test/trunk/, NOTHING</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.NegativAccessRuleGroupTest@c1f10e</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.NegativAccessRuleGroupTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.NegativAccessRuleGroupTest<br>Parameters: brian, repository, /test/trunk/src/CHANGELOG, NOTHING</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.NegativAccessRuleGroupTest@c1f10e</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.NegativAccessRuleGroupTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.NegativAccessRuleGroupTest<br>Parameters: sally, repository, /test/trunk/src/xyz.java, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.NegativAccessRuleGroupTest@c1f10e</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.NegativAccessRuleGroupTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.NegativAccessRuleGroupTest<br>Parameters: sally, repository, /test/trunk/, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.NegativAccessRuleGroupTest@c1f10e</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.NegativAccessRuleGroupTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.NegativAccessRuleGroupTest<br>Parameters: michael, repository, /test/trunk/src/xyz.java, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.NegativAccessRuleGroupTest@c1f10e</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.NegativAccessRuleGroupTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.NegativAccessRuleGroupTest<br>Parameters: michael, repository, /test/trunk/, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.NegativAccessRuleGroupTest@c1f10e</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.NegativAccessRuleGroupTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.NegativAccessRuleGroupTest<br>Parameters: harry, different, /test/trunk/, NOTHING</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.NegativAccessRuleGroupTest@c1f10e</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.NegativAccessRuleGroupTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.NegativAccessRuleGroupTest<br>Parameters: michael, different, /test/trunk/, NOTHING</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.NegativAccessRuleGroupTest@c1f10e</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.NegativAccessRuleGroupTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.NegativAccessRuleGroupTest<br>Parameters: brian, different, /test/trunk/, NOTHING</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.NegativAccessRuleGroupTest@c1f10e</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.NegativAccessRulesGroupTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.NegativAccessRulesGroupTest<br>Parameters: harry, calc, /, NOTHING</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.NegativAccessRulesGroupTest@b8deef</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.NegativAccessRulesGroupTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.NegativAccessRulesGroupTest<br>Parameters: harry, calc, /projects, NOTHING</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.NegativAccessRulesGroupTest@b8deef</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.NegativAccessRulesGroupTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.NegativAccessRulesGroupTest<br>Parameters: sally, calc, /, NOTHING</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.NegativAccessRulesGroupTest@b8deef</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.NegativAccessRulesGroupTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.NegativAccessRulesGroupTest<br>Parameters: sally, calc, /projects, NOTHING</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.NegativAccessRulesGroupTest@b8deef</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.NegativAccessRulesGroupTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.NegativAccessRulesGroupTest<br>Parameters: joe, calc, /, NOTHING</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.NegativAccessRulesGroupTest@b8deef</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.NegativAccessRulesGroupTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.NegativAccessRulesGroupTest<br>Parameters: joes, calc, /projects, NOTHING</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.NegativAccessRulesGroupTest@b8deef</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.NegativAccessRulesGroupTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.NegativAccessRulesGroupTest<br>Parameters: hewlett, calc, /, NOTHING</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.NegativAccessRulesGroupTest@b8deef</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.NegativAccessRulesGroupTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.NegativAccessRulesGroupTest<br>Parameters: hewlett, calc, /projects, NOTHING</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.NegativAccessRulesGroupTest@b8deef</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.NegativAccessRulesGroupTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.NegativAccessRulesGroupTest<br>Parameters: packard, calc, /, NOTHING</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.NegativAccessRulesGroupTest@b8deef</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.NegativAccessRulesGroupTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.NegativAccessRulesGroupTest<br>Parameters: packard, calc, /projects, NOTHING</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.NegativAccessRulesGroupTest@b8deef</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.NegativAccessRulesGroupTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.NegativAccessRulesGroupTest<br>Parameters: harry, calc, /projects/calc/, READ_WRITE</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.NegativAccessRulesGroupTest@b8deef</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.NegativAccessRulesGroupTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.NegativAccessRulesGroupTest<br>Parameters: harry, calc, /projects/calc/trunk/, READ_WRITE</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.NegativAccessRulesGroupTest@b8deef</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.NegativAccessRulesGroupTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.NegativAccessRulesGroupTest<br>Parameters: harry, calc, /projects/calc/branches/, READ_WRITE</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.NegativAccessRulesGroupTest@b8deef</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.NegativAccessRulesGroupTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.NegativAccessRulesGroupTest<br>Parameters: sally, calc, /projects/calc/, READ_WRITE</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.NegativAccessRulesGroupTest@b8deef</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.NegativAccessRulesGroupTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.NegativAccessRulesGroupTest<br>Parameters: sally, calc, /projects/calc/trunk/, READ_WRITE</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.NegativAccessRulesGroupTest@b8deef</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.NegativAccessRulesGroupTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.NegativAccessRulesGroupTest<br>Parameters: sally, calc, /projects/calc/branches/, READ_WRITE</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.NegativAccessRulesGroupTest@b8deef</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.NegativAccessRulesGroupTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.NegativAccessRulesGroupTest<br>Parameters: joe, calc, /projects/calc/, READ_WRITE</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.NegativAccessRulesGroupTest@b8deef</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.NegativAccessRulesGroupTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.NegativAccessRulesGroupTest<br>Parameters: joe, calc, /projects/calc/trunk/, READ_WRITE</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.NegativAccessRulesGroupTest@b8deef</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.NegativAccessRulesGroupTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.NegativAccessRulesGroupTest<br>Parameters: joe, calc, /projects/calc/branches/, READ_WRITE</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.NegativAccessRulesGroupTest@b8deef</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.NegativAccessRulesGroupTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.NegativAccessRulesGroupTest<br>Parameters: hewlett, calc, /projects/calc/, READ_WRITE</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.NegativAccessRulesGroupTest@b8deef</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.NegativAccessRulesGroupTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.NegativAccessRulesGroupTest<br>Parameters: hewlett, calc, /projects/calc/trunk/, READ_WRITE</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.NegativAccessRulesGroupTest@b8deef</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.NegativAccessRulesGroupTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.NegativAccessRulesGroupTest<br>Parameters: hewlett, calc, /projects/calc/branches/, READ_WRITE</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.NegativAccessRulesGroupTest@b8deef</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.NegativAccessRulesGroupTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.NegativAccessRulesGroupTest<br>Parameters: packard, calc, /projects/calc/, READ_WRITE</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.NegativAccessRulesGroupTest@b8deef</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.NegativAccessRulesGroupTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.NegativAccessRulesGroupTest<br>Parameters: packard, calc, /projects/calc/trunk/, READ_WRITE</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.NegativAccessRulesGroupTest@b8deef</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.NegativAccessRulesGroupTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.NegativAccessRulesGroupTest<br>Parameters: packard, calc, /projects/calc/branches/, READ_WRITE</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.NegativAccessRulesGroupTest@b8deef</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.NegativAccessRulesGroupTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.NegativAccessRulesGroupTest<br>Parameters: harry, calc, /projects/calc/tags/, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.NegativAccessRulesGroupTest@b8deef</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.NegativAccessRulesGroupTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.NegativAccessRulesGroupTest<br>Parameters: sally, calc, /projects/calc/tags/, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.NegativAccessRulesGroupTest@b8deef</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.NegativAccessRulesGroupTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.NegativAccessRulesGroupTest<br>Parameters: joe, calc, /projects/calc/tags/, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.NegativAccessRulesGroupTest@b8deef</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.NegativAccessRulesGroupTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.NegativAccessRulesGroupTest<br>Parameters: hewlett, calc, /projects/calc/tags/, READ_WRITE</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.NegativAccessRulesGroupTest@b8deef</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.NegativAccessRulesGroupTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.NegativAccessRulesGroupTest<br>Parameters: packard, calc, /projects/calc/tags/, READ_WRITE</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.NegativAccessRulesGroupTest@b8deef</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.NegativeAccessRuleUserTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.NegativeAccessRuleUserTest<br>Parameters: harry, repository, /, NOTHING</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.NegativeAccessRuleUserTest@1342ba4</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.NegativeAccessRuleUserTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.NegativeAccessRuleUserTest<br>Parameters: harry, repository, /test/trunk/, NOTHING</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.NegativeAccessRuleUserTest@1342ba4</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.NegativeAccessRuleUserTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.NegativeAccessRuleUserTest<br>Parameters: harry, repository, /test/trunk/src/, NOTHING</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.NegativeAccessRuleUserTest@1342ba4</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.NegativeAccessRuleUserTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.NegativeAccessRuleUserTest<br>Parameters: harry, repository, /test/trunk/src/xyz.java, NOTHING</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.NegativeAccessRuleUserTest@1342ba4</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.NegativeAccessRuleUserTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.NegativeAccessRuleUserTest<br>Parameters: harry, repository, /test/trunk/src/CHANGELOG, NOTHING</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.NegativeAccessRuleUserTest@1342ba4</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.NegativeAccessRuleUserTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.NegativeAccessRuleUserTest<br>Parameters: brian, repository, /test/trunk/src/xyz.java, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.NegativeAccessRuleUserTest@1342ba4</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.NegativeAccessRuleUserTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.NegativeAccessRuleUserTest<br>Parameters: brian, repository, /test/trunk/src/CHANGELOG, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.NegativeAccessRuleUserTest@1342ba4</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.NegativeAccessRuleUserTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.NegativeAccessRuleUserTest<br>Parameters: sally, repository, /test/trunk/src/xyz.java, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.NegativeAccessRuleUserTest@1342ba4</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.NegativeAccessRuleUserTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.NegativeAccessRuleUserTest<br>Parameters: brian, repository, /test/trunk/, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.NegativeAccessRuleUserTest@1342ba4</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.NegativeAccessRuleUserTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.NegativeAccessRuleUserTest<br>Parameters: sally, repository, /test/trunk/, READ</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.NegativeAccessRuleUserTest@1342ba4</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.NegativeAccessRuleUserTest.accessRuleCheck()'><b>accessRuleCheck</b><br>Test class: com.soebes.subversion.sapm.NegativeAccessRuleUserTest<br>Parameters: harry, different, /test/trunk/, NOTHING</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.NegativeAccessRuleUserTest@1342ba4</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRuleGroupTest.accessTest()'><b>accessTest</b><br>Test class: com.soebes.subversion.sapm.AccessRuleGroupTest</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRuleGroupTest@ee7a14</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRuleUserAnyRepositoryTest.accessTest()'><b>accessTest</b><br>Test class: com.soebes.subversion.sapm.AccessRuleUserAnyRepositoryTest</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRuleUserAnyRepositoryTest@90cb03</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRuleUserAsterikTest.accessTest()'><b>accessTest</b><br>Test class: com.soebes.subversion.sapm.AccessRuleUserAsterikTest</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRuleUserAsterikTest@6cb8</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRuleUserTest.accessTest()'><b>accessTest</b><br>Test class: com.soebes.subversion.sapm.AccessRuleUserTest</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRuleUserTest@1e1a408</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AccessRulesDerivingPermissionsTest.accessTest()'><b>accessTest</b><br>Test class: com.soebes.subversion.sapm.AccessRulesDerivingPermissionsTest</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AccessRulesDerivingPermissionsTest@126f75b</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.NegativAccessRuleGroupTest.accessTest()'><b>accessTest</b><br>Test class: com.soebes.subversion.sapm.NegativAccessRuleGroupTest</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.NegativAccessRuleGroupTest@c1f10e</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.NegativeAccessRuleUserTest.accessTest()'><b>accessTest</b><br>Test class: com.soebes.subversion.sapm.NegativeAccessRuleUserTest</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.NegativeAccessRuleUserTest@1342ba4</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AliasesTest.aliasesTest()'><b>aliasesTest</b><br>Test class: com.soebes.subversion.sapm.AliasesTest</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AliasesTest@9df6f1</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.FileNameTest.check()'><b>check</b><br>Test class: com.soebes.subversion.sapm.FileNameTest<br>Parameters: /usr/local/test.zip, zip, test.zip, test, /usr/local/</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.FileNameTest@dc6a77</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.FileNameTest.check()'><b>check</b><br>Test class: com.soebes.subversion.sapm.FileNameTest<br>Parameters: /usr/local/test.tar.gz, tar.gz, test.tar.gz, test, /usr/local/</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.FileNameTest@dc6a77</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.FileNameTest.check()'><b>check</b><br>Test class: com.soebes.subversion.sapm.FileNameTest<br>Parameters: C:/Programme/x-y-z.zip, zip, x-y-z.zip, x-y-z, C:/Programme/</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.FileNameTest@dc6a77</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.FileNameTest.check()'><b>check</b><br>Test class: com.soebes.subversion.sapm.FileNameTest<br>Parameters: /x.zip, zip, x.zip, x, /</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.FileNameTest@dc6a77</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.FileNameTest.check()'><b>check</b><br>Test class: com.soebes.subversion.sapm.FileNameTest<br>Parameters: /branches/, , , , /branches/</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.FileNameTest@dc6a77</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.FileNameTest.check()'><b>check</b><br>Test class: com.soebes.subversion.sapm.FileNameTest<br>Parameters: /branches, , branches, branches, /</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.FileNameTest@dc6a77</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.FileNameTest.check()'><b>check</b><br>Test class: com.soebes.subversion.sapm.FileNameTest<br>Parameters: /, , , , /</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.FileNameTest@dc6a77</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AppTest.configurationWithAliasesTest()'><b>configurationWithAliasesTest</b><br>Test class: com.soebes.subversion.sapm.AppTest</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AppTest@bf7190</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AuthorizationFileSaveTest.createRulesForSave()'><b>createRulesForSave</b><br>Test class: com.soebes.subversion.sapm.AuthorizationFileSaveTest</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AuthorizationFileSaveTest@b8bef7</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AppTest.firstConfigurationTest()'><b>firstConfigurationTest</b><br>Test class: com.soebes.subversion.sapm.AppTest</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AppTest@bf7190</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.PathTest.folderTestWithX()'><b>folderTestWithX</b><br>Test class: com.soebes.subversion.sapm.PathTest<br>Parameters: /test/trunk/, /test/trunk/xyz.pas, true</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.PathTest@1d332b</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.PathTest.folderTestWithX()'><b>folderTestWithX</b><br>Test class: com.soebes.subversion.sapm.PathTest<br>Parameters: /test/trunk/, /test/trunk/src/main/java/, true</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.PathTest@1d332b</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.PathTest.folderTestWithX()'><b>folderTestWithX</b><br>Test class: com.soebes.subversion.sapm.PathTest<br>Parameters: /test/trunk/, /test/trunk/, true</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.PathTest@1d332b</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.PathTest.folderTestWithX()'><b>folderTestWithX</b><br>Test class: com.soebes.subversion.sapm.PathTest<br>Parameters: /test/trunk/, /test/, false</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.PathTest@1d332b</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.GroupTest.groupAddTest()'><b>groupAddTest</b><br>Test class: com.soebes.subversion.sapm.GroupTest</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.GroupTest@d1e89e</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.GroupsTest.groupAddTest()'><b>groupAddTest</b><br>Test class: com.soebes.subversion.sapm.GroupsTest</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.GroupsTest@ff057f</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.UsersTest.groupAddTest()'><b>groupAddTest</b><br>Test class: com.soebes.subversion.sapm.UsersTest</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.UsersTest@10a6ae2</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.GroupTest.groupContainsGroupTest()'><b>groupContainsGroupTest</b><br>Test class: com.soebes.subversion.sapm.GroupTest</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.GroupTest@d1e89e</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.GroupTest.groupContainsTest()'><b>groupContainsTest</b><br>Test class: com.soebes.subversion.sapm.GroupTest</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.GroupTest@d1e89e</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.GroupsTest.groupGetTest()'><b>groupGetTest</b><br>Test class: com.soebes.subversion.sapm.GroupsTest</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.GroupsTest@ff057f</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AppTest.groupsInGroupsConfigurationTest()'><b>groupsInGroupsConfigurationTest</b><br>Test class: com.soebes.subversion.sapm.AppTest</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AppTest@bf7190</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AppTest.negativeRulesTest()'><b>negativeRulesTest</b><br>Test class: com.soebes.subversion.sapm.AppTest</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AppTest@bf7190</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.FileNameTest.testF100()'><b>testF100</b><br>Test class: com.soebes.subversion.sapm.FileNameTest</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.FileNameTest@dc6a77</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.FileNameTest.testF61()'><b>testF61</b><br>Test class: com.soebes.subversion.sapm.FileNameTest</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.FileNameTest@dc6a77</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.FileNameTest.testF80()'><b>testF80</b><br>Test class: com.soebes.subversion.sapm.FileNameTest</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.FileNameTest@dc6a77</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.FileNameTest.testF90()'><b>testF90</b><br>Test class: com.soebes.subversion.sapm.FileNameTest</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.FileNameTest@dc6a77</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AppTest.testReadAST()'><b>testReadAST</b><br>Test class: com.soebes.subversion.sapm.AppTest</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AppTest@bf7190</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AppTest.testReadOne()'><b>testReadOne</b><br>Test class: com.soebes.subversion.sapm.AppTest</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AppTest@bf7190</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AppTest.testReadThree()'><b>testReadThree</b><br>Test class: com.soebes.subversion.sapm.AppTest</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AppTest@bf7190</td></tr>
+<tr>
+<td title='com.soebes.subversion.sapm.AppTest.testReadTwo()'><b>testReadTwo</b><br>Test class: com.soebes.subversion.sapm.AppTest</td>
+<td></td>
+<td>0</td>
+<td>com.soebes.subversion.sapm.AppTest@bf7190</td></tr>
+</table><p>
+</body>
+</html>

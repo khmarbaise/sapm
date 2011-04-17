@@ -1,0 +1,258 @@
+<?xml version="1.0"?>
+<JDepend>
+    <Packages>
+
+        <Package name="com.soebes.subversion.sapm">
+            <Stats>
+                <TotalClasses>20</TotalClasses>
+                <ConcreteClasses>19</ConcreteClasses>
+                <AbstractClasses>1</AbstractClasses>
+                <Ca>1</Ca>
+                <Ce>5</Ce>
+                <A>0.05</A>
+                <I>0.83</I>
+                <D>0.12</D>
+                <V>1</V>
+            </Stats>
+
+            <AbstractClasses>
+                <Class sourceFile="IPrincipal.java">
+                    com.soebes.subversion.sapm.IPrincipal
+                </Class>
+            </AbstractClasses>
+
+            <ConcreteClasses>
+                <Class sourceFile="ANTLRNoCaseStringStream.java">
+                    com.soebes.subversion.sapm.ANTLRNoCaseStringStream
+                </Class>
+                <Class sourceFile="Access.java">
+                    com.soebes.subversion.sapm.Access
+                </Class>
+                <Class sourceFile="AccessLevel.java">
+                    com.soebes.subversion.sapm.AccessLevel
+                </Class>
+                <Class sourceFile="AccessRule.java">
+                    com.soebes.subversion.sapm.AccessRule
+                </Class>
+                <Class sourceFile="AccessRules.java">
+                    com.soebes.subversion.sapm.AccessRules
+                </Class>
+                <Class sourceFile="Alias.java">
+                    com.soebes.subversion.sapm.Alias
+                </Class>
+                <Class sourceFile="Aliases.java">
+                    com.soebes.subversion.sapm.Aliases
+                </Class>
+                <Class sourceFile="AuthorizationFile.java">
+                    com.soebes.subversion.sapm.AuthorizationFile
+                </Class>
+                <Class sourceFile="AuthorizationFileException.java">
+                    com.soebes.subversion.sapm.AuthorizationFileException
+                </Class>
+                <Class sourceFile="FileName.java">
+                    com.soebes.subversion.sapm.FileName
+                </Class>
+                <Class sourceFile="Group.java">
+                    com.soebes.subversion.sapm.Group
+                </Class>
+                <Class sourceFile="Groups.java">
+                    com.soebes.subversion.sapm.Groups
+                </Class>
+                <Class sourceFile="Path.java">
+                    com.soebes.subversion.sapm.Path
+                </Class>
+                <Class sourceFile="User.java">
+                    com.soebes.subversion.sapm.User
+                </Class>
+                <Class sourceFile="UserAnonymous.java">
+                    com.soebes.subversion.sapm.UserAnonymous
+                </Class>
+                <Class sourceFile="UserAsterik.java">
+                    com.soebes.subversion.sapm.UserAsterik
+                </Class>
+                <Class sourceFile="UserAuthenticated.java">
+                    com.soebes.subversion.sapm.UserAuthenticated
+                </Class>
+                <Class sourceFile="UserFactory.java">
+                    com.soebes.subversion.sapm.UserFactory
+                </Class>
+                <Class sourceFile="Users.java">
+                    com.soebes.subversion.sapm.Users
+                </Class>
+            </ConcreteClasses>
+
+            <DependsUpon>
+                <Package>com.soebes.subversion.sapm.parser</Package>
+                <Package>java.io</Package>
+                <Package>java.lang</Package>
+                <Package>java.util</Package>
+                <Package>org.antlr.runtime</Package>
+            </DependsUpon>
+
+            <UsedBy>
+                <Package>com.soebes.subversion.sapm.parser</Package>
+            </UsedBy>
+        </Package>
+
+        <Package name="com.soebes.subversion.sapm.parser">
+            <Stats>
+                <TotalClasses>32</TotalClasses>
+                <ConcreteClasses>32</ConcreteClasses>
+                <AbstractClasses>0</AbstractClasses>
+                <Ca>1</Ca>
+                <Ce>5</Ce>
+                <A>0</A>
+                <I>0.83</I>
+                <D>0.17</D>
+                <V>1</V>
+            </Stats>
+
+            <AbstractClasses>
+            </AbstractClasses>
+
+            <ConcreteClasses>
+                <Class sourceFile="SAFPLexer.java">
+                    com.soebes.subversion.sapm.parser.SAFPLexer
+                </Class>
+                <Class sourceFile="SAFPLexer.java">
+                    com.soebes.subversion.sapm.parser.SAFPLexer$DFA6
+                </Class>
+                <Class sourceFile="SAFPParser.java">
+                    com.soebes.subversion.sapm.parser.SAFPParser
+                </Class>
+                <Class sourceFile="SAFPParser.java">
+                    com.soebes.subversion.sapm.parser.SAFPParser$alias_return
+                </Class>
+                <Class sourceFile="SAFPParser.java">
+                    com.soebes.subversion.sapm.parser.SAFPParser$aliases_return
+                </Class>
+                <Class sourceFile="SAFPParser.java">
+                    com.soebes.subversion.sapm.parser.SAFPParser$aliaspermission_return
+                </Class>
+                <Class sourceFile="SAFPParser.java">
+                    com.soebes.subversion.sapm.parser.SAFPParser$aliasreference_return
+                </Class>
+                <Class sourceFile="SAFPParser.java">
+                    com.soebes.subversion.sapm.parser.SAFPParser$group_return
+                </Class>
+                <Class sourceFile="SAFPParser.java">
+                    com.soebes.subversion.sapm.parser.SAFPParser$grouppermission_return
+                </Class>
+                <Class sourceFile="SAFPParser.java">
+                    com.soebes.subversion.sapm.parser.SAFPParser$groupreference_return
+                </Class>
+                <Class sourceFile="SAFPParser.java">
+                    com.soebes.subversion.sapm.parser.SAFPParser$groups_return
+                </Class>
+                <Class sourceFile="SAFPParser.java">
+                    com.soebes.subversion.sapm.parser.SAFPParser$groupuserdefinition_return
+                </Class>
+                <Class sourceFile="SAFPParser.java">
+                    com.soebes.subversion.sapm.parser.SAFPParser$groupuserreference_return
+                </Class>
+                <Class sourceFile="SAFPParser.java">
+                    com.soebes.subversion.sapm.parser.SAFPParser$permission_nothing_return
+                </Class>
+                <Class sourceFile="SAFPParser.java">
+                    com.soebes.subversion.sapm.parser.SAFPParser$permission_read_return
+                </Class>
+                <Class sourceFile="SAFPParser.java">
+                    com.soebes.subversion.sapm.parser.SAFPParser$permission_read_write_return
+                </Class>
+                <Class sourceFile="SAFPParser.java">
+                    com.soebes.subversion.sapm.parser.SAFPParser$permission_return
+                </Class>
+                <Class sourceFile="SAFPParser.java">
+                    com.soebes.subversion.sapm.parser.SAFPParser$permission_write_return
+                </Class>
+                <Class sourceFile="SAFPParser.java">
+                    com.soebes.subversion.sapm.parser.SAFPParser$permissionrule_return
+                </Class>
+                <Class sourceFile="SAFPParser.java">
+                    com.soebes.subversion.sapm.parser.SAFPParser$prog_return
+                </Class>
+                <Class sourceFile="SAFPParser.java">
+                    com.soebes.subversion.sapm.parser.SAFPParser$repos_return
+                </Class>
+                <Class sourceFile="SAFPParser.java">
+                    com.soebes.subversion.sapm.parser.SAFPParser$repository_return
+                </Class>
+                <Class sourceFile="SAFPParser.java">
+                    com.soebes.subversion.sapm.parser.SAFPParser$repositorypath_return
+                </Class>
+                <Class sourceFile="SAFPParser.java">
+                    com.soebes.subversion.sapm.parser.SAFPParser$sectionaliases_return
+                </Class>
+                <Class sourceFile="SAFPParser.java">
+                    com.soebes.subversion.sapm.parser.SAFPParser$sectiongroup_return
+                </Class>
+                <Class sourceFile="SAFPParser.java">
+                    com.soebes.subversion.sapm.parser.SAFPParser$sectionrepository_return
+                </Class>
+                <Class sourceFile="SAFPParser.java">
+                    com.soebes.subversion.sapm.parser.SAFPParser$statement_return
+                </Class>
+                <Class sourceFile="SAFPParser.java">
+                    com.soebes.subversion.sapm.parser.SAFPParser$user_return
+                </Class>
+                <Class sourceFile="SAFPParser.java">
+                    com.soebes.subversion.sapm.parser.SAFPParser$useralias_return
+                </Class>
+                <Class sourceFile="SAFPParser.java">
+                    com.soebes.subversion.sapm.parser.SAFPParser$useraliasdefinition_return
+                </Class>
+                <Class sourceFile="SAFPParser.java">
+                    com.soebes.subversion.sapm.parser.SAFPParser$userpermission_return
+                </Class>
+                <Class sourceFile="SAFPParser.java">
+                    com.soebes.subversion.sapm.parser.SAFPParser$userreference_return
+                </Class>
+            </ConcreteClasses>
+
+            <DependsUpon>
+                <Package>com.soebes.subversion.sapm</Package>
+                <Package>java.lang</Package>
+                <Package>java.util</Package>
+                <Package>org.antlr.runtime</Package>
+                <Package>org.antlr.runtime.tree</Package>
+            </DependsUpon>
+
+            <UsedBy>
+                <Package>com.soebes.subversion.sapm</Package>
+            </UsedBy>
+        </Package>
+
+        <Package name="java.io">
+            <error>No stats available: package referenced, but not analyzed.</error>
+        </Package>
+
+        <Package name="java.lang">
+            <error>No stats available: package referenced, but not analyzed.</error>
+        </Package>
+
+        <Package name="java.util">
+            <error>No stats available: package referenced, but not analyzed.</error>
+        </Package>
+
+        <Package name="org.antlr.runtime">
+            <error>No stats available: package referenced, but not analyzed.</error>
+        </Package>
+
+        <Package name="org.antlr.runtime.tree">
+            <error>No stats available: package referenced, but not analyzed.</error>
+        </Package>
+    </Packages>
+
+    <Cycles>
+        <Package Name="com.soebes.subversion.sapm">
+            <Package>com.soebes.subversion.sapm.parser</Package>
+            <Package>com.soebes.subversion.sapm</Package>
+        </Package>
+
+        <Package Name="com.soebes.subversion.sapm.parser">
+            <Package>com.soebes.subversion.sapm</Package>
+            <Package>com.soebes.subversion.sapm.parser</Package>
+        </Package>
+
+    </Cycles>
+</JDepend>
