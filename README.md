@@ -18,7 +18,7 @@ The Maven Site for Release sapm-0.3 [http://khmarbaise.github.com/sapm](http://k
 
 Status
 ------
-- [Module is available via maven central](http://repo1.maven.org/maven2)
+- [Module is available via maven central](http://repo1.maven.org/maven2/com/soebes/subversion/sapm/sapm/)
 - Object model created and fit my needs.
 - ANTLR Grammar works reading
   - Support of ~user, ~group and ~alias rule
@@ -28,12 +28,6 @@ Status
 
 TODOs
 -----
-- Grammar / Object Model
-  - Handling the tokens $anonymous and $authenticated is not implemented (yet).
-    $anonymous means no username exists, cause the user does not have authenticated.
-    so we assume a username equal to null means anonymous otherwise $authenticated.
-    $authenticated means the user has a username. 
-
 - Enhanced / Improve Authorization class.
   - Check what to do?
 - May be more Examples
