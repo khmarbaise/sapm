@@ -9,12 +9,13 @@ repositories {
 
 configurations {  antlr3 }
 
-sourceCompatibility = 1.5
+sourceCompatibility = 1.6
 version = '0.5.0-SNAPSHOT'
 
 dependencies {
   antlr3 'org.antlr:antlr:3.3'
-  compile group: 'org.antlr', name:'antlr-runtime', version:'3.3'  
+  compile group: 'org.antlr', name:'antlr-runtime', version:'3.3'
+  testCompile group: 'org.testng', name:'testng', version:'6.0.1'
 }
 
 antlrSource = "src/main/antlr"
