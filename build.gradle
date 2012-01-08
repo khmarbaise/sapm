@@ -22,12 +22,17 @@ antlrSource = "src/main/antlr"
 antlrOutput = "target/generated-sources/antlr3/"
 
 task grammar << {
-    def grammars = fileTree(antlrSource).include("src/main/antlr/**/*.g")
+    def grammars = fileTree(antlrSource).include("${antlrSource}/**/*.g")
 
-    ant.java(classname: 'org.antlr.Tool', fork: true, classpath: "${configurations.antlr3.asPath}") {
-        arg(line: "-o ${antlrOutput}/")
-        arg(line: grammars.files.join(" "))
-    }
+    ant.java(
+        classname: 'org.antlr.Tool', 
+        fork: true, 
+        classpath: "${configurations.antlr3.asPath}")
+      {
+          arg(line: "-o ${antlrOutput}/")
+          arg(line: grammars.files.join(" "))
+      }
+
   sourceSets {
       main {
           java {
@@ -40,14 +45,16 @@ task grammar << {
 
 compileJava.dependsOn grammar
 
-subprojects {
-    version = '0.7.1-SNAPSHOT'
-
-    jar {
-      manifest {
-          attributes  'Implementation-Title': 'Subversion Authentication Parser Module', 
-                      'Implementation-Version': version
-      }
-    }
+/* test << {
+  beforeTest { descriptor ->
+     logger.lifecycle("Running test: " + descriptor)
+  }
+}
+*/
+jar {
+  manifest {
+      attributes  'Implementation-Title': 'Subversion Authentication Parser Module', 
+                  'Implementation-Version': version
+  }
 }
 
