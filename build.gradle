@@ -1,0 +1,49 @@
+apply plugin: 'java'
+
+repositories {
+    mavenCentral()
+}
+
+configurations {  antlr3 }
+
+sourceCompatibility = 1.5
+version = '0.5.0-SNAPSHOT'
+
+dependencies {
+  antlr3 'org.antlr:antlr:3.3'
+  compile group: 'org.antlr', name:'antlr-runtime', version:'3.3'  
+}
+
+antlrSource = "src/main/antlr"
+antlrOutput = "target/generated-sources/antlr3/"
+
+task grammar << {
+    def grammars = fileTree(antlrSource).include("src/main/antlr/**/*.g")
+
+    ant.java(classname: 'org.antlr.Tool', fork: true, classpath: "${configurations.antlr3.asPath}") {
+        arg(line: "-o ${antlrOutput}/")
+        arg(line: grammars.files.join(" "))
+    }
+  sourceSets {
+      main {
+          java {
+              srcDir "${antlrOutput}"
+          }
+      }
+  }
+
+}
+
+compileJava.dependsOn grammar
+
+subprojects {
+    version = '0.7.1-SNAPSHOT'
+
+    jar {
+      manifest {
+          attributes  'Implementation-Title': 'Subversion Authentication Parser Module', 
+                      'Implementation-Version': version
+      }
+    }
+}
+
