@@ -3,7 +3,6 @@ apply plugin: 'java'
 repositories {
   maven {
     url 'http://build:8080/nexus/content/groups/public/'
-   /* artifactUrls: 'http://build:8080/nexus/content/groups/public/'  */
   }
 }
 
