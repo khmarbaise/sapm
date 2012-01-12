@@ -43,12 +43,18 @@ task generateGrammarSource {
 compileJava.dependsOn generateGrammarSource  
 
 
-/* test << {
+test {
+    useTestNG()
+/*
+    afterTest { desc, result -> 
+        println "Executing test ${desc.name} [${desc.className}] with result: ${result.resultType}"
+    }
   beforeTest { descriptor ->
      logger.lifecycle("Running test: " + descriptor)
   }
-}
 */
+}
+
 jar {
   manifest {
       attributes  'Implementation-Title': 'Subversion Authentication Parser Module', 
