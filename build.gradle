@@ -9,8 +9,9 @@ repositories {
   }
 }
 
-antlrSource = "src/main/antlr3/"
-antlrOutput = "build/generated-sources/antlr3/"
+antlr = "antlr3"
+antlrSource = "src/main/$antlr/"
+antlrOutput = "$buildDir/generated-sources/$antlr/"
 
 configurations {  antlr3 }
 
