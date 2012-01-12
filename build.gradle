@@ -10,7 +10,7 @@ repositories {
 }
 
 antlrSource = "src/main/antlr3/"
-antlrOutput = "target/generated-sources/antlr3/"
+antlrOutput = "build/generated-sources/antlr3/"
 
 configurations {  antlr3 }
 
