@@ -1,10 +1,13 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project
+  xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
   <modelVersion>4.0.0</modelVersion>
   <parent>
     <groupId>com.soebes.smpp</groupId>
     <artifactId>smpp</artifactId>
-    <version>0.2</version>
+    <version>0.4-SNAPSHOT</version>
   </parent>
 
   <groupId>com.soebes.subversion.sapm</groupId>
@@ -17,39 +20,14 @@
   <url>https://github.com/khmarbaise/sapm</url>
   <inceptionYear>2010</inceptionYear>
 
-  <organization>
-    <name>SoftwareEntwicklung Beratung Schulung</name>
-    <url>http://www.soebes.com</url>
-  </organization>
-
-  <licenses>
-    <license>
-      <name>Apache License 2.0</name>
-      <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
-      <distribution>repo</distribution>
-    </license>
-  </licenses>
-
-  <developers>
-    <developer>
-      <id>kama</id>
-      <name>Karl Heinz Marbaise</name>
-      <email>sapm@soebes.de</email>
-      <roles>
-        <role>Lead</role>
-        <role>Committer</role>
-      </roles>
-    </developer>
-  </developers>
-
   <issueManagement>
     <system>default</system>
     <url>https://github.com/khmarbaise/sapm/issues</url>
   </issueManagement>
 
   <properties>
-    <maven-license-plugin.version>1.9.0</maven-license-plugin.version>
-    <antlr.version>3.3</antlr.version>
+    <antlr-runtime.version>3.4</antlr-runtime.version>
+    
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
@@ -72,14 +50,6 @@
       </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-compiler-plugin</artifactId>
-        <configuration>
-          <source>1.6</source>
-          <target>1.6</target>
-        </configuration>
-      </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-resources-plugin</artifactId>
       </plugin>
       <plugin>
@@ -90,7 +60,6 @@
       <plugin>
         <groupId>org.antlr</groupId>
         <artifactId>antlr3-maven-plugin</artifactId>
-        <version>${antlr.version}</version>
         <executions>
           <execution>
             <goals>
@@ -121,7 +90,7 @@
             <apt>DOUBLETILDE_STYLE</apt>
           </mapping>
           <properties>
-            <year>2010, 2011</year>
+            <year>2010, 2011, 2012</year>
             <email>sapm@soebes.de</email>
           </properties>
         </configuration>
@@ -142,13 +111,12 @@
         <artifactId>maven-project-info-reports-plugin</artifactId>
       </plugin>
       <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-pmd-plugin</artifactId>
-          <version>2.5</version>
-          <configuration>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-pmd-plugin</artifactId>
+        <configuration>
           <excludeRoots>${project.build.outputDirectory}/generated-sources</excludeRoots>
-          </configuration>
-        </plugin>
+        </configuration>
+      </plugin>
     </plugins>
   </build>
 
@@ -177,14 +145,13 @@
     <dependency>
       <groupId>org.testng</groupId>
       <artifactId>testng</artifactId>
-      <version>6.0.1</version>
       <scope>test</scope>
     </dependency>
 
     <dependency>
       <groupId>org.antlr</groupId>
       <artifactId>antlr-runtime</artifactId>
-      <version>${antlr.version}</version>
+      <version>${antlr-runtime.version}</version>
     </dependency>
   </dependencies>
 
