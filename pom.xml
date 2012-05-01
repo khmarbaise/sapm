@@ -170,6 +170,14 @@
           </reportSet>
         </reportSets>
       </plugin>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>jdiff-maven-plugin</artifactId>
+        <version>1.0-beta-1</version>
+        <configuration>
+          <comparisonVersion>0.4</comparisonVersion>
+        </configuration>
+      </plugin>
     </plugins>
   </reporting>
 
