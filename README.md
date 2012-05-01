@@ -1,7 +1,7 @@
 Subversion Authentication Parser Module
 =======================================
 
-The idea is to read the [authentication file of Subversion](http://svnbook.red-bean.com/nightly/en/svn-book.html#svn.serverconfig.pathbasedauthz)
+The idea is to read the [authentication file of Subversion](http://svnbook.red-bean.com/en/1.7/svn-book.html#svn.serverconfig.pathbasedauthz)
 and convert it into a form which can be used inside an application.
 
 This means to check a user against the configuration for example if a user is
