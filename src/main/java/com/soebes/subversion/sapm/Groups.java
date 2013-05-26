@@ -22,6 +22,7 @@
 package com.soebes.subversion.sapm;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Convenience class for the grammar to handle a list of {@link Group}s.
@@ -29,13 +30,13 @@ import java.util.ArrayList;
  *
  */
 public class Groups {
-    private ArrayList<Group> groupsList;
+    private List<Group> groupsList;
 
     public Groups() {
         setGroupsList(new ArrayList<Group>());
     }
 
-    public void setGroupsList(ArrayList<Group> groupsList) {
+    public void setGroupsList(List<Group> groupsList) {
         this.groupsList = groupsList;
     }
 
@@ -43,7 +44,7 @@ public class Groups {
      * Get the list of all groups
      * @return The list of Groups.
      */
-    public ArrayList<Group> getGroupsList() {
+    public List<Group> getGroupsList() {
         return groupsList;
     }
 

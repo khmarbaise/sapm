@@ -22,6 +22,7 @@
 package com.soebes.subversion.sapm;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * A group which represents a number of individual {@link User users} or
@@ -32,7 +33,7 @@ import java.util.ArrayList;
  */
 public class Group implements IPrincipal {
 
-    private ArrayList<IPrincipal> principalList;
+    private List<IPrincipal> principalList;
 
     /**
      * The name of the group.
@@ -99,11 +100,11 @@ public class Group implements IPrincipal {
      * Get the whole list of users/groups.
      * @return The list of users/groups.
      */
-    public ArrayList<IPrincipal> getPrincipalList() {
+    public List<IPrincipal> getPrincipalList() {
         return principalList;
     }
 
-    public void setPrincipalList(ArrayList<IPrincipal> principalList) {
+    public void setPrincipalList(List<IPrincipal> principalList) {
         this.principalList = principalList;
     }
 

@@ -22,6 +22,7 @@
 package com.soebes.subversion.sapm;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * This is a convenience class for the parser.
@@ -31,7 +32,7 @@ import java.util.ArrayList;
  */
 public class Aliases {
 
-    private ArrayList<Alias> aliasesList;
+    private List<Alias> aliasesList;
 
     public Aliases() {
         setAliasesList(new ArrayList<Alias>());
@@ -63,11 +64,11 @@ public class Aliases {
         return result;
     }
 
-    public void setAliasesList(ArrayList<Alias> aliasesList) {
+    public void setAliasesList(List<Alias> aliasesList) {
         this.aliasesList = aliasesList;
     }
 
-    public ArrayList<Alias> getAliasesList() {
+    public List<Alias> getAliasesList() {
         return aliasesList;
     }
 

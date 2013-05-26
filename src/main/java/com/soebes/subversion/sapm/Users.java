@@ -22,6 +22,7 @@
 package com.soebes.subversion.sapm;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Convenience class for the grammar to handle a list of {@link User}s.
@@ -31,17 +32,17 @@ import java.util.ArrayList;
  */
 public class Users {
 
-    private ArrayList<User> usersList;
+    private List<User> usersList;
 
     public Users() {
         setUsersList(new ArrayList<User>());
     }
 
-    public void setUsersList(ArrayList<User> usersList) {
+    public void setUsersList(List<User> usersList) {
         this.usersList = usersList;
     }
 
-    public ArrayList<User> getUsersList() {
+    public List<User> getUsersList() {
         return usersList;
     }
 

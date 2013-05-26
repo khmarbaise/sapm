@@ -22,6 +22,7 @@
 package com.soebes.subversion.sapm;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * This class describes an AccessRule which comprises of an repository name and
@@ -55,7 +56,7 @@ import java.util.ArrayList;
  */
 public class AccessRule {
 
-    private ArrayList<Access> accessList;
+    private List<Access> accessList;
 
     /**
      * The name of the repository which this AccessRule represents.
@@ -118,11 +119,11 @@ public class AccessRule {
         this.repositoryPath = path;
     }
 
-    public void setAccessList(ArrayList<Access> accessList) {
+    public void setAccessList(List<Access> accessList) {
         this.accessList = accessList;
     }
 
-    public ArrayList<Access> getAccessList() {
+    public List<Access> getAccessList() {
         return accessList;
     }
 
