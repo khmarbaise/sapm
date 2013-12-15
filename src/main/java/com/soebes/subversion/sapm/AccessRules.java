@@ -25,19 +25,20 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * This class can handle an access rule which comprises of multiple {@link AccessRule}.
- *
+ * This class can handle an access rule which comprises of multiple
+ * {@link AccessRule}.
+ * 
  * <pre>
  * [/]
  * * = r
- *
+ * 
  * [repository:/test/trunk]
  * harry = rw
  * michael = rw
  * </pre>
- *
+ * 
  * @author Karl Heinz Marbaise
- *
+ * 
  */
 public class AccessRules {
 
@@ -49,7 +50,9 @@ public class AccessRules {
 
     /**
      * Add an {@link AccessRule} to the list of access rules.
-     * @param accessRule The access rule which will be added.
+     * 
+     * @param accessRule
+     *            The access rule which will be added.
      */
     public void add(AccessRule accessRule) {
         getAccessRules().add(accessRule);
@@ -57,6 +60,7 @@ public class AccessRules {
 
     /**
      * Get the complete list of access rules.
+     * 
      * @return The list of access rules.
      */
     public List<AccessRule> getAccessRules() {
@@ -76,5 +80,62 @@ public class AccessRules {
             }
         }
         return result;
+    }
+
+    public static class UserBuilder {
+        private List<User> userList;
+        private AccessRule accessRule;
+        private Builder builder;
+
+        private UserBuilder(Builder builder, AccessRule accessRule) {
+            this.userList = new ArrayList<User>();
+            this.builder = builder;
+            this.accessRule = accessRule;
+        }
+
+        public UserBuilder and(String userName) {
+            this.userList.add(UserFactory.createInstance(userName));
+            return this;
+        }
+
+        public Builder with(AccessLevel level) {
+            for (User user : this.userList) {
+                accessRule.add(user, level);
+            }
+            return this.builder;
+        }
+    }
+
+    public static class AccessRuleBuilder {
+        private Builder builder;
+        private AccessRule rule;
+
+        private AccessRuleBuilder(Builder builder, AccessRule rule) {
+            this.builder = builder;
+            this.rule = rule;
+        }
+
+        public UserBuilder forUser(String userName) {
+            return new UserBuilder(this.builder, rule).and(userName);
+        }
+
+    }
+
+    public static class Builder {
+        private AccessRules accessRules;
+
+        public Builder() {
+            this.accessRules = new AccessRules();
+        }
+
+        public AccessRuleBuilder forRepository(String repositoryPath) {
+            AccessRule accessRule = new AccessRule(repositoryPath);
+            accessRules.add(accessRule);
+            return new AccessRuleBuilder(this, accessRule);
+        }
+
+        public AccessRules build() {
+            return this.accessRules;
+        }
     }
 }

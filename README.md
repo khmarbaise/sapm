@@ -47,7 +47,8 @@ or directly using a configuration file which can be loaded via AuthorizationFile
     harry = rw
     brian = rw
 
-The above configuration contents can be created by using the following code snippet:
+The above configuration contents can be created by using the following code snippet 
+by using traditional usage of the classes:
 
     AccessRules accessRules = new AccessRules();
 
@@ -61,8 +62,22 @@ The above configuration contents can be created by using the following code snip
 
     AccessRule accessRule = new AccessRule("repository", "/test/trunk");
     accessRule.add(userHarry, AccessLevel.READ_WRITE);
-    accessRule.add(userMicheal, AccessLevel.READ_WRITE);
+    accessRule.add(userBrian, AccessLevel.READ_WRITE);
     accessRules.add(accessRule);
+
+It's also possible to use the following fluent API
+which makes creation much more simpler, readable
+and less error prone.
+ 
+    AccessRules accessRules = new AccessRules.Builder()
+      .ofRepository("/")
+      .forUser("*")
+      .with(AccessLevel.READ)
+      .ofRepository("repository").forPath("/test/trunk")
+      .forUser("harry").and("brian")
+      .with(AccessLevel.READ_WRITE)
+      .build();
+
 
 And now finally you can ask the AccessRules class what kind of permission a particular user has whereas
 the user is the user name for example "harry" and the repository for which repository you would like to
@@ -88,6 +103,33 @@ The following rule set works as well (see the following unit test AccessRulesGro
     [global:/project/trunk]
     @all-developer = rw
 
+
+The fluent API can be used to create the previous as well like:
+
+    AccessRules accessRule = new AccessRules.Builder()
+    	.group("c-developer").withMember("harry").and("brian")
+    	.group("d-developer").withMember("michael").and("sally")
+    	.group("e-developer").withMember("jonas")
+    	.group("all-developer").withMember("c-developer").and("d-developer").and("e-developer")
+    	.ofRepository("/")
+    	.forUser("*")
+    	.with(AccessLevel.READ)
+    	.ofRepository("repository", "/project-c/trunk")
+    	.forGroup("c-developer")
+    	.with(AccessLevel.READ_WRITE)
+    	.ofRepository("repository", "/project-d/trunk")
+    	.forGroup("d-developer")
+    	.with(AccessLevel.READ_WRITE)
+    	.ofRepository("repository", "/project-e/trunk")
+    	.forGroup("e-developer")
+    	.with(AccessLevel.READ_WRITE)
+    	.ofRepository("global", "/project/trunk")
+    	.forGroup("all-developer")
+    	.with(AccessLevel.READ_WRITE)
+    	.build();
+
+    	
+    	
 Order of permission rules
 -------------------------
 
