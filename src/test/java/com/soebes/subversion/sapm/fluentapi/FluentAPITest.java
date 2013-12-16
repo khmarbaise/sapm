@@ -1,34 +1,41 @@
 package com.soebes.subversion.sapm.fluentapi;
 
 import static org.fest.assertions.api.Assertions.assertThat;
+import static com.soebes.subversion.sapm.fluentapi.AccessRulesAssert.assertThat;
 
 import org.testng.annotations.Test;
 
 import com.soebes.subversion.sapm.AccessLevel;
 import com.soebes.subversion.sapm.AccessRule;
 import com.soebes.subversion.sapm.AccessRules;
-import com.soebes.subversion.sapm.User;
 import com.soebes.subversion.sapm.UserFactory;
 
 public class FluentAPITest {
 
     @Test
-    public void baseTest() {
+    public void theBuilderShouldReturnAnInstanceOfAccessRules() {
         AccessRules accessRules = new AccessRules.Builder().build();
         assertThat(accessRules.getAccessRules()).isNotNull().hasSize(0);
     }
 
+    /**
+     *<pre>{@code  [/]
+     ** = r
+     *harry = r
+     *brian = r 
+     *}</pre>
+     *
+     *
+     * 
+     */
     @Test
     public void gegenTest() {
         AccessRules rules = new AccessRules();
-        User userAsterik = UserFactory.createInstance("*");
-        User userHarry = UserFactory.createInstance("harry");
-        User userBrian = UserFactory.createInstance("brian");
 
         AccessRule rule1 = new AccessRule("/");
-        rule1.add(userAsterik, AccessLevel.READ);
-        rule1.add(userHarry, AccessLevel.READ);
-        rule1.add(userBrian, AccessLevel.READ);
+        rule1.add(UserFactory.createInstance("*"), AccessLevel.READ);
+        rule1.add(UserFactory.createInstance("harry"), AccessLevel.READ);
+        rule1.add(UserFactory.createInstance("brian"), AccessLevel.READ);
 
         rules.add(rule1);
 
@@ -37,17 +44,26 @@ public class FluentAPITest {
 
     @Test
     public void voidFirstTest() {
+        //@formatter:off
         AccessRules accessRules = new AccessRules.Builder()
             .forRepository("/")
             .forUser("*").and("harry").and("brian")
             .with(AccessLevel.READ)
             .build();
+        //@formatter:on
 
-        assertThat(accessRules.getAccessRules()).hasSize(1);
+        assertThat(accessRules)
+            .hasRuleForRepository("/")
+            .forUser("*")
+            .and("harry")
+            .and("brian").with(AccessLevel.READ);
+
+//        assertThat(accessRules.getAccessRules()).hasSize(1);
     }
 
     @Test
     public void thirdfirstTest() {
+        //@formatter:off
         AccessRules accessRules = new AccessRules.Builder()
             .forRepository("/")
             .forUser("*").and("harry").and("brian")
@@ -56,7 +72,12 @@ public class FluentAPITest {
             .forUser("harry").and("brian")
             .with(AccessLevel.READ_WRITE)
             .build();
+        //@formatter:on
+
         assertThat(accessRules.getAccessRules()).hasSize(2);
+
+        AccessRule accessRule_1 = accessRules.getAccessRules().get(0);
+        accessRule_1.getAccessList().get(0);
     }
 
     public void secondTest() {
