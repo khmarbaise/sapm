@@ -258,4 +258,36 @@ public class AccessRule {
         }
         return result.toString();
     }
+
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int result = 1;
+        result = prime * result + ((repositoryName == null) ? 0 : repositoryName.hashCode());
+        result = prime * result + ((repositoryPath == null) ? 0 : repositoryPath.hashCode());
+        return result;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        AccessRule other = (AccessRule) obj;
+        if (repositoryName == null) {
+            if (other.repositoryName != null)
+                return false;
+        } else if (!repositoryName.equals(other.repositoryName))
+            return false;
+        if (repositoryPath == null) {
+            if (other.repositoryPath != null)
+                return false;
+        } else if (!repositoryPath.equals(other.repositoryPath))
+            return false;
+        return true;
+    }
+
 }

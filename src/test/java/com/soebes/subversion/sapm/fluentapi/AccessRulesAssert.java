@@ -18,21 +18,28 @@ public class AccessRulesAssert extends GenericAssert<AccessRulesAssert, AccessRu
         return new AccessRulesAssert(actual);
     }
     
-    public AccessRuleAssert hasRuleForRepository(String repository) {
+    public AccessRuleAssert hasRuleForRepository(String repositoryPath) {
         isNotNull();
 
         String errorMessage = String.format(
-                "Expected repository to be <%s> but was <%s>",
-                repository,
+                "Expected repository to be <%s> but it does not exist <%s>",
+                repositoryPath,
                 actual.getAccessRules()
         );
 
         List<AccessRule> accessRules = actual.getAccessRules();
-        boolean contains = accessRules.contains(repository);
+
+        AccessRule accessRule = new AccessRule(repositoryPath);
         
-        Assertions.assertThat(actual.getAccessRules().contains(repository)).overridingErrorMessage(errorMessage).isEqualTo(contains);
+        System.out.println("Size: " + accessRules.size());
+        for (AccessRule rule : accessRules) {
+            System.out.println("rule:" + rule.getRepositoryName());
+        }
+        boolean contains = accessRules.contains(accessRule);
         
-        int indexOf = actual.getAccessRules().indexOf(repository);
+        Assertions.assertThat(contains).overridingErrorMessage(errorMessage).isTrue();
+        
+        int indexOf = actual.getAccessRules().indexOf(accessRule);
         
         return AccessRuleAssert.assertThat(actual.getAccessRules().get(indexOf));
     }
