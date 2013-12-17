@@ -31,10 +31,6 @@ public class AccessRulesAssert extends GenericAssert<AccessRulesAssert, AccessRu
 
         AccessRule accessRule = new AccessRule(repositoryPath);
         
-        System.out.println("Size: " + accessRules.size());
-        for (AccessRule rule : accessRules) {
-            System.out.println("rule:" + rule.getRepositoryName());
-        }
         boolean contains = accessRules.contains(accessRule);
         
         Assertions.assertThat(contains).overridingErrorMessage(errorMessage).isTrue();
