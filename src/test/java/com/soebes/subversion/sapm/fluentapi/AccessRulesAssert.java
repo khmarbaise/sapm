@@ -29,13 +29,11 @@ public class AccessRulesAssert extends GenericAssert<AccessRulesAssert, AccessRu
 
         List<AccessRule> accessRules = actual.getAccessRules();
 
-        AccessRule accessRule = new AccessRule(repositoryPath);
+        AccessRule accessRuleToSearchFor = new AccessRule(repositoryPath);
         
-        boolean contains = accessRules.contains(accessRule);
+        Assertions.assertThat(accessRules.contains(accessRuleToSearchFor)).overridingErrorMessage(errorMessage).isTrue();
         
-        Assertions.assertThat(contains).overridingErrorMessage(errorMessage).isTrue();
-        
-        int indexOf = actual.getAccessRules().indexOf(accessRule);
+        int indexOf = accessRules.indexOf(accessRuleToSearchFor);
         
         return AccessRuleAssert.assertThat(actual.getAccessRules().get(indexOf));
     }

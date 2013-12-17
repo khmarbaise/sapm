@@ -53,8 +53,8 @@ public class FluentAPITest {
         //@formatter:on
 
         assertThat(accessRules)
-            .hasRuleForRepository("/");
-//            .forUser("*")
+            .hasRuleForRepository("/")
+            .forUser("*");
 //            .and("harry")
 //            .and("brian").with(AccessLevel.READ);
 
