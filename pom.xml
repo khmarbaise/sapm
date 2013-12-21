@@ -25,6 +25,8 @@
 
   <properties>
     <antlr-runtime.version>3.5.2</antlr-runtime.version>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
 
   <scm>
@@ -116,6 +118,7 @@
       <artifactId>antlr-runtime</artifactId>
       <version>${antlr-runtime.version}</version>
     </dependency>
+
   </dependencies>
 
   <!-- mvn -Darguments="-Dgpg.passphrase=xxxx" release:perform see parent pom. -->

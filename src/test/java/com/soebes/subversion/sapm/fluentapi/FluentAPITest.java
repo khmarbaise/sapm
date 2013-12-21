@@ -1,14 +1,13 @@
 package com.soebes.subversion.sapm.fluentapi;
 
-import static org.fest.assertions.api.Assertions.assertThat;
-import static com.soebes.subversion.sapm.fluentapi.AccessRulesAssert.assertThat;
-
-import org.testng.annotations.Test;
-
 import com.soebes.subversion.sapm.AccessLevel;
 import com.soebes.subversion.sapm.AccessRule;
 import com.soebes.subversion.sapm.AccessRules;
 import com.soebes.subversion.sapm.UserFactory;
+import org.testng.annotations.Test;
+
+import static com.soebes.subversion.sapm.fluentapi.AccessRulesAssert.assertThat;
+import static org.fest.assertions.api.Assertions.assertThat;
 
 public class FluentAPITest {
 
@@ -54,7 +53,7 @@ public class FluentAPITest {
 
         assertThat(accessRules)
             .hasRuleForRepository("/")
-            .forUser("*");
+            .forUser("*").and("harry").and("brian");
 //            .and("harry")
 //            .and("brian").with(AccessLevel.READ);
 
