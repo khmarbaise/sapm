@@ -1,13 +1,10 @@
 package com.soebes.subversion.sapm.fluentapi;
 
-import com.soebes.subversion.sapm.User;
-import com.soebes.subversion.sapm.UserFactory;
+import com.google.common.base.Joiner;
+import com.soebes.subversion.sapm.*;
 import org.fest.assertions.Assert;
 import org.fest.assertions.Assertions;
 import org.fest.assertions.GenericAssert;
-
-import com.soebes.subversion.sapm.AccessLevel;
-import com.soebes.subversion.sapm.AccessRule;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -47,15 +44,21 @@ public class AccessRuleAssert extends GenericAssert<AccessRuleAssert, AccessRule
     public AccessRuleAssert withUser(String userName) {
         isNotNull();
 
+        StringBuilder sb = new StringBuilder();
+        for (Access item : actual.getAccessList()) {
+            sb.append(item.getPrincipal().getName());
+            sb.append(",");
+        }
+
         String errorMessage = String.format(
                 "Expected userName <%s> but it does not exist in list of users <%s>",
                 userName,
-                actual.getAccessList()
+                sb.toString()
         );
 
         boolean result = actual.getAccessList().contains(UserFactory.createInstance(userName));
 
-        Assertions.assertThat(actual.getAccessList()).contains(UserFactory.createInstance(userName)).overridingErrorMessage(errorMessage);
+        Assertions.assertThat(actual.getAccessList()).overridingErrorMessage(errorMessage).contains(UserFactory.createInstance(userName));
 
         userList.add(UserFactory.createInstance(userName));
 //        Assertions.assertThat(actual.getAccessList())
