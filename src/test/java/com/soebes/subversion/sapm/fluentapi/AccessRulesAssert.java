@@ -8,7 +8,7 @@ import org.fest.assertions.GenericAssert;
 import com.soebes.subversion.sapm.AccessRule;
 import com.soebes.subversion.sapm.AccessRules;
 
-public class AccessRulesAssert extends GenericAssert<AccessRulesAssert, AccessRules>{
+public class AccessRulesAssert extends GenericAssert<AccessRulesAssert, AccessRules> {
 
     protected AccessRulesAssert(AccessRules actual) {
         super(AccessRulesAssert.class, actual);
@@ -17,7 +17,7 @@ public class AccessRulesAssert extends GenericAssert<AccessRulesAssert, AccessRu
     public static AccessRulesAssert assertThat(AccessRules actual) {
         return new AccessRulesAssert(actual);
     }
-    
+
     public AccessRuleAssert hasRuleForRepository(String repositoryPath) {
         isNotNull();
 
@@ -29,13 +29,13 @@ public class AccessRulesAssert extends GenericAssert<AccessRulesAssert, AccessRu
 
         List<AccessRule> accessRules = actual.getAccessRules();
 
-        AccessRule accessRuleToSearchFor = new AccessRule(repositoryPath);
-        
-        Assertions.assertThat(accessRules.contains(accessRuleToSearchFor)).overridingErrorMessage(errorMessage).isTrue();
-        
-        int indexOf = accessRules.indexOf(accessRuleToSearchFor);
-        
+        AccessRule theAccessRuleToSearchFor = new AccessRule(repositoryPath);
+
+        Assertions.assertThat(accessRules.contains(theAccessRuleToSearchFor)).overridingErrorMessage(errorMessage).isTrue();
+
+        int indexOf = accessRules.indexOf(theAccessRuleToSearchFor);
+
         return AccessRuleAssert.assertThat(actual.getAccessRules().get(indexOf));
     }
-    
+
 }

@@ -53,7 +53,8 @@ public class FluentAPITest {
 
         assertThat(accessRules)
             .hasRuleForRepository("/")
-            .forUser("*").and("harry").and("brian");
+            .withUser("*").and("harry").and("brian")
+            .with(AccessLevel.READ);
 //            .and("harry")
 //            .and("brian").with(AccessLevel.READ);
 
@@ -61,7 +62,7 @@ public class FluentAPITest {
     }
 
     @Test
-    public void thirdfirstTest() {
+    public void thirdFirstTest() {
         //@formatter:off
         AccessRules accessRules = new AccessRules.Builder()
             .forRepository("/")
@@ -76,7 +77,19 @@ public class FluentAPITest {
         assertThat(accessRules.getAccessRules()).hasSize(2);
 
         AccessRule accessRule_1 = accessRules.getAccessRules().get(0);
-        accessRule_1.getAccessList().get(0);
+
+        assertThat(accessRule_1.getAccessList()).hasSize(3);
+        assertThat(accessRule_1.getAccessList().get(0).getPrincipal().getName()).isEqualTo("*");
+        assertThat(accessRule_1.getAccessList().get(1).getPrincipal().getName()).isEqualTo("harry");
+        assertThat(accessRule_1.getAccessList().get(2).getPrincipal().getName()).isEqualTo("brian");
+        assertThat(accessRule_1.getAccessList().get(0).getLevel()).isEqualTo(AccessLevel.READ);
+
+        AccessRule accessRule_2 = accessRules.getAccessRules().get(1);
+
+        assertThat(accessRule_2.getAccessList()).hasSize(2);
+        assertThat(accessRule_2.getAccessList().get(0).getPrincipal().getName()).isEqualTo("harry");
+        assertThat(accessRule_2.getAccessList().get(1).getPrincipal().getName()).isEqualTo("brian");
+        assertThat(accessRule_2.getAccessList().get(0).getLevel()).isEqualTo(AccessLevel.READ_WRITE);
     }
 
     public void secondTest() {
@@ -87,7 +100,7 @@ public class FluentAPITest {
          * .group("e-developer").withMember("jonas")
          * .group("all-developer").withMember
          * ("c-developer").and("d-developer").and("e-developer")
-         * .ofRepository("/") .with(AccessLevel.READ).forUser("*")
+         * .ofRepository("/") .with(AccessLevel.READ).withUser("*")
          * .ofRepository("repository", "/project-c/trunk")
          * .with(AccessLevel.READ_WRITE).forGroup("c-developer")
          * .ofRepository("repository", "/project-d/trunk")
