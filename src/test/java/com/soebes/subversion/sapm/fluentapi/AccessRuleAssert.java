@@ -62,15 +62,20 @@ public class AccessRuleAssert extends GenericAssert<AccessRuleAssert, AccessRule
             sb.append(",");
         }
 
-        String errorMessage = String.format(
-                "Expected userName <%s> but it does not exist in list of users <%s>",
-                userName,
-                sb.toString()
-        );
+        Access access = new Access();
+        access.setPrincipal(UserFactory.createInstance(userName));
 
         boolean result = actual.getAccessList().contains(UserFactory.createInstance(userName));
 
-        Assertions.assertThat(actual.getAccessList().contains(UserFactory.createInstance(userName))).overridingErrorMessage(errorMessage);
+        String errorMessage = String.format(
+                "Expected userName <%s> but it does not exist in list of users <%s> (<%s>)",
+                userName,
+                sb.toString(),
+                result
+        );
+
+
+        Assertions.assertThat(actual.getAccessList().contains(UserFactory.createInstance(userName))).overridingErrorMessage(errorMessage).isTrue();
 
         userList.add(UserFactory.createInstance(userName));
 //        Assertions.assertThat(actual.getAccessList())
