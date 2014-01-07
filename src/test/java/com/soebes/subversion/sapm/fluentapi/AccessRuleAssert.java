@@ -19,6 +19,24 @@ public class AccessRuleAssert extends GenericAssert<AccessRuleAssert, AccessRule
         return new AccessRuleAssert(actual);
     }
 
+    /**
+     * This will check if the number of entries in the accessList
+     * is equal to the given expected size.
+     * @param expected
+     * @return Current instance.
+     */
+    public AccessRuleAssert hasSize(int expected) {
+        isNotNull();
+        String errorMessage = String.format(
+                "The number of access rules <%s> is not equal the number of access rules you have expected  <%s>",
+                actual.getAccessList().size(),
+                expected
+        );
+
+        Assertions.assertThat(actual.getAccessList()).overridingErrorMessage(errorMessage).hasSize(expected);
+        return this;
+    }
+
     public AccessRuleAssert with(AccessLevel level) {
         isNotNull();
 
