@@ -16,6 +16,18 @@ public class AccessRulesAssert extends GenericAssert<AccessRulesAssert, AccessRu
         return new AccessRulesAssert(actual);
     }
 
+    public AccessRulesAssert hasSize(int expected) {
+        isNotNull();
+        String errorMessage = String.format(
+                "The number of access rules <%s> is not equal the number of access rules you have expected  <%s>",
+                actual.getAccessRules().size(),
+                expected
+        );
+
+        Assertions.assertThat(actual.getAccessRules()).overridingErrorMessage(errorMessage).hasSize(expected);
+        return this;
+    }
+
     public AccessRuleAssert hasRuleForRepository(String repositoryPath) {
         isNotNull();
 
