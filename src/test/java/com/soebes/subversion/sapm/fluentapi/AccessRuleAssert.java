@@ -42,8 +42,7 @@ public class AccessRuleAssert extends GenericAssert<AccessRuleAssert, AccessRule
 
         Assertions.assertThat(userList).isNotEmpty();
 
-        //TODO: We have to check the user list...against the
-        //user in the AccessLevel ist.
+        //TODO: We have to check the user list...against the user in the AccessLevel ist.
         Boolean found = true;
         for (Access access : actual.getAccessList()) {
               if (access.getLevel() != level) {

@@ -53,6 +53,7 @@ public class FluentAPITest {
         //@formatter:on
 
         assertThat(accessRules)
+                .hasSize(1)
                 .hasRuleForRepository("/")
                 .withUser("*").and("harry").and("brian")
                 .with(AccessLevel.READ);
