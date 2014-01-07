@@ -90,8 +90,8 @@ public class Access {
 
         Access access = (Access) o;
 
-        if (negativeRule != access.negativeRule) return false;
-        if (level != access.level) return false;
+//        if (negativeRule != access.negativeRule) return false;
+//        if (level != access.level) return false;
         if (!principal.equals(access.principal)) return false;
 
         return true;

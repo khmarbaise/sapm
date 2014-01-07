@@ -1,12 +1,10 @@
 package com.soebes.subversion.sapm.fluentapi;
 
-import java.util.List;
-
-import org.fest.assertions.Assertions;
-import org.fest.assertions.GenericAssert;
-
 import com.soebes.subversion.sapm.AccessRule;
 import com.soebes.subversion.sapm.AccessRules;
+import org.fest.assertions.Assertions;
+import org.fest.assertions.GenericAssert;
+import java.util.List;
 
 public class AccessRulesAssert extends GenericAssert<AccessRulesAssert, AccessRules> {
 
@@ -35,7 +33,7 @@ public class AccessRulesAssert extends GenericAssert<AccessRulesAssert, AccessRu
 
         int indexOf = accessRules.indexOf(theAccessRuleToSearchFor);
 
-        return AccessRuleAssert.assertThat(actual.getAccessRules().get(indexOf));
+        return AccessRuleAssert.assertThat(accessRules.get(indexOf));
     }
 
 }

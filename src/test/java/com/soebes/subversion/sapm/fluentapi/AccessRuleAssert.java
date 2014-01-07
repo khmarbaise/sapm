@@ -45,7 +45,10 @@ public class AccessRuleAssert extends GenericAssert<AccessRuleAssert, AccessRule
                 sb.toString()
         );
 
-        Assertions.assertThat(actual.getAccessList().contains(UserFactory.createInstance(userName))).overridingErrorMessage(errorMessage).isTrue();
+        Access access = new Access();
+        access.setPrincipal(UserFactory.createInstance(userName));
+
+        Assertions.assertThat(actual.getAccessList().contains(access)).overridingErrorMessage(errorMessage).isTrue();
         userList.add(UserFactory.createInstance(userName));
         return this;
     }

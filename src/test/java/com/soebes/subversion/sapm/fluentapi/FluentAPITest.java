@@ -48,7 +48,9 @@ public class FluentAPITest {
             .forRepository("/")
             .forUser("*").and("harry").and("brian")
             .with(AccessLevel.READ)
-            .build();
+            .build();                          Access access = new Access();
+        access.setPrincipal(UserFactory.createInstance(userName));
+
         //@formatter:on
 
         assertThat(accessRules)
