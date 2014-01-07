@@ -82,4 +82,26 @@ public class Access {
     public boolean isNegativeRule() {
         return negativeRule;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Access access = (Access) o;
+
+        if (negativeRule != access.negativeRule) return false;
+        if (level != access.level) return false;
+        if (!principal.equals(access.principal)) return false;
+
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = principal.hashCode();
+        result = 31 * result + level.hashCode();
+        result = 31 * result + (negativeRule ? 1 : 0);
+        return result;
+    }
 }

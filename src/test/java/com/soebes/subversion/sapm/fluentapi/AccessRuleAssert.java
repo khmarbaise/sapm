@@ -1,15 +1,12 @@
 package com.soebes.subversion.sapm.fluentapi;
 
-import com.google.common.base.Joiner;
 import com.soebes.subversion.sapm.*;
-import org.fest.assertions.Assert;
 import org.fest.assertions.Assertions;
 import org.fest.assertions.GenericAssert;
-
 import java.util.ArrayList;
 import java.util.List;
 
-public class AccessRuleAssert extends GenericAssert<AccessRuleAssert, AccessRule>{
+public class AccessRuleAssert extends GenericAssert<AccessRuleAssert, AccessRule> {
 
     private List<User> userList;
 
@@ -21,14 +18,14 @@ public class AccessRuleAssert extends GenericAssert<AccessRuleAssert, AccessRule
     public static AccessRuleAssert assertThat(AccessRule actual) {
         return new AccessRuleAssert(actual);
     }
-    
+
     public AccessRuleAssert with(AccessLevel level) {
         isNotNull();
 
         Assertions.assertThat(userList).isNotEmpty();
 
-            //We have to check the user list...against the
-            //user in the AccessLevel ist.
+        //We have to check the user list...against the
+        //user in the AccessLevel ist.
 
         return this;
     }
@@ -65,7 +62,7 @@ public class AccessRuleAssert extends GenericAssert<AccessRuleAssert, AccessRule
         Access access = new Access();
         access.setPrincipal(UserFactory.createInstance(userName));
 
-        boolean result = actual.getAccessList().contains(UserFactory.createInstance(userName));
+        boolean result = actual.getAccessList().contains(access);
 
         String errorMessage = String.format(
                 "Expected userName <%s> but it does not exist in list of users <%s> (<%s>)",
@@ -74,8 +71,7 @@ public class AccessRuleAssert extends GenericAssert<AccessRuleAssert, AccessRule
                 result
         );
 
-
-        Assertions.assertThat(actual.getAccessList().contains(UserFactory.createInstance(userName))).overridingErrorMessage(errorMessage).isTrue();
+        Assertions.assertThat(actual.getAccessList().contains(access)).overridingErrorMessage(errorMessage).isTrue();
 
         userList.add(UserFactory.createInstance(userName));
 //        Assertions.assertThat(actual.getAccessList())
@@ -84,5 +80,5 @@ public class AccessRuleAssert extends GenericAssert<AccessRuleAssert, AccessRule
 
         return this;
     }
-    
+
 }

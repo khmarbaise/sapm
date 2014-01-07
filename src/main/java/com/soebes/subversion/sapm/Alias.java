@@ -81,4 +81,23 @@ public class Alias implements IPrincipal {
         return "&" + getName();
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Alias alias = (Alias) o;
+
+        if (!definition.equals(alias.definition)) return false;
+        if (!name.equals(alias.name)) return false;
+
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = name.hashCode();
+        result = 31 * result + definition.hashCode();
+        return result;
+    }
 }
