@@ -21,39 +21,64 @@
  */
 package com.soebes.subversion.sapm;
 
+import java.util.List;
+
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 /**
- *
  * @author Karl Heinz Marbaise
- *
  */
-public class AuthorizationFileSaveTest extends TestBase {
+public class AuthorizationFileSaveTest
+    extends TestBase
+{
 
-    @Test
-    public void createRulesForSave() {
-        User userHarry = UserFactory.createInstance("harry");
-        User userBrian = UserFactory.createInstance("brian");
-        User userMicheal = UserFactory.createInstance("michael");
+    private AccessRules rules;
 
-        Group developerGroup = new Group("developer");
+    @BeforeMethod
+    public void beforeMethod()
+    {
+        User userHarry = UserFactory.createInstance( "harry" );
+        User userBrian = UserFactory.createInstance( "brian" );
+
+        Group developerGroup = new Group( "developer" );
 
         // @developer = harry, brian
-        developerGroup.add(userHarry);
-        developerGroup.add(userBrian);
+        developerGroup.add( userHarry );
+        developerGroup.add( userBrian );
 
-        Group adminGroup = new Group("admin");
+        Group adminGroup = new Group( "admin" );
 
         // @admin = michael
-        adminGroup.add(userMicheal);
+        User userMicheal = UserFactory.createInstance( "michael" );
+        adminGroup.add( userMicheal );
 
         // [repository:/test/trunk]
         // @developer = r
         // @admin = rw
-        AccessRule accessRule = new AccessRule("repository", "/test/trunk");
+        AccessRule accessRule = new AccessRule( "repository", "/test/trunk" );
 
-        accessRule.add(developerGroup, AccessLevel.READ);
-        accessRule.add(adminGroup, AccessLevel.READ_WRITE);
-//        System.out.println(accessRule);
+        accessRule.add( developerGroup, AccessLevel.READ );
+        accessRule.add( adminGroup, AccessLevel.READ_WRITE );
+
+        AccessRules rules = new AccessRules();
+        rules.add( accessRule );
+        // System.out.println(accessRule);
+
+    }
+
+    @Test
+    public void shouldSaveTheGroup()
+    {
+        List<AccessRule> accessRules = rules.getAccessRules();
+        for ( AccessRule accessRule : accessRules )
+        {
+            List<Access> accessList = accessRule.getAccessList();
+            for ( Access access : accessList )
+            {
+                IPrincipal principal = access.getPrincipal();
+                principal.getName();
+            }
+        }
     }
 }
