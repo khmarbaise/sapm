@@ -7,7 +7,7 @@
   <parent>
     <groupId>com.soebes.smpp</groupId>
     <artifactId>smpp</artifactId>
-    <version>0.7.1-SNAPSHOT</version>
+    <version>0.7.0</version>
   </parent>
 
   <groupId>com.soebes.subversion.sapm</groupId>
@@ -41,7 +41,7 @@
   </issueManagement>
 
   <properties>
-    <antlr-runtime.version>3.4</antlr-runtime.version>
+    <antlr-runtime.version>3.5.2</antlr-runtime.version>
     
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -66,44 +66,11 @@
       <plugin>
         <groupId>org.antlr</groupId>
         <artifactId>antlr3-maven-plugin</artifactId>
+        <version>3.5.2</version>
         <executions>
           <execution>
             <goals>
               <goal>antlr</goal>
-            </goals>
-          </execution>
-        </executions>
-      </plugin>
-      <plugin>
-        <groupId>com.mycila.maven-license-plugin</groupId>
-        <artifactId>maven-license-plugin</artifactId>
-        <configuration>
-          <header>src/main/etc/header.txt</header>
-          <quiet>false</quiet>
-          <aggregate>true</aggregate>
-          <failIfMissing>false</failIfMissing>
-          <includes>
-            <include>src/**</include>
-          </includes>
-          <excludes>
-            <exclude>src/main/resources/**</exclude>
-            <exclude>src/test/resources/**</exclude>
-            <exclude>target/**</exclude>
-          </excludes>
-          <mapping>
-            <g>DOUBLESLASH_STYLE</g>
-            <apt.vm>DOUBLETILDE_STYLE</apt.vm>
-            <apt>DOUBLETILDE_STYLE</apt>
-          </mapping>
-          <properties>
-            <year>2010, 2011, 2012</year>
-            <email>sapm@soebes.de</email>
-          </properties>
-        </configuration>
-        <executions>
-          <execution>
-            <goals>
-              <goal>check</goal>
             </goals>
           </execution>
         </executions>
