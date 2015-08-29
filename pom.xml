@@ -9,7 +9,7 @@
 
   <groupId>com.soebes.subversion.sapm</groupId>
   <artifactId>sapm</artifactId>
-  <version>0.5</version>
+  <version>0.6-SNAPSHOT</version>
 
   <name>Subversion Authentication Parse Module</name>
   <description>Will read the Subversion authentication file and give you
@@ -31,7 +31,7 @@
     <developerConnection>scm:git:git@github.com:khmarbaise/sapm.git</developerConnection>
     <connection>scm:git:git://github.com/khmarbaise/sapm.git</connection>
     <url>https://github.com/khmarbaise/sapm</url>
-    <tag>sapm-0.5</tag>
+    <tag>HEAD</tag>
   </scm>
 
   <build>
