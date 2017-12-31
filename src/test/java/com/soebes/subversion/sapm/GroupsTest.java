@@ -21,7 +21,8 @@
  */
 package com.soebes.subversion.sapm;
 
-import junit.framework.Assert;
+import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertTrue;
 
 import org.testng.annotations.Test;
 
@@ -35,7 +36,7 @@ public class GroupsTest extends TestBase {
         groups.add(group1);
         groups.add(group2);
 
-        Assert.assertTrue(groups.hasGroup("developer"));
+        assertTrue( groups.hasGroup("developer"));
     }
 
     @Test
@@ -47,7 +48,7 @@ public class GroupsTest extends TestBase {
         groups.add(group2);
 
         Group result = groups.getGroup("admin");
-        Assert.assertEquals(group2, result);
+        assertEquals( group2, result);
     }
 
 }

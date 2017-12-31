@@ -4,7 +4,7 @@
   <parent>
     <groupId>com.soebes.smpp</groupId>
     <artifactId>smpp</artifactId>
-    <version>1.0.0</version>
+    <version>3.1.0</version>
   </parent>
 
   <groupId>com.soebes.subversion.sapm</groupId>
@@ -28,8 +28,8 @@
   </properties>
 
   <scm>
-    <developerConnection>scm:git:git@github.com:khmarbaise/sapm.git</developerConnection>
-    <connection>scm:git:git://github.com/khmarbaise/sapm.git</connection>
+    <developerConnection>scm:git:ssh://git@github.com/khmarbaise/sapm.git</developerConnection>
+    <connection>scm:git:https://github.com/khmarbaise/sapm.git</connection>
     <url>https://github.com/khmarbaise/sapm</url>
     <tag>HEAD</tag>
   </scm>
