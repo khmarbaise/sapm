@@ -5,6 +5,7 @@ Subversion Authentication Parser Module
 [![Build Status][build-status]][travis-ci]
 [![Maven Central][shield-central]][maven-central]
 
+
 The idea is to read the [authentication file of Subversion](http://svnbook.red-bean.com/en/1.7/svn-book.html#svn.serverconfig.pathbasedauthz)
 and convert it into a form which can be used inside an application.
 
@@ -137,3 +138,5 @@ of a given user against the repository and path inside the repository.
 [travis-ci]: https://travis-ci.org/khmarbaise/sapm
 [build-status]: https://travis-ci.org/khmarbaise/sapm.svg?branch=master
 [shield-central]: https://img.shields.io/maven-central/v/com.soebes.subversion.sapm/sapm.svg?label=Maven%20Central
+[shield-license]: https://img.shields.io/github/license/khmarbaise/sapm.svg?label=License
+[maven-central]: http://search.maven.org/#search%7Cga%7C1%7Cg%3A%22com.soebes.subversion.sapm%22%20a%3A%22sapm%22
